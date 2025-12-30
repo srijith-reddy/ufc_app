@@ -117,7 +117,7 @@ This stabilizes:
 
 ## 🧠 Feature Set Overview (Prefight-Only)
 
-All models operate on a strictly **prefight-available** feature space.
+All models operate on a strictly prefight-available feature space.
 
 Feature categories:
 - **Rating-based:** Glicko rating and RD differentials  
