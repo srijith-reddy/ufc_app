@@ -111,7 +111,7 @@ This stabilizes:
 
 ---
 
-## 2️⃣ Models Compared (NO “FINAL” MODEL)
+## 2️⃣ Models Compared
 
 All models use the same prefight data rules.
 
