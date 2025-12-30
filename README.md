@@ -315,20 +315,9 @@ No recomputation. No shortcuts.
   - Progress bar  
   - Win probability  
   - Main card summary table  
-
 ---
 
-## 5️⃣ Why This Project Is Different
-
-✔ Strict temporal integrity  
-✔ Explicit skew diagnostics  
-✔ Calibration treated as first-class  
-✔ No hidden leakage  
-✔ Deployment code mirrors training logic  
-
----
-
-## 6️⃣ Dependencies
+## 5️⃣ Dependencies
 ```
 
 streamlit
