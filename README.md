@@ -1,283 +1,342 @@
-# 🥊 UFC Fight Outcome Prediction  
-**Leakage-Free, Time-Aware Glicko + XGBoost + GRU Style Embeddings**
+# 🥊 UFC Fight Prediction — End-to-End, Leakage-Free, Time-Aware Study
 
-This repository contains a **single end-to-end Jupyter notebook** that builds a production-grade UFC fight prediction system.  
-The pipeline strictly uses **prefight-only information**, enforces **chronological integrity**, and saves **deployment-ready artifacts**.  
-Everything documented below is derived **directly from notebook code and printed outputs** — no assumptions, no post-hoc edits.
+This repository documents a full UFC fight prediction pipeline, starting from raw data construction and pre-modeling hygiene, through multiple modeling approaches, and ending with a production-safe Streamlit inference app.
 
----
-
-## 1️⃣ Imports, Settings, and Global Configuration
-
-The notebook uses:
-- **PyTorch** for GRU sequence modeling
-- **XGBoost** for tabular classification
-- **Optuna** (earlier stage) for tuning
-- **Scikit-learn** for metrics and calibration
-
-Device selection is automatic:
-- CUDA → MPS → CPU fallback
-
-### Key constants
-```
-
-SEQ_LEN = 5
-EMBED_DIM = 32
-HIDDEN_DIM = 64
-BATCH_SIZE = 64
-EPOCHS = 25
-LR = 1e-3
-
-```
-
-### Sequential (per-fight) features
-```
-
-SLpM, SApM,
-Str_Acc, Str_Def,
-TD_Avg, TD_Acc,
-TD_Def, Sub_Avg
-
-```
-
-### Style regression targets
-```
-
-SLpM, TD_Avg, Sub_Avg, Str_Acc
-
-```
+This project is an experimental comparison study under strict prefight constraints.
 
 ---
 
-## 2️⃣ Fighter Sequence Construction
+## 1️⃣ Premodeling & Data Engineering (THE MOST IMPORTANT PART)
 
-Each fighter’s career is treated as a **time series**.
+Before any model is trained, the notebook enforces hard constraints that define what is legally usable at prediction time.
 
-For every fight:
-- Past fights are sorted chronologically
-- Up to the **last 5 fights** are used
-- Left-padded with zeros if fewer than 5
-- Target is the fighter’s *current-fight style stats*
+### 1.1 Canonical fight universe
+- Only win / loss outcomes kept  
+- NC / draws removed  
+- Dates parsed and validated  
+- All rows sorted chronologically  
 
-Each row represents:
-- `(fighter, fight_url, date)`
-- `sequence`: `(5 × 8)` tensor
-- `target`: `(4,)` style vector
+```
 
-This produces a sequence-aligned dataset where **each embedding is conditioned only on past fights**.
+Master rows:                17,006
+After removing NC/draw:     16,704
+After dropping missing date:16,114
+After filtering pre-2005:   15,254
+After removing 1-fight profiles: 14,758
+
+```
+
+This avoids:
+- Early-era UFC noise  
+- Fighters with no historical signal  
+- Artificial inflation from debut fights  
 
 ---
 
-## 3️⃣ GRU Style Encoder
-
-### Architecture
-- GRU(input=8, hidden=64)
-- Mean pooling across time
-- Linear projection to:
-  - 32-dim **style embedding**
-  - 4-dim **style regression head**
-
-### Training setup
-- Loss: MSE
-- Optimizer: Adam
-- Epochs: 25
-- Train split: fights **before 2021-01-01**
-
-### Training signal (printed)
-```
-
-Epoch 1/25  | Style MSE: 1.3277
-Epoch 5/25  | Style MSE: 0.2885
-Epoch 10/25 | Style MSE: 0.2137
-Epoch 15/25 | Style MSE: 0.1896
-Epoch 20/25 | Style MSE: 0.1806
-Epoch 25/25 | Style MSE: 0.1769
-
-```
-
-The monotonic loss decay confirms the GRU learns **stable latent fighter style representations**.
+### 1.2 Rating integrity (Glicko)
+- Fights missing pre-fight Glicko ratings are removed  
+- Only g_rating_before and g_RD_before are used  
+- Ensures ratings are never updated using current fight  
 
 ---
 
-## 4️⃣ Style Embedding Extraction
+### 1.3 Temporal feature construction (prefight-only)
 
-After training:
-- The GRU encodes **every fight for every fighter**
-- Produces a `(32,)` vector per row
+All temporal features are computed using groupby + shift, never cumulative leakage.
 
-Output:
-- `emb_df` with columns:
-```
+For each fighter:
+- fights_before  
+- wins_before  
+- win_rate_before  
+- recent_win_rate_3  
+- recent_win_rate_5  
+- days_since_last_fight  
 
-fight_url, fighter, gru_style_0 ... gru_style_31
-
-```
-
-These embeddings are later merged for **both fighter and opponent**.
+Opponent versions are merged by fight_url, not by future stats.
 
 ---
 
-## 5️⃣ Feature Assembly for Final Model
+### 1.4 Skew diagnostics (WHY transformations exist)
 
-### Embedding alignment
-For each bout:
-- Merge fighter embedding
-- Merge opponent embedding
-- Compute **32-dimensional style difference**:
+Measured skew on training data:
 ```
 
-gru_style_diff_i = fighter_style_i − opponent_style_i
+days_since_last_fight        5.05
+opp_days_since_last_fight    5.05
+fights_before                1.61
+opp_fights_before            1.61
 
 ```
 
-### Final feature set
-Includes:
-- Glicko:
-  - `rating_diff`, `RD_diff`
-- Physical:
-  - `height_diff`, `reach_diff`, `age_diff`
-- Fighter stats:
-  - SLpM, SApM, Str_Acc, Str_Def, TD_Avg, TD_Acc, TD_Def, Sub_Avg
-- Opponent stats (mirrored)
-- Temporal prefight features:
-  - win_rate_before
-  - recent_win_rate_3 / 5
-  - opponent equivalents
-- + 32 GRU style diff features
-
-All missing values are filled with zero **after splitting**.
+This justifies:
+- Quantile clipping  
+- Log transforms  
+- Separate treatment of temporal vs skill features  
 
 ---
 
-## 6️⃣ Time-Aware Train / Test Split
+### 1.5 Quantile clipping (train-fit only)
+
+For heavy-tailed features:
+```
+
+[0.1%, 99.9%] quantiles
 
 ```
 
-Train: date < 2021-01-01
-Test:  date ≥ 2021-01-01
+Applied only using training data, then reused for:
+- test set  
+- Streamlit inference  
 
+Saved as:
 ```
 
-This ensures **no future leakage**.
-
----
-
-## 7️⃣ XGBoost + OOF Calibration Pipeline
-
-### XGBoost parameters
-```
-
-n_estimators: 600
-learning_rate: 0.12
-max_depth: 3
-subsample: 0.9
-colsample_bytree: 0.7
-tree_method: hist
-eval_metric: logloss
-random_state: 42
-
-```
-
-### Cross-validation
-- 5-fold **TimeSeriesSplit**
-- Out-of-fold predictions collected
-
-### Fold AUCs (printed)
-```
-
-Fold 1 AUC: 0.8399
-Fold 2 AUC: 0.8786
-Fold 3 AUC: 0.8987
-Fold 4 AUC: 0.8885
-Fold 5 AUC: 0.9161
+models/clip_bounds.json
 
 ```
 
 ---
 
-## 8️⃣ Isotonic Calibration
+### 1.6 Log transforms (after clipping)
 
-- Calibrator trained on **OOF probabilities**
-- Prevents test leakage
-- Improves probability reliability (Brier)
+Applied to:
+- fights_before  
+- days_since_last_fight  
+- opponent equivalents  
+
+This stabilizes:
+- Logistic Regression  
+- XGBoost splits  
+- Calibration behavior  
 
 ---
 
-## 9️⃣ Final Test Results (Printed)
+## 2️⃣ Models Compared (NO “FINAL” MODEL)
+
+All models use the same prefight data rules.
+
+---
+
+### Model A — Logistic Regression (Baseline)
+
+Purpose  
+Establish a strong linear baseline under perfect data hygiene.
+
+CV (TimeSeriesSplit)
+```
+
+Fold AUCs: 0.87 – 0.89
+OOF AUC:   0.7639
 
 ```
 
-===== FINAL RESULTS =====
-Accuracy: 0.745958751393534
-AUC:      0.8253891020358957
-Brier:   0.1745996419962172
+Test (Post-2021)
+```
+
+Accuracy: 0.7524
+AUC:      0.8359
 
 ```
 
-This reflects the **GRU + XGBoost + calibration** hybrid.
+Why it matters
+- Confirms signal quality  
+- Provides an interpretable reference  
+- Shows data > model complexity  
 
 ---
 
-## 🔟 Saved Artifacts (Deployment-Ready)
+### Model B — XGBoost (Tabular, Uncalibrated)
 
-Saved to `/models`:
+Purpose  
+Measure nonlinear lift over Logistic Regression.
+
+CV (Optuna-tuned)
+```
+
+Fold AUCs: 0.87 – 0.93
+OOF AUC:   0.7826
 
 ```
 
-gru_xgb_prefight_model.json        # final XGBoost model
-gru_xgb_isotonic_calibrator.pkl    # probability calibrator
-gru_xgb_feature_cols.json          # exact feature order (CRITICAL)
-gru_style_encoder.pt               # trained GRU weights
-gru_style_config.json              # GRU architecture + features
+Test
+```
+
+Accuracy: 0.7939
+AUC:      0.8894
 
 ```
 
-Printed confirmation:
+Observation
+- Strong ranking  
+- Over-confident probabilities  
+- Needs calibration for real usage  
+
+---
+
+### Model C — XGBoost + Isotonic Calibration
+
+Calibration trained only on OOF predictions.
+
+Training Brier
 ```
 
-✅ Saved GRU encoder, XGB model, calibrator, and metadata
+Uncalibrated: 0.1861
+Calibrated:   0.1625
 
 ```
 
-These files are sufficient to reproduce inference **without retraining**.
+Test (Calibrated)
+```
+
+Accuracy: 0.8070
+AUC:      0.8863
+Brier:    0.1433
+
+```
+
+Interpretation
+- AUC stable (expected)  
+- Probability quality improves significantly  
+- This is the deployment-grade tabular model  
 
 ---
 
-## 🧠 Why This Pipeline Is Legit
+### Model D — GRU Fighter Style Encoder (Representation Only)
 
-- ✅ Chronological modeling everywhere
-- ✅ Prefight-only data (no post-fight leakage)
-- ✅ Fighter/opponent symmetry
-- ✅ OOF-based calibration
-- ✅ Sequence-aware latent representations
-- ❌ No random splits
-- ❌ No Kaggle-style shortcuts
+Does not predict wins.
 
-This is **forecasting-grade**, not retrospective curve fitting.
+Purpose  
+Learn latent fighter style embeddings from fight sequences.
 
----
+- Sequence length: 5 past fights  
+- 8 per-fight stats  
+- Targets: style regression (SLpM, TD_Avg, Sub_Avg, Str_Acc)  
 
-## ▶️ How to Use
+Training curve
+```
 
-1. Open the notebook
-2. Run top-to-bottom
-3. Trained models appear in `/models`
-4. Load GRU → build embeddings → apply XGB → calibrate → predict
+MSE: 1.3277 → 0.1769
 
----
+```
 
-## 📊 Final Snapshot
-
-| Model | Accuracy | AUC | Brier |
-|-----|---------|-----|-------|
-GRU + XGB (calibrated) | 0.746 | 0.825 | 0.175 |
+Use
+- Generates 32-dim embeddings  
+- Used downstream as features  
+- Encodes stylistic evolution  
 
 ---
 
-## 🔮 Future Extensions
-- Supervise GRU on outcomes instead of style regression
-- Transformer-based fighter encoders
-- Betting ROI evaluation
-- Weight-class or era-specific models
+### Model E — GRU Style Differences + XGBoost + Calibration
+
+Purpose  
+Test whether learned style mismatches add predictive power.
+
+CV
+```
+
+Fold AUCs: 0.84 – 0.92
+
+```
+
+Test
+```
+
+Accuracy: 0.7460
+AUC:      0.8254
+Brier:    0.1746
+
+```
+
+Conclusion
+- Competitive but not dominant  
+- Style info overlaps with tabular stats  
+- Valuable analytically, not strictly superior  
 
 ---
+
+## 3️⃣ Model Comparison (Test Set)
+
+| Model | Calibrated | AUC | Accuracy | Brier |
+|------|-----------|-----|----------|-------|
+| Logistic Regression | No | 0.8359 | 0.7524 | — |
+| XGBoost (tabular) | No | 0.8894 | 0.7939 | 0.1861 |
+| XGBoost (tabular) | Yes | 0.8863 | 0.8070 | 0.1433 |
+| GRU + XGBoost | Yes | 0.8254 | 0.7460 | 0.1746 |
+
+---
+
+## 4️⃣ Streamlit Inference App (PRODUCTION-SAFE)
+
+Design goals
+- Exact parity with training preprocessing  
+- Zero leakage  
+- Deterministic predictions  
+- Calibrated probabilities only  
+
+---
+
+### Assets loaded
+```
+
+models/
+├─ xgb_prefight_model.json
+├─ xgb_calibrator.pkl
+├─ xgb_feature_cols.json
+├─ clip_bounds.json
+├─ fighters_latest.csv
+
+```
+
+---
+
+### Preprocessing at inference
+
+Matches training exactly:
+1. NA fill  
+2. Quantile clipping (train-fit bounds)  
+3. Log transforms  
+4. Feature reordering  
+
+No recomputation. No shortcuts.
+
+---
+
+### Prediction logic
+- Raw XGBoost probability  
+- Isotonic calibration  
+- Defensive clipping to [0.01, 0.99]  
+
+---
+
+### UI behavior
+- Select fighters from latest snapshot  
+- Build prefight feature row  
+- Display:
+  - Progress bar  
+  - Win probability  
+  - Main card summary table  
+
+---
+
+## 5️⃣ Why This Project Is Different
+
+✔ Strict temporal integrity  
+✔ Explicit skew diagnostics  
+✔ Calibration treated as first-class  
+✔ No hidden leakage  
+✔ Deployment code mirrors training logic  
+
+---
+
+## 6️⃣ Dependencies
+```
+
+streamlit
+pandas
+numpy
+scikit-learn
+xgboost
+optuna
+torch
+joblib
+```
