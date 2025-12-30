@@ -1,6 +1,4 @@
-# 🥊 UFC Fight Prediction
-
-🎥 **Full Application Walkthrough (3:30)**  
+# 🥊 UFC Fight Prediction 
 
 [https://github.com/srijith-reddy/ufc_app/issues/1#issue-3770714357](https://github.com/user-attachments/assets/a0e067f2-a68d-4e16-b25c-2c34af5dd2f8
 )
