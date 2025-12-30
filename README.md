@@ -141,8 +141,6 @@ win_rate_before, recent_win_rate_3, recent_win_rate_5,
 log_opp_fights_before, log_opp_days_since_last_fight,
 opp_win_rate_before, opp_recent_win_rate_3, opp_recent_win_rate_5
 
-yaml
-Copy code
 
 </details>
 
