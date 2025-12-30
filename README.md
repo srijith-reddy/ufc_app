@@ -1,7 +1,6 @@
 # 🥊 UFC Fight Prediction 
 
-[(https://github.com/user-attachments/assets/a0e067f2-a68d-4e16-b25c-2c34af5dd2f8
-)](https://github.com/srijith-reddy/ufc_app/releases/download/demo-video/UFC_app_demo.mp4)
+https://github.com/user-attachments/assets/8790479d-8df7-4aa9-95a5-a53c851e5a41
 
 ⏩ **Short on time?**  
 Jump to **~3:30** in the walkthrough to see the final fight card predictions.
