@@ -1,7 +1,7 @@
 # 🥊 UFC Fight Prediction 
 
-(https://github.com/user-attachments/assets/a0e067f2-a68d-4e16-b25c-2c34af5dd2f8
-)
+[(https://github.com/user-attachments/assets/a0e067f2-a68d-4e16-b25c-2c34af5dd2f8
+)](https://github.com/srijith-reddy/ufc_app/releases/download/demo-video/UFC_app_demo.mp4)
 
 ⏩ **Short on time?**  
 Jump to **~3:30** in the walkthrough to see the final fight card predictions.
@@ -112,6 +112,39 @@ This stabilizes:
 - Logistic Regression  
 - XGBoost splits  
 - Calibration behavior  
+
+---
+
+## 🧠 Feature Set Overview (Prefight-Only)
+
+All models operate on a strictly **prefight-available** feature space.
+
+Feature categories:
+- **Rating-based:** Glicko rating and RD differentials  
+- **Physical:** height, reach, age differences  
+- **Striking:** SLpM, SApM, accuracy, defense  
+- **Grappling:** takedown metrics, submissions  
+- **Form:** win rates and recent form windows  
+- **Temporal:** log-transformed experience and layoffs  
+
+<details>
+<summary><strong>Exact feature list</strong></summary>
+
+rating_diff, RD_diff,
+height_diff, reach_diff, age_diff,
+SLpM, SApM, Str_Acc, Str_Def,
+TD_Avg, TD_Acc, TD_Def, Sub_Avg,
+opp_SLpM, opp_SApM, opp_Str_Acc, opp_Str_Def,
+opp_TD_Avg, opp_TD_Acc, opp_TD_Def, opp_Sub_Avg,
+log_fights_before, log_days_since_last_fight,
+win_rate_before, recent_win_rate_3, recent_win_rate_5,
+log_opp_fights_before, log_opp_days_since_last_fight,
+opp_win_rate_before, opp_recent_win_rate_3, opp_recent_win_rate_5
+
+yaml
+Copy code
+
+</details>
 
 ---
 
