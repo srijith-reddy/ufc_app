@@ -2,6 +2,7 @@
 
 🎥 **Full Application Walkthrough (3:30)**  
 https://github.com/srijith-reddy/ufc_app/issues/1#issue-3770714357
+
 This repository documents a full UFC fight prediction pipeline, starting from raw data construction and pre-modeling hygiene, through multiple modeling approaches, and ending with a production-safe Streamlit inference app.
 
 ---
