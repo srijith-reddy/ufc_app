@@ -1,4 +1,4 @@
-# 🥊 UFC Fight Prediction — End-to-End, Leakage-Free, Time-Aware Study
+# 🥊 UFC Fight Prediction
 
 This repository documents a full UFC fight prediction pipeline, starting from raw data construction and pre-modeling hygiene, through multiple modeling approaches, and ending with a production-safe Streamlit inference app.
 
