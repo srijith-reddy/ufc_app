@@ -92,13 +92,6 @@ Applied only using training data, then reused for:
 - test set  
 - Streamlit inference  
 
-Saved as:
-```
-
-models/clip_bounds.json
-
-```
-
 ---
 
 ### 1.6 Log transforms (after clipping)
