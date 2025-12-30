@@ -344,6 +344,13 @@ No recomputation. No shortcuts.
   - Main card summary table  
 ---
 
+## 🚀 Running the App Locally
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
 ## 5️⃣ Dependencies
 ```
 
