@@ -6,7 +6,7 @@ import joblib
 import re
 import unicodedata
 from xgboost import XGBClassifier
-from playwright.sync_api import sync_playwright
+from pathlib import Path
 
 # ===============================================================
 # STREAMLIT CONFIG
@@ -672,100 +672,6 @@ if page == "Betting Guide":
     betting_guide()
     st.stop()
 
-# ===============================================================
-# SCRAPE UFC EVENT CARD
-# ===============================================================
-@st.cache_data(show_spinner=False)
-def scrape_ufc_event(event_number: int):
-    url = f"https://www.ufc.com/event/ufc-{event_number}"
-    fights = []
-
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
-        page.goto(url, timeout=60000)
-        page.wait_for_selector("div.c-listing-fight", timeout=60000)
-
-        for fight in page.query_selector_all("div.c-listing-fight"):
-            names = fight.query_selector_all("div.c-listing-fight__corner-name")
-            if len(names) == 2:
-                fights.append((names[0].inner_text().strip(),
-                               names[1].inner_text().strip()))
-        browser.close()
-
-    return fights
-
-# ===============================================================
-# SCRAPE FIGHTODDS.IO
-# ===============================================================
-def get_fightodds_event_url(event_number: int, page):
-    target = f"ufc-{event_number}".lower()
-    for _ in range(6):
-        page.mouse.wheel(0, 3000)
-        page.wait_for_timeout(1000)
-
-    for a in page.query_selector_all("a[href^='/odds/']"):
-        href = a.get_attribute("href")
-        if href and target in href.lower():
-            return "https://fightodds.io" + href
-    return None
-
-@st.cache_data(ttl=1800, show_spinner=False)
-def scrape_fightodds(event_number: int):
-    odds_map = {}
-
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
-
-        page.goto("https://fightodds.io", timeout=30000)
-        page.wait_for_timeout(3000)
-
-        event_url = get_fightodds_event_url(event_number, page)
-        if not event_url:
-            browser.close()
-            return {}
-
-        page.goto(event_url, timeout=30000)
-        page.wait_for_selector("table tbody tr", timeout=15000)
-
-        for tr in page.query_selector_all("table tbody tr"):
-            if not tr.is_visible():
-                continue
-
-            tds = tr.query_selector_all("td")
-            if len(tds) < 2:
-                continue
-
-            raw_name = tds[0].inner_text()
-            aliases = name_aliases(raw_name)
-
-            row_odds = set()
-            for td in tds[1:]:
-                for s in td.query_selector_all("span"):
-                    txt = s.inner_text().replace("−", "-").strip()
-                    if re.fullmatch(r"[+-]\d+", txt):
-                        val = int(txt)
-                        if -5000 < val < 5000:
-                            row_odds.add(val)
-
-            if not row_odds:
-                continue
-
-            # choose ONE canonical key (base normalized name)
-            canonical = normalize_name(raw_name)
-
-            # initialize once
-            odds_map.setdefault(canonical, set()).update(row_odds)
-
-            # map aliases to the SAME set (not copies)
-            for a in aliases:
-                odds_map[a] = odds_map[canonical]
-
-        browser.close()
-
-    # convert sets → sorted lists for downstream use
-    return {k: sorted(v) for k, v in odds_map.items()}
 
 # ===============================================================
 # PREPROCESSING (EXACT TRAINING PARITY)
@@ -892,7 +798,7 @@ event_number = int(event_number)
 
 with st.spinner(f"Fetching UFC {event_number} fight card..."):
     try:
-        fights = scrape_ufc_event(event_number)
+        fights = json.load(open(f"cards/ufc_{event_number}.json"))
     except Exception as e:
         st.error(f"Failed to fetch UFC event card. ({e})")
         st.stop()
@@ -901,9 +807,17 @@ if not fights:
     st.warning("No fights found — event may not be published yet.")
     st.stop()
 
+@st.cache_data(show_spinner=False)
+def load_odds(event_number: int):
+    path = Path("odds") / f"ufc_{event_number}.json"
+    if not path.exists():
+        return {}
+    with open(path) as f:
+        return json.load(f).get("odds", {})
+
 with st.spinner("Fetching betting odds from fightodds.io..."):
     try:
-        odds_map = scrape_fightodds(event_number)
+        odds_map = load_odds(event_number)
     except Exception as e:
         st.warning(f"Odds scrape failed — continuing without odds. ({e})")
         odds_map = {}
