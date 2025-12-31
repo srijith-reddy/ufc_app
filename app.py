@@ -5,7 +5,7 @@ import json
 import joblib
 import re
 import unicodedata
-from xgboost import XGBClassifier
+import xgboost as xgb
 from pathlib import Path
 
 # ===============================================================
@@ -107,8 +107,8 @@ def safe_float(x, default=np.nan):
 # ===============================================================
 @st.cache_resource
 def load_assets():
-    model = XGBClassifier()
-    model.load_model("models/xgb_prefight_model.json")
+    booster = xgb.Booster()
+    booster.load_model("models/xgb_prefight_model.json")
 
     calibrator = joblib.load("models/xgb_calibrator.pkl")
 
@@ -126,8 +126,8 @@ def load_assets():
         for _, row in fighters_df.iterrows()
     }
 
-    return model, calibrator, feature_cols, clip_bounds, fighters_df, fighter_lookup
-
+    return booster, calibrator, feature_cols, clip_bounds, fighters_df, fighter_lookup
+    
 def betting_guide():
     st.title("📘 Betting Logic & Decision Guide")
     st.caption("How the app thinks, why bets are filtered, and what every label actually means")
@@ -696,8 +696,9 @@ def preprocess_row(row_df, feature_cols, clip_bounds):
 # ===============================================================
 # INFERENCE
 # ===============================================================
-def predict_win_prob(model, calibrator, X):
-    raw = model.predict_proba(X)[0, 1]
+def predict_win_prob(booster, calibrator, X):
+    dmat = xgb.DMatrix(X)
+    raw = booster.predict(dmat)[0]   # probability
     cal = calibrator.transform([raw])[0]
     return float(np.clip(cal, 0.01, 0.99))
 
