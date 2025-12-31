@@ -56,9 +56,32 @@ def name_aliases(name: str) -> set[str]:
     aliases = {base}
 
     if len(parts) >= 2:
-        aliases.add(f"{parts[-1]} {parts[0]}")  # yadong song
+        first = parts[0]
+        last = parts[-1]
+        middle = parts[1:-1]
 
-    return aliases
+        # Basic swaps
+        aliases.add(f"{last} {first}")
+        aliases.add(f"{first} {last}")
+
+        # Handle compound surnames (Cortes Acosta)
+        if middle:
+            compound_spaced = " ".join(middle + [last])      # cortes acosta
+            compound_nospace = "".join(middle + [last])      # cortesacosta
+
+            aliases.update({
+                f"{first} {compound_spaced}",
+                f"{first} {compound_nospace}",
+                compound_spaced,
+                compound_nospace,
+                f"{compound_spaced} {first}",
+                f"{compound_nospace} {first}",
+            })
+
+        # Full reverse
+        aliases.add(" ".join(reversed(parts)))
+
+    return {a.strip() for a in aliases if a.strip()}
 
 
 # ===============================================================
