@@ -281,8 +281,8 @@ Conclusion
 | Model | Calibrated | AUC | Accuracy | Brier |
 |------|-----------|-----|----------|-------|
 | Logistic Regression | No | 0.8707 | 0.7744 | — |
-| XGBoost (tabular) | No | 0.8999 | 0.8078 | 0.1806 |
-| XGBoost (tabular) | Yes | 0.8928 | 0.8074 | 0.1380 |
+| XGBoost | No | 0.8999 | 0.8078 | 0.1806 |
+| XGBoost | Yes | 0.8928 | 0.8074 | 0.1380 |
 | GRU + XGBoost | Yes | 0.8143 | 0.7390 | 0.1769 |
 
 ---
