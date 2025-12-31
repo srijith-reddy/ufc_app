@@ -244,7 +244,97 @@ If Kelly ≤ 0, the optimal bet size is zero.
 """)
 
     st.divider()
+    
+    st.subheader("🔢 How Market Probability & Best Odds Are Calculated")
 
+    st.markdown("""
+This app aggregates **many sportsbook prices** and uses them in two
+different ways — intentionally.
+
+---
+
+### 📈 Raw Odds (Example)
+
+Waldo Cortes-Acosta moneyline odds from fightodds.io:
+
+- -335  
+- -330  
+- -310  
+- -300  
+- -290  
+
+### 🔁 Convert to Decimal Odds
+
+Negative American odds are converted as:
+
+Decimal = 1 + 100 / |odds|
+
+Result:
+
+[1.30, 1.30, 1.32, 1.33, 1.34]
+
+
+---
+
+### 🏆 Best Odds (Used for EV & Kelly)
+
+Best Odds = max(decimal_odds) = 1.34
+
+This answers:
+**“What is the best price I can personally bet?”**
+
+Used for:
+- Expected Value (EV)
+- Kelly sizing
+
+---
+
+### 📊 Market Probability (Used for EDGE)
+
+Market probability is computed from the **median** price:
+
+Median decimal = 1.32
+Market Prob = 1 / 1.32 ≈ 75.8%
+
+
+Why median?
+- Filters out outlier books
+- Represents market consensus
+- More robust than best odds
+
+Used only for:
+- EDGE calculation
+
+---
+
+### 🧠 Why EV and EDGE Can Disagree
+
+Example:
+
+- Model Prob = **75.1%**
+- Market Prob = **75.8%**
+- Best Odds = **1.34**
+
+EDGE = -0.7%
+EV ≈ +0.006
+Kelly = 0
+
+Result:
+🚫 **No Edge**
+
+High confidence ≠ profitable bet.
+
+---
+
+### ⚠️ Key Rule
+
+- **Best Odds** → what you can get  
+- **Market Probability** → what the market believes  
+
+""")
+    
+    st.divider()
+    
     # ==========================================================
     # SCENARIO 1 — CLEAR +EV BET
     # ==========================================================
