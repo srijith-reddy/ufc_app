@@ -1,0 +1,43 @@
+name: Daily UFC Odds Scrape
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # Daily at 06:00 UTC
+  workflow_dispatch:
+    inputs:
+      event_number:
+        description: "Optional UFC event number (e.g. 324)"
+        required: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          playwright install chromium
+
+      - name: Scrape odds
+        run: |
+          if [ -z "${{ github.event.inputs.event_number }}" ]; then
+            python scrape_odds.py
+          else
+            python scrape_odds.py ${{ github.event.inputs.event_number }}
+          fi
+
+      - name: Commit odds
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add odds/
+          git commit -m "Update UFC odds" || echo "No changes"
+          git push
