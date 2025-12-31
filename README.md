@@ -1,13 +1,13 @@
 # 🥊 UFC Fight Prediction 
 
-https://github.com/user-attachments/assets/e614be12-7eae-4e93-a062-54c32c07e0c0
-
 🚀 Interactive Streamlit App (Try It Live)
 
 This project culminates in a production-safe Streamlit application that allows users to interactively generate prefight win probabilities for full UFC cards using the trained models and exact training-time preprocessing.
 
 👉 Live App:
 https://srijith-reddy-ufc-app-app-2grqrv.streamlit.app/
+
+https://github.com/user-attachments/assets/e614be12-7eae-4e93-a062-54c32c07e0c0
 
 App highlights:
 
@@ -27,7 +27,7 @@ Odds for future events (e.g., UFC 325) are automatically generated and populated
 
 This design mirrors real-world usage: predictions are always made using only information available before the fight, ensuring the app remains realistic, reproducible, and suitable for evaluation against live betting markets.
 
-This repository documents a full UFC fight prediction pipeline, starting from raw data construction and pre-modeling hygiene, through multiple modeling approaches, and ending with a production-safe Streamlit inference app.
+This repository also documents a full UFC fight prediction pipeline, starting from raw data construction and pre-modeling hygiene, through multiple modeling approaches.
 
 ---
 
