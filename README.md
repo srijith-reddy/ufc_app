@@ -1,5 +1,7 @@
 # 🥊 UFC Fight Prediction 
 
+https://github.com/user-attachments/assets/e614be12-7eae-4e93-a062-54c32c07e0c0
+
 This repository documents a full UFC fight prediction pipeline, starting from raw data construction and pre-modeling hygiene, through multiple modeling approaches, and ending with a production-safe Streamlit inference app.
 
 ---
