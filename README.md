@@ -2,6 +2,31 @@
 
 https://github.com/user-attachments/assets/e614be12-7eae-4e93-a062-54c32c07e0c0
 
+🚀 Interactive Streamlit App (Try It Live)
+
+This project culminates in a production-safe Streamlit application that allows users to interactively generate prefight win probabilities for full UFC cards using the trained models and exact training-time preprocessing.
+
+👉 Live App:
+https://srijith-reddy-ufc-app-app-2grqrv.streamlit.app/
+
+App highlights:
+
+Select fighters from the latest prefight snapshot
+
+Deterministic, leakage-free probability inference
+
+Calibrated win probabilities (no post-fight or in-fight data)
+
+Clean fight-by-fight breakdown for full event cards
+
+Odds integration:
+
+Betting odds for the current UFC event (e.g., UFC 324) are scraped and refreshed daily
+
+Odds for future events (e.g., UFC 325) are automatically generated and populated once the prior event concludes
+
+This design mirrors real-world usage: predictions are always made using only information available before the fight, ensuring the app remains realistic, reproducible, and suitable for evaluation against live betting markets.
+
 This repository documents a full UFC fight prediction pipeline, starting from raw data construction and pre-modeling hygiene, through multiple modeling approaches, and ending with a production-safe Streamlit inference app.
 
 ---
