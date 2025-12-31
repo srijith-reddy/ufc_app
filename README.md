@@ -2,8 +2,6 @@
 
 🚀 Interactive Streamlit App (Try It Live)
 
-This project culminates in a production-safe Streamlit application that allows users to interactively generate prefight win probabilities for full UFC cards using the trained models and exact training-time preprocessing.
-
 👉 Live App:
 https://srijith-reddy-ufc-app-app-2grqrv.streamlit.app/
 
