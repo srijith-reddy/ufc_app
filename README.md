@@ -1,10 +1,5 @@
 # 🥊 UFC Fight Prediction 
 
-https://github.com/user-attachments/assets/8790479d-8df7-4aa9-95a5-a53c851e5a41
-
-⏩ **Short on time?**  
-Jump to **~3:30** in the walkthrough to see the final fight card predictions.
-
 This repository documents a full UFC fight prediction pipeline, starting from raw data construction and pre-modeling hygiene, through multiple modeling approaches, and ending with a production-safe Streamlit inference app.
 
 ---
@@ -152,16 +147,16 @@ Establish a strong linear baseline under perfect data hygiene.
 CV (TimeSeriesSplit)
 ```
 
-Fold AUCs: 0.87 – 0.89
-OOF AUC:   0.7639
+Fold AUCs: 0.89 – 0.91
+OOF AUC:   0.7799
 
 ```
 
 Test (Post-2021)
 ```
 
-Accuracy: 0.7524
-AUC:      0.8359
+Accuracy: 0.7744
+AUC:      0.8707
 
 ```
 
@@ -180,16 +175,16 @@ Measure nonlinear lift over Logistic Regression.
 CV (Optuna-tuned)
 ```
 
-Fold AUCs: 0.87 – 0.93
-OOF AUC:   0.7826
+Fold AUCs: 0.87 – 0.94
+OOF AUC:   0.7891
 
 ```
 
 Test
 ```
 
-Accuracy: 0.7939
-AUC:      0.8894
+Accuracy: 0.8078
+AUC:      0.8999
 
 ```
 
@@ -207,17 +202,17 @@ Calibration trained only on OOF predictions.
 Training Brier
 ```
 
-Uncalibrated: 0.1861
-Calibrated:   0.1625
+Uncalibrated: 0.1806
+Calibrated:   0.1577
 
 ```
 
 Test (Calibrated)
 ```
 
-Accuracy: 0.8070
-AUC:      0.8863
-Brier:    0.1433
+Accuracy: 0.8074
+AUC:      0.8928
+Brier:    0.1380
 
 ```
 
@@ -242,7 +237,7 @@ Learn latent fighter style embeddings from fight sequences.
 Training curve
 ```
 
-MSE: 1.3277 → 0.1769
+MSE: 1.3758 → 0.2203
 
 ```
 
@@ -261,16 +256,16 @@ Test whether learned style mismatches add predictive power.
 CV
 ```
 
-Fold AUCs: 0.84 – 0.92
+Fold AUCs: 0.85 – 0.93
 
 ```
 
 Test
 ```
 
-Accuracy: 0.7460
-AUC:      0.8254
-Brier:    0.1746
+Accuracy: 0.7390
+AUC:      0.8143
+Brier:    0.1769
 
 ```
 
@@ -285,81 +280,9 @@ Conclusion
 
 | Model | Calibrated | AUC | Accuracy | Brier |
 |------|-----------|-----|----------|-------|
-| Logistic Regression | No | 0.8359 | 0.7524 | — |
-| XGBoost (tabular) | No | 0.8894 | 0.7939 | 0.1861 |
-| XGBoost (tabular) | Yes | 0.8863 | 0.8070 | 0.1433 |
-| GRU + XGBoost | Yes | 0.8254 | 0.7460 | 0.1746 |
+| Logistic Regression | No | 0.8707 | 0.7744 | — |
+| XGBoost (tabular) | No | 0.8999 | 0.8078 | 0.1806 |
+| XGBoost (tabular) | Yes | 0.8928 | 0.8074 | 0.1380 |
+| GRU + XGBoost | Yes | 0.8143 | 0.7390 | 0.1769 |
 
 ---
-
-## 4️⃣ Streamlit Inference App (PRODUCTION-SAFE)
-
-Design goals
-- Exact parity with training preprocessing  
-- Zero leakage  
-- Deterministic predictions  
-- Calibrated probabilities only  
-
----
-
-### Assets loaded
-```
-
-models/
-├─ xgb_prefight_model.json
-├─ xgb_calibrator.pkl
-├─ xgb_feature_cols.json
-├─ clip_bounds.json
-├─ fighters_latest.csv
-
-```
-
----
-
-### Preprocessing at inference
-
-Matches training exactly:
-1. NA fill  
-2. Quantile clipping (train-fit bounds)  
-3. Log transforms  
-4. Feature reordering  
-
-No recomputation. No shortcuts.
-
----
-
-### Prediction logic
-- Raw XGBoost probability  
-- Isotonic calibration  
-- Defensive clipping to [0.01, 0.99]  
-
----
-
-### UI behavior
-- Select fighters from latest snapshot  
-- Build prefight feature row  
-- Display:
-  - Progress bar  
-  - Win probability  
-  - Main card summary table  
----
-
-## 🚀 Running the App Locally
-
-```bash
-pip install -r requirements.txt
-streamlit run app.py
-```
-
-## 5️⃣ Dependencies
-```
-
-streamlit
-pandas
-numpy
-scikit-learn
-xgboost
-optuna
-torch
-joblib
-```
