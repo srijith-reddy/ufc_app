@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
     inputs:
       event_number:
-        description: "UFC event number (e.g. 324)"
-        required: true
+        description: "Optional UFC event number (e.g. 324)"
+        required: false
 
 permissions:
   contents: write
@@ -17,16 +17,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # -----------------------------
+      # CHECKOUT
+      # -----------------------------
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      # -----------------------------
+      # PYTHON
+      # -----------------------------
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
+      # -----------------------------
+      # DEPENDENCIES
+      # -----------------------------
       - name: Install dependencies
         run: |
           pip install -r requirements-scrape.txt
@@ -34,25 +43,35 @@ jobs:
 
       # -----------------------------
       # SCRAPE UFC CARD
+      # (manual only — cards don't auto-detect safely)
       # -----------------------------
       - name: Scrape UFC fight card
         run: |
-          python scrape_cards.py ${{ github.event.inputs.event_number }}
+          if [ -z "${{ github.event.inputs.event_number }}" ]; then
+            echo "No event number provided — skipping card scrape"
+          else
+            python scrape_cards.py ${{ github.event.inputs.event_number }}
+          fi
 
       # -----------------------------
       # SCRAPE ODDS
+      # (manual OR scheduled)
       # -----------------------------
       - name: Scrape UFC odds
         run: |
-          python scrape_odds.py ${{ github.event.inputs.event_number }}
+          if [ -z "${{ github.event.inputs.event_number }}" ]; then
+            python scrape_odds.py
+          else
+            python scrape_odds.py ${{ github.event.inputs.event_number }}
+          fi
 
       # -----------------------------
-      # COMMIT IF CHANGED
+      # COMMIT & PUSH (SAFE)
       # -----------------------------
       - name: Commit and push data
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add cards/ odds/
           git commit -m "Update UFC cards & odds" || echo "No changes to commit"
