@@ -30,8 +30,7 @@ def name_aliases(name: str) -> set[str]:
     base = normalize_name(name)
     parts = base.split()
 
-    aliases = set()
-    aliases.add(base)
+    aliases = {base}
 
     if len(parts) >= 2:
         first = parts[0]
@@ -44,17 +43,22 @@ def name_aliases(name: str) -> set[str]:
 
         # Handle compound surnames (Cortes Acosta)
         if middle:
-            compound_last = " ".join(middle + [last])
-            aliases.add(f"{first} {compound_last}")
-            aliases.add(compound_last)
-            aliases.add(f"{last} {compound_last}")
-            aliases.add(f"{compound_last} {first}")
+            compound_spaced = " ".join(middle + [last])          # cortes acosta
+            compound_nospace = "".join(middle + [last])          # cortesacosta
+
+            aliases.update({
+                f"{first} {compound_spaced}",
+                f"{first} {compound_nospace}",
+                compound_spaced,
+                compound_nospace,
+                f"{compound_spaced} {first}",
+                f"{compound_nospace} {first}",
+            })
 
         # Full reverse
         aliases.add(" ".join(reversed(parts)))
 
     return {a.strip() for a in aliases if a.strip()}
-
 
 
 # ===============================================================
