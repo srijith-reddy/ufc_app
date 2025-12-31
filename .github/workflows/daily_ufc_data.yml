@@ -18,11 +18,12 @@ jobs:
 
     steps:
       # -----------------------------
-      # CHECKOUT
+      # CHECKOUT (ALWAYS LATEST MAIN)
       # -----------------------------
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
+          ref: main
           token: ${{ secrets.GITHUB_TOKEN }}
 
       # -----------------------------
@@ -43,7 +44,7 @@ jobs:
 
       # -----------------------------
       # SCRAPE UFC CARD
-      # (manual only — cards don't auto-detect safely)
+      # (manual only)
       # -----------------------------
       - name: Scrape UFC fight card
         run: |
@@ -55,7 +56,6 @@ jobs:
 
       # -----------------------------
       # SCRAPE ODDS
-      # (manual OR scheduled)
       # -----------------------------
       - name: Scrape UFC odds
         run: |
@@ -66,7 +66,7 @@ jobs:
           fi
 
       # -----------------------------
-      # COMMIT & PUSH (SAFE)
+      # COMMIT & PUSH (NO REBASE)
       # -----------------------------
       - name: Commit and push data
         run: |
@@ -74,7 +74,13 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add cards/ odds/
-          git commit -m "Update UFC cards & odds" || echo "No changes to commit"
 
-          git pull --rebase origin main
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git commit -m "Update UFC cards & odds"
+
+          # Push directly — no rebase, no merge
           git push origin main
