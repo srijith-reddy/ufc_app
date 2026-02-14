@@ -1,6 +1,6 @@
 {
   "event": 326,
-  "scraped_at": "2026-02-13T06:59:03.489028",
+  "scraped_at": "2026-02-14T06:43:27.978386",
   "source": "https://fightodds.io",
   "odds": {
     "max holloway": [
@@ -69,15 +69,11 @@
       180,
       185
     ],
-    "de ridder": [
-      180,
-      185
-    ],
     "deridder reinier": [
       180,
       185
     ],
-    "ridder reinier": [
+    "de ridder": [
       180,
       185
     ],
@@ -86,6 +82,10 @@
       185
     ],
     "deridder": [
+      180,
+      185
+    ],
+    "ridder reinier": [
       180,
       185
     ],
