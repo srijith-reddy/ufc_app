@@ -30,6 +30,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          pip install -r requirements.txt
           pip install -r requirements-scrape.txt
           # Install the browser binary
           playwright install chromium
