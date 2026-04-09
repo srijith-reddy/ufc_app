@@ -1,5 +1,6 @@
 pandas>=2.1
 numpy>=1.26
 python-dateutil>=2.9
-xgboost>=2.0
+xgboost==1.7.6
 fastapi>=0.111
+uvicorn>=0.30
