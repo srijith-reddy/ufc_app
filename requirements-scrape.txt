@@ -1,3 +1,4 @@
+-r requirements.txt
 playwright
 requests>=2.32
 beautifulsoup4>=4.12
