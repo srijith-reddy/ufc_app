@@ -1,0 +1,51 @@
+# ── Python ─────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# ── Virtual environments (the repo ships a .venv/ for local dev only) ─────────
+.venv/
+venv/
+env/
+.env
+.env.local
+.env.*.local
+
+# ── Testing & coverage ─────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+
+# ── Jupyter ────────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ── IDE / OS ───────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Streamlit ─────────────────────────────────────────────────────────────────
+.streamlit/secrets.toml
+
+# ── Model artifacts (large binary/CSV — not tracked by default) ───────────────
+# Uncomment these if you want to stop tracking large artifact files in git.
+# Currently they ARE tracked so CI can run without a separate artifact store.
+# models/fighters_latest.csv
+# models/xgb_prefight_model.json
+# models/xgb_calibrator.pkl
+
+# ── Playwright ────────────────────────────────────────────────────────────────
+/playwright/.local-browsers/
