@@ -82,7 +82,9 @@ def fetch_upcoming_odds() -> list[dict[str, Any]]:
     return payload
 
 
-def _matchup_price_map(odds_payload: list[dict[str, Any]]) -> dict[tuple[str, str], dict[str, set[int]]]:
+def _matchup_price_map(
+    odds_payload: list[dict[str, Any]],
+) -> dict[tuple[str, str], dict[str, Any]]:
     """
     Build matchup-keyed price maps from The Odds API response.
 
@@ -95,7 +97,7 @@ def _matchup_price_map(odds_payload: list[dict[str, Any]]) -> dict[tuple[str, st
         ...
       }
     """
-    by_matchup: dict[tuple[str, str], dict[str, set[int]]] = {}
+    by_matchup: dict[tuple[str, str], dict[str, Any]] = {}
 
     for event in odds_payload:
         fighter_a = event.get("home_team")
@@ -104,9 +106,20 @@ def _matchup_price_map(odds_payload: list[dict[str, Any]]) -> dict[tuple[str, st
             continue
 
         matchup_key = _fight_key(fighter_a, fighter_b)
-        matchup_prices = by_matchup.setdefault(matchup_key, {})
+        matchup_prices = by_matchup.setdefault(
+            matchup_key,
+            {
+                "fighter_names": {
+                    normalize_name(fighter_a): fighter_a,
+                    normalize_name(fighter_b): fighter_b,
+                },
+                "prices": {},
+                "quotes": [],
+            },
+        )
 
         for bookmaker in event.get("bookmakers", []):
+            quote_prices: dict[str, int] = {}
             for market in bookmaker.get("markets", []):
                 if market.get("key") != "h2h":
                     continue
@@ -120,9 +133,72 @@ def _matchup_price_map(odds_payload: list[dict[str, Any]]) -> dict[tuple[str, st
                         continue
 
                     fighter_key = normalize_name(fighter_name)
-                    matchup_prices.setdefault(fighter_key, set()).add(int(price))
+                    matchup_prices["prices"].setdefault(fighter_key, set()).add(int(price))
+                    quote_prices[fighter_key] = int(price)
+
+            if quote_prices:
+                matchup_prices["quotes"].append(
+                    {
+                        "sportsbook": bookmaker.get("title") or bookmaker.get("key") or "Unknown Book",
+                        "last_update": bookmaker.get("last_update"),
+                        "prices": quote_prices,
+                    }
+                )
 
     return by_matchup
+
+
+def build_event_odds_bundle(
+    event_id: str,
+    fights: list[list[str]],
+    odds_payload: list[dict[str, Any]],
+) -> tuple[dict[str, list[int]], dict[str, Any]]:
+    """
+    Map The Odds API fight-level odds into the repo's event odds format.
+    """
+    matchup_prices = _matchup_price_map(odds_payload)
+    event_odds: dict[str, set[int]] = {}
+    event_books: dict[str, Any] = {}
+
+    for fighter_a, fighter_b in fights:
+        matchup_key = _fight_key(fighter_a, fighter_b)
+        data = matchup_prices.get(matchup_key)
+        if not data:
+            continue
+
+        prices = data["prices"]
+        for fighter in (fighter_a, fighter_b):
+            fighter_key = normalize_name(fighter)
+            if fighter_key in prices:
+                event_odds.setdefault(fighter_key, set()).update(prices[fighter_key])
+
+        quotes = []
+        for quote in data.get("quotes", []):
+            fighter_a_price = quote["prices"].get(normalize_name(fighter_a))
+            fighter_b_price = quote["prices"].get(normalize_name(fighter_b))
+            if fighter_a_price is None and fighter_b_price is None:
+                continue
+
+            quotes.append(
+                {
+                    "sportsbook": quote["sportsbook"],
+                    "last_update": quote.get("last_update"),
+                    "fighter_a_price": fighter_a_price,
+                    "fighter_b_price": fighter_b_price,
+                }
+            )
+
+        if quotes:
+            event_books[f"{normalize_name(fighter_a)}-vs-{normalize_name(fighter_b)}"] = {
+                "fighter_a": fighter_a,
+                "fighter_b": fighter_b,
+                "quotes": quotes,
+            }
+
+    return (
+        {fighter: sorted(values) for fighter, values in event_odds.items()},
+        event_books,
+    )
 
 
 def build_event_odds_map(
@@ -130,24 +206,8 @@ def build_event_odds_map(
     fights: list[list[str]],
     odds_payload: list[dict[str, Any]],
 ) -> dict[str, list[int]]:
-    """
-    Map The Odds API fight-level odds into the repo's event odds format.
-    """
-    matchup_prices = _matchup_price_map(odds_payload)
-    event_odds: dict[str, set[int]] = {}
-
-    for fighter_a, fighter_b in fights:
-        matchup_key = _fight_key(fighter_a, fighter_b)
-        prices = matchup_prices.get(matchup_key)
-        if not prices:
-            continue
-
-        for fighter in (fighter_a, fighter_b):
-            fighter_key = normalize_name(fighter)
-            if fighter_key in prices:
-                event_odds.setdefault(fighter_key, set()).update(prices[fighter_key])
-
-    return {fighter: sorted(values) for fighter, values in event_odds.items()}
+    odds_map, _ = build_event_odds_bundle(event_id, fights, odds_payload)
+    return odds_map
 
 
 def _default_event_ids() -> list[str]:
@@ -175,7 +235,7 @@ def refresh_events(event_refs: list[str]) -> list[Path]:
     for ref in event_refs:
         event_id = normalize_event_id(ref)
         fights = load_fight_card(event_id)
-        odds_map = build_event_odds_map(event_id, fights, odds_payload)
+        odds_map, books_map = build_event_odds_bundle(event_id, fights, odds_payload)
 
         if not odds_map:
             print(f"No matching upcoming odds found for {event_id} — skipping write.")
@@ -190,6 +250,7 @@ def refresh_events(event_refs: list[str]) -> list[Path]:
             "scraped_at": datetime.utcnow().isoformat(),
             "source": ODDS_API_SOURCE,
             "odds": odds_map,
+            "books": books_map,
         }
 
         with open(output_path, "w") as f:

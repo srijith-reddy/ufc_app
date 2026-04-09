@@ -3,10 +3,8 @@ import { ChevronLeft, Clock3 } from "lucide-react";
 
 import { CoverageBadge } from "@/components/coverage-badge";
 import { EmptyState } from "@/components/empty-state";
-import { FightCardDeck } from "@/components/fight-card-deck";
+import { EventWorkspace } from "@/components/event-workspace";
 import { Reveal } from "@/components/reveal";
-import { SectionHeader } from "@/components/section-header";
-import { UnsupportedFightRow } from "@/components/unsupported-fight-row";
 import { formatEventMeta, formatTimestamp, getEventDetail } from "@/lib/api";
 import type { EventDetailResponse } from "@/types/api";
 
@@ -105,55 +103,25 @@ export default async function EventDetailPage({
           </div>
         </Reveal>
 
-        <div className="space-y-8">
-          <Reveal>
-            <SectionHeader
-              eyebrow="Supported Fights"
-              title="Fight-level prediction intelligence."
-              description="Supported bouts expose calibrated probability, model-market edge, and a grounded prefight breakdown. Tap into any fight for the full comparison drawer."
+        {payload.supported_fights.length || payload.unsupported_fights.length ? (
+          <Reveal delay={0.04}>
+            <EventWorkspace
+              eventId={payload.event.event_id}
+              eventTitle={payload.hero.title}
+              supportedFights={payload.supported_fights}
+              unsupportedFights={payload.unsupported_fights}
             />
           </Reveal>
-
-          {payload.supported_fights.length ? (
-            <Reveal delay={0.04}>
-              <FightCardDeck fights={payload.supported_fights} />
-            </Reveal>
-          ) : (
-            <EmptyState
-              title={payload.event.has_card ? "No supported fights on this card" : "No local fight card is stored for this event"}
-              description={
-                payload.event.has_card
-                  ? "This event is present locally, but the current prefight artifact set could not produce valid fight-level predictions for any matchup."
-                  : "This archived event has local metadata or odds history, but not a saved fight card artifact yet."
-              }
-            />
-          )}
-        </div>
-
-        <div className="space-y-8">
-          <Reveal>
-            <SectionHeader
-              eyebrow="Unavailable Predictions"
-              title="Explicitly unsupported bouts."
-              description="Unsupported fights are kept visible for trust. The platform reports why each matchup is unavailable instead of hiding it or manufacturing a prediction."
-            />
-          </Reveal>
-
-          {payload.unsupported_fights.length ? (
-            <div className="grid gap-4">
-              {payload.unsupported_fights.map((fight, index) => (
-                <Reveal key={fight.id} delay={index * 0.03}>
-                  <UnsupportedFightRow fight={fight} />
-                </Reveal>
-              ))}
-            </div>
-          ) : (
-            <EmptyState
-              title="No unavailable fights on this card"
-              description="Every bout on this event card is currently supported by the prefight pipeline."
-            />
-          )}
-        </div>
+        ) : (
+          <EmptyState
+            title={payload.event.has_card ? "No supported fights on this card" : "No local fight card is stored for this event"}
+            description={
+              payload.event.has_card
+                ? "This event is present locally, but the current prefight artifact set could not produce valid fight-level predictions for any matchup."
+                : "This archived event has local metadata or odds history, but not a saved fight card artifact yet."
+            }
+          />
+        )}
       </div>
     </section>
   );

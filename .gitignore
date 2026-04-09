@@ -54,3 +54,4 @@ frontend/.next/
 
 # ── Playwright ────────────────────────────────────────────────────────────────
 /playwright/.local-browsers/
+.vercel

@@ -3,7 +3,7 @@ Tests for The Odds API-based odds ingestion helpers.
 """
 from __future__ import annotations
 
-from scrape_odds import build_event_odds_map
+from scrape_odds import build_event_odds_bundle, build_event_odds_map
 
 
 def test_build_event_odds_map_matches_fight_pairs_by_name():
@@ -43,6 +43,43 @@ def test_build_event_odds_map_matches_fight_pairs_by_name():
 
     assert odds_map["jiri prochazka"] == [-113, -112]
     assert odds_map["carlos ulberg"] == [-108, -107]
+
+
+def test_build_event_odds_bundle_preserves_bookmaker_quotes():
+    fights = [["JIRI PROCHAZKA", "CARLOS ULBERG"]]
+    payload = [
+        {
+            "home_team": "Jiri Prochazka",
+            "away_team": "Carlos Ulberg",
+            "bookmakers": [
+                {
+                    "title": "DraftKings",
+                    "last_update": "2026-04-09T12:00:00Z",
+                    "markets": [
+                        {
+                            "key": "h2h",
+                            "outcomes": [
+                                {"name": "Jiri Prochazka", "price": -113},
+                                {"name": "Carlos Ulberg", "price": -107},
+                            ],
+                        }
+                    ]
+                }
+            ],
+        }
+    ]
+
+    odds_map, books_map = build_event_odds_bundle("ufc-327", fights, payload)
+
+    assert odds_map["jiri prochazka"] == [-113]
+    assert books_map["jiri prochazka-vs-carlos ulberg"]["quotes"] == [
+        {
+            "sportsbook": "DraftKings",
+            "last_update": "2026-04-09T12:00:00Z",
+            "fighter_a_price": -113,
+            "fighter_b_price": -107,
+        }
+    ]
 
 
 def test_build_event_odds_map_skips_unmatched_bouts():

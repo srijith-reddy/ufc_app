@@ -1,6 +1,6 @@
 [build-system]
 requires = ["setuptools>=68", "wheel"]
-build-backend = "setuptools.backends.legacy:build"
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "ufc-predictor"
@@ -8,21 +8,18 @@ version = "0.1.0"
 description = "UFC fight prediction — prefight-only calibrated XGBoost model with betting metrics"
 requires-python = ">=3.11"
 dependencies = [
-    "streamlit>=1.35",
     "pandas>=2.1",
     "numpy>=1.26",
     "python-dateutil>=2.9",
-    "xgboost>=2.0",
-    "scikit-learn>=1.4",
-    "joblib>=1.4",
+    "xgboost==1.7.6",
     "fastapi>=0.111",
-    "uvicorn>=0.30",
 ]
 
 [project.optional-dependencies]
+streamlit = ["streamlit>=1.35"]
 scrape = ["playwright>=1.44", "requests>=2.32", "beautifulsoup4>=4.12"]
 test = ["pytest>=8.2", "pytest-asyncio>=0.23", "httpx>=0.27"]
-dev = ["ufc-predictor[scrape,test]", "notebook>=7", "optuna>=3"]
+dev = ["ufc-predictor[streamlit,scrape,test]", "notebook>=7", "optuna>=3"]
 
 [tool.setuptools.packages.find]
 include = ["core*", "apps*", "backend*"]

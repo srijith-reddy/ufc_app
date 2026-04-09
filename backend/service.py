@@ -367,6 +367,52 @@ def _humanize_unavailable(fight) -> dict[str, Any]:
     }
 
 
+def _fight_books_from_payload(
+    fighter_a: str,
+    fighter_b: str,
+    odds_payload: dict[str, Any],
+) -> list[dict[str, Any]]:
+    books = odds_payload.get("books", {})
+    direct_key = f"{normalize_name(fighter_a)}-vs-{normalize_name(fighter_b)}"
+    reverse_key = f"{normalize_name(fighter_b)}-vs-{normalize_name(fighter_a)}"
+    entry = books.get(direct_key) or books.get(reverse_key)
+    if not entry:
+        return []
+
+    stored_a = normalize_name(entry.get("fighter_a", fighter_a))
+    is_direct = stored_a == normalize_name(fighter_a)
+
+    quotes: list[dict[str, Any]] = []
+    for quote in entry.get("quotes", []):
+        a_price = quote.get("fighter_a_price")
+        b_price = quote.get("fighter_b_price")
+        if not is_direct:
+            a_price, b_price = b_price, a_price
+
+        a_decimal = (
+            round(float(american_to_decimal(int(a_price))), 4)
+            if isinstance(a_price, int)
+            else None
+        )
+        b_decimal = (
+            round(float(american_to_decimal(int(b_price))), 4)
+            if isinstance(b_price, int)
+            else None
+        )
+        quotes.append(
+            {
+                "sportsbook": quote.get("sportsbook", "Unknown Book"),
+                "updated_at": quote.get("last_update"),
+                "fighter_a_price": a_price,
+                "fighter_b_price": b_price,
+                "fighter_a_decimal": a_decimal,
+                "fighter_b_decimal": b_decimal,
+            }
+        )
+
+    return quotes
+
+
 def _fighter_rows(
     fighter_a: str,
     fighter_b: str,
@@ -386,6 +432,7 @@ def build_supported_fight_payload(
     fighters_df: pd.DataFrame,
     fighter_lookup: dict[str, str],
     odds_map: dict[str, list[int]],
+    odds_payload: dict[str, Any],
 ) -> dict[str, Any]:
     """Build the rich product payload for a supported fight."""
     fighter_a = fight.fighter_a
@@ -433,6 +480,7 @@ def build_supported_fight_payload(
         "feature_comparison": comparisons,
         "odds_list_a": odds_list_a,
         "odds_list_b": odds_list_b,
+        "sportsbook_quotes": _fight_books_from_payload(fighter_a, fighter_b, odds_payload),
     }
 
 
@@ -570,7 +618,13 @@ def build_event_detail(
             calibrator,
         )
         supported = [
-            build_supported_fight_payload(fight, fighters_df, fighter_lookup, odds_map)
+            build_supported_fight_payload(
+                fight,
+                fighters_df,
+                fighter_lookup,
+                odds_map,
+                odds_payload,
+            )
             for fight in coverage.predictable_fights
         ]
         unsupported = [_humanize_unavailable(fight) for fight in coverage.unpredictable_fights]

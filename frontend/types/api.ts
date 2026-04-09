@@ -64,6 +64,15 @@ export interface FeatureComparisonItem {
   advantage: "a" | "b" | null;
 }
 
+export interface SportsbookQuote {
+  sportsbook: string;
+  updated_at: string | null;
+  fighter_a_price: number | null;
+  fighter_b_price: number | null;
+  fighter_a_decimal: number | null;
+  fighter_b_decimal: number | null;
+}
+
 export interface SupportedFight {
   id: string;
   fighter_a: string;
@@ -86,6 +95,7 @@ export interface SupportedFight {
   feature_comparison: FeatureComparisonItem[];
   odds_list_a: number[];
   odds_list_b: number[];
+  sportsbook_quotes: SportsbookQuote[];
 }
 
 export interface UnsupportedFight {

@@ -7,13 +7,13 @@ All preprocessing steps match the training pipeline exactly.
 from __future__ import annotations
 import json
 
-import joblib
 import numpy as np
 import pandas as pd
 import xgboost as xgb
 
 from .config import (
     CALIBRATOR_PATH,
+    CALIBRATOR_JSON_PATH,
     CLIP_BOUNDS_PATH,
     FEATURE_COLS_PATH,
     FIGHTERS_PATH,
@@ -22,6 +22,26 @@ from .config import (
     MODEL_PATH,
 )
 from .names import normalize_name
+
+
+class LightweightIsotonicCalibrator:
+    """Small runtime calibrator using stored isotonic thresholds."""
+
+    def __init__(self, x_thresholds: list[float], y_thresholds: list[float]):
+        self.x_thresholds = np.asarray(x_thresholds, dtype=float)
+        self.y_thresholds = np.asarray(y_thresholds, dtype=float)
+
+    def transform(self, values: list[float] | np.ndarray) -> np.ndarray:
+        arr = np.asarray(values, dtype=float)
+        if self.x_thresholds.size == 0 or self.y_thresholds.size == 0:
+            return arr
+        return np.interp(
+            arr,
+            self.x_thresholds,
+            self.y_thresholds,
+            left=float(self.y_thresholds[0]),
+            right=float(self.y_thresholds[-1]),
+        )
 
 
 # ── Artifact Loading ───────────────────────────────────────────────────────────
@@ -39,11 +59,13 @@ def load_artifacts() -> tuple:
     """
     required = {
         "XGBoost model": MODEL_PATH,
-        "isotonic calibrator": CALIBRATOR_PATH,
         "feature column list": FEATURE_COLS_PATH,
         "clip bounds": CLIP_BOUNDS_PATH,
         "fighter snapshot CSV": FIGHTERS_PATH,
     }
+    calibrator_exists = CALIBRATOR_JSON_PATH.exists() or CALIBRATOR_PATH.exists()
+    if not calibrator_exists:
+        required["isotonic calibrator"] = CALIBRATOR_PATH
     missing = [f"{label}: {path}" for label, path in required.items() if not path.exists()]
     if missing:
         raise FileNotFoundError(
@@ -53,7 +75,17 @@ def load_artifacts() -> tuple:
     booster = xgb.Booster()
     booster.load_model(str(MODEL_PATH))
 
-    calibrator = joblib.load(str(CALIBRATOR_PATH))
+    if CALIBRATOR_JSON_PATH.exists():
+        with open(CALIBRATOR_JSON_PATH) as f:
+            calibrator_data = json.load(f)
+        calibrator = LightweightIsotonicCalibrator(
+            calibrator_data["x_thresholds"],
+            calibrator_data["y_thresholds"],
+        )
+    else:
+        import joblib
+
+        calibrator = joblib.load(str(CALIBRATOR_PATH))
 
     with open(FEATURE_COLS_PATH) as f:
         feature_cols: list[str] = json.load(f)

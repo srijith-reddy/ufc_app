@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BarChart3, Radar, Shield, Sparkles } from "lucide-react";
+import { BarChart3, BellRing, BrainCircuit, Radar, ScanSearch, Shield, Sparkles } from "lucide-react";
 
 import { EmptyState } from "@/components/empty-state";
 import { EventCard } from "@/components/event-card";
@@ -33,6 +33,24 @@ const differentiation = [
   "Model edge compares calibrated probability against live market price where odds exist.",
   "Unavailable predictions are surfaced clearly with reasons such as missing snapshot support or feature build failure.",
   "Every page is designed around event-level decision making rather than dumping notebook artifacts into a UI.",
+];
+
+const advancedTools = [
+  {
+    icon: ScanSearch,
+    title: "Odds Screen",
+    copy: "Bookmaker-aware event pricing with best-line context, market breadth, and clean fallback behavior when only aggregate odds are available.",
+  },
+  {
+    icon: BellRing,
+    title: "Email Notifications",
+    copy: "Stage price and edge alerts directly from supported events so the alert workflow feels native to the product instead of bolted on later.",
+  },
+  {
+    icon: BrainCircuit,
+    title: "Research Assistant",
+    copy: "Grounded matchup research generated only from current prefight features, model outputs, and live market context.",
+  },
 ];
 
 export default async function HomePage() {
@@ -97,6 +115,32 @@ export default async function HomePage() {
               </div>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="px-6 py-16 lg:px-10">
+        <div className="mx-auto max-w-7xl space-y-10">
+          <Reveal>
+            <SectionHeader
+              eyebrow="Advanced Tools"
+              title="More than a prediction feed."
+              description="The platform now includes a premium odds screen, staged email alert workflow, and a grounded research assistant layered directly on top of the event intelligence engine."
+            />
+          </Reveal>
+
+          <div className="grid gap-6 lg:grid-cols-3">
+            {advancedTools.map((item, index) => (
+              <Reveal key={item.title} delay={index * 0.06}>
+                <div className="h-full rounded-[28px] border border-white/10 bg-white/[0.03] p-6 shadow-halo">
+                  <item.icon className="h-6 w-6 text-gold" />
+                  <h3 className="mt-8 text-2xl font-semibold tracking-[-0.04em] text-white">
+                    {item.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-7 text-white/58">{item.copy}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 

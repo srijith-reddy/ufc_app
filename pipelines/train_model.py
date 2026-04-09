@@ -23,6 +23,7 @@ from xgboost import XGBClassifier
 
 from core.config import (
     CALIBRATOR_PATH,
+    CALIBRATOR_JSON_PATH,
     CLIP_BOUNDS_PATH,
     FEATURE_COLS_PATH,
     LOG_COLS,
@@ -200,6 +201,18 @@ def save_training_summary(path: Path, summary: dict) -> None:
         json.dump(summary, f, indent=2)
 
 
+def save_lightweight_calibrator(path: Path, calibrator: IsotonicRegression) -> None:
+    with open(path, "w") as f:
+        json.dump(
+            {
+                "x_thresholds": [float(x) for x in calibrator.X_thresholds_],
+                "y_thresholds": [float(y) for y in calibrator.y_thresholds_],
+            },
+            f,
+            indent=2,
+        )
+
+
 def run(
     data_dir: Path,
     split_date: str = "2021-01-01",
@@ -298,6 +311,7 @@ def run(
     with open(FEATURE_COLS_PATH, "w") as f:
         json.dump(FINAL_FEATURE_COLS, f, indent=2)
     joblib.dump(calibrator, CALIBRATOR_PATH)
+    save_lightweight_calibrator(CALIBRATOR_JSON_PATH, calibrator)
     final_xgb.save_model(MODEL_PATH)
 
     pd.DataFrame({
