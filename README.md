@@ -82,12 +82,6 @@ uvicorn apps.vercel.api.main:app --reload
 cd frontend && npm install && npm run dev
 ```
 
-### Optional debug surface
-
-```bash
-streamlit run apps/streamlit/app.py
-```
-
 ## API Routes
 
 Primary frontend-facing routes:
