@@ -1,107 +1,155 @@
 # Octagon Intel
 
-Premium UFC betting intelligence built around calibrated prefight-only prediction support.
+Octagon Intel is a UFC fight intelligence platform built around calibrated prefight-only predictions. It turns model probability, live market odds, fighter feature comparisons, and coverage discipline into one clean event-level experience.
 
-This repository is no longer organized as a notebook wrapper or a Streamlit-first demo. The flagship product surface is now a Vercel-friendly Next.js frontend backed by a clean FastAPI inference layer that preserves the original modeling discipline:
+## What Octagon Intel Does
 
-- strictly prefight-only features
-- deterministic inference
-- calibrated probabilities
-- no leakage
-- explicit event and fight support checks
-- graceful unsupported-fight handling
+- surfaces upcoming UFC events with fight-level coverage status
+- separates supportable bouts from unavailable ones rather than forcing predictions
+- compares calibrated model probability against live market odds where they exist
+- shows grounded prefight feature differences for each supported matchup
+- surfaces kelly fraction, edge, and value state alongside each pick
+- explains why unsupported fights cannot be predicted instead of hiding them
 
-The product is designed around real event consumption:
+## Product Direction
 
-- browse UFC event coverage
-- see which bouts are supportable from current artifacts
-- compare calibrated model probability to market price when odds exist
-- inspect grounded prefight feature differences in a premium fight breakdown
-- surface unavailable predictions clearly instead of faking support
+This repository is built around event-level decision quality rather than a notebook wrapper or a raw odds feed.
 
-Streamlit remains available only as a secondary local debugging surface.
+The current product is:
 
----
+- strictly prefight-only — no post-fight leakage, no retroactive features
+- coverage-honest — unsupported fights are shown explicitly with reasons
+- calibrated — probabilities reflect measured confidence, not raw model output
+- designed to feel like a real product rather than a demo surface
 
-## Repo Layout
+## Key Views
 
-The repo is separated by product role:
+### Event Index
 
-- `frontend/` — Next.js premium product UI for landing, events, and event detail pages
-- `apps/vercel/api/main.py` — FastAPI inference API with product-friendly `/v1` routes
-- `backend/` — product service layer that assembles event and fight payloads
-- `core/` — shared model, eligibility, odds, and inference logic
-- `pipelines/` — raw UFCStats scrape, fighter snapshot refresh, training, and orchestration scripts
-- `apps/streamlit/app.py` — local-only secondary Streamlit surface
-- `notebooks/ufc_pipeline.ipynb` — archived research notebook, no longer the operational path
+The events page shows:
 
-Preferred run commands:
+- upcoming UFC cards the platform is currently tracking
+- coverage status per event showing how many bouts are supportable
+- featured matchup and odds freshness at a glance
+
+### Event Detail
+
+Each event page shows:
+
+- a coverage summary for the full card
+- supported fights with calibrated probability, edge, kelly fraction, and value state
+- prefight feature comparisons across striking, grappling, form, and physical attributes
+- insight chips grounded in the current prefight snapshot
+- unsupported fights with explicit reasons for unavailability
+- per-book odds quotes where available
+
+## Tech Stack
+
+- Next.js 15
+- React 19
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- FastAPI
+- XGBoost
+- Scikit-learn
+
+## Repository Structure
+
+```text
+frontend/               Next.js product UI for landing, events, and event detail
+apps/vercel/api/        FastAPI inference API with product-friendly /v1 routes
+backend/                product service layer that assembles event and fight payloads
+core/                   shared model, eligibility, odds, and inference logic
+pipelines/              UFCStats scrape, fighter snapshot refresh, and training scripts
+cards/                  local fight card artifacts per event
+odds/                   local odds snapshots per event
+data/                   raw UFCStats CSVs and processed fighter snapshots
+models/                 exported XGBoost booster and calibration artifacts
+```
+
+## Local Development
+
+### Backend
 
 ```bash
 uvicorn apps.vercel.api.main:app --reload
+```
+
+### Frontend
+
+```bash
 cd frontend && npm install && npm run dev
 ```
 
-Optional local debug surface:
+### Optional debug surface
 
 ```bash
 streamlit run apps/streamlit/app.py
 ```
 
----
-
-## Product API
+## API Routes
 
 Primary frontend-facing routes:
 
 - `GET /v1/health` — product API health and available event list
 - `GET /v1/events` — event summaries with coverage status
-- `GET /v1/events/{event_number}` — premium event detail payload with supported and unsupported fights
+- `GET /v1/events/{event_id}` — full event detail payload with supported and unsupported fights
 
-Legacy low-level routes remain available for direct debugging:
+Low-level debug routes:
 
 - `GET /health`
 - `GET /events`
 - `GET /events/{event_number}/coverage`
 - `GET /events/{event_number}/predictions`
 
----
+## Automation
 
-## Automation Workflow
+Fighter data and model artifacts are refreshed via GitHub Actions on a monthly schedule. Fight cards and odds are updated daily.
 
-The notebook is no longer the operational path. The repo now includes CLI scripts for the raw UFCStats scrape, model training, and an end-to-end refresh entrypoint.
-
-Raw UFCStats data now lives under:
-
-`data/raw/ufcstats/`
-
-Common commands:
+Raw UFCStats data lives under `data/raw/ufcstats/`. Common commands:
 
 ```bash
-# 1) Incrementally refresh the raw UFCStats CSV bundle
+# Incrementally refresh the raw UFCStats CSV bundle
 python -m pipelines.scrape_ufcstats all
 
-# 2) Rebuild just fighters_latest.csv from raw CSVs
+# Rebuild fighters_latest.csv from raw CSVs
 python -m pipelines.refresh_fighters --data-dir data/raw/ufcstats
 
-# 3) Retrain and export all production model artifacts
+# Retrain and export all production model artifacts
 python -m pipelines.train_model --data-dir data/raw/ufcstats
 
-# 4) Run the full workflow in one shot
+# Run the full workflow in one shot
 python -m pipelines.refresh_all --card-events 324 --odds-events 324 325
 ```
 
 Useful flags:
 
-- `python -m pipelines.scrape_ufcstats all --full` for a from-scratch raw rebuild
-- `python -m pipelines.train_model --data-dir data/raw/ufcstats --tune-trials 0` to skip Optuna and use baked-in XGBoost defaults
-- `python -m pipelines.refresh_all --skip-train` to refresh raw data and snapshot only
+- `--full` on `scrape_ufcstats` for a from-scratch raw rebuild
+- `--tune-trials 0` on `train_model` to skip Optuna and use baked-in defaults
+- `--skip-train` on `refresh_all` to refresh raw data and snapshot only
 
-Recommended cadence:
+## Current Status
 
-- After each completed UFC event: `scrape_ufcstats` + `train_model` (or at minimum `refresh_fighters`)
-- Before upcoming events: refresh `scrape_cards.py` and `scrape_odds.py` data for the target event numbers
-- For deployment automation: run these jobs in GitHub Actions or another scheduled runner, then deploy the frontend/API using the refreshed artifacts
+What is working today:
+
+- polished Next.js frontend deployed on Vercel
+- FastAPI inference backend deployed on Render
+- calibrated XGBoost predictions with betting metrics
+- daily automated card and odds scraping via GitHub Actions
+- monthly automated fighter snapshot and model refresh via GitHub Actions
+
+What still depends on external data or future hardening:
+
+- odds availability varies by event and provider
+- missing fighters on new cards until the next snapshot refresh runs
+- no historical event archive in the product UI
+
+## Why This Repo Exists
+
+UFC fight prediction tools are usually either overfit notebooks, raw odds scrapers, or apps that fake confidence on every bout.
+
+Octagon Intel exists to build something more honest: a platform that knows what it can support, shows calibrated probability where it can, and says pass where it cannot.
 
 ---
 
