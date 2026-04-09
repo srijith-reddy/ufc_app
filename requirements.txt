@@ -1,7 +1,17 @@
-streamlit
-pandas
-numpy
-xgboost
-scikit-learn
-optuna
+# Core model + app dependencies
+# Tested with Python 3.11
+streamlit>=1.35
+pandas>=2.1
+numpy>=1.26
+python-dateutil>=2.9
+xgboost>=2.0
+scikit-learn>=1.4
+joblib>=1.4
 
+# API backend
+fastapi>=0.111
+uvicorn>=0.30
+
+# Testing
+pytest>=8.2
+httpx>=0.27

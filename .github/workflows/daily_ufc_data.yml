@@ -17,57 +17,50 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # -----------------------------
-      # CHECKOUT (ALWAYS LATEST MAIN)
-      # -----------------------------
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
           ref: main
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      # -----------------------------
-      # PYTHON
-      # -----------------------------
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      # -----------------------------
-      # DEPENDENCIES
-      # -----------------------------
       - name: Install dependencies
         run: |
           pip install -r requirements-scrape.txt
+          # Install the browser binary
           playwright install chromium
+          # Install OS-level system libs that Chromium requires on Ubuntu.
+          # Without this step, chromium.launch() raises an immediate error:
+          #   "Host system is missing dependencies to run browsers"
+          playwright install-deps chromium
 
-      # -----------------------------
-      # SCRAPE UFC CARD
-      # (manual only)
-      # -----------------------------
       - name: Scrape UFC fight card
+        # Only runs when an event number is explicitly provided (manual dispatch).
+        # Cards are stable once published, so daily auto-runs skip this.
         run: |
           if [ -z "${{ github.event.inputs.event_number }}" ]; then
             echo "No event number provided — skipping card scrape"
           else
-            python scrape_cards.py ${{ github.event.inputs.event_number }}
+            python scrape_cards.py "${{ github.event.inputs.event_number }}"
           fi
 
-      # -----------------------------
-      # SCRAPE ODDS
-      # -----------------------------
       - name: Scrape UFC odds
+        # On daily schedule: auto-detects the next upcoming event.
+        # On manual dispatch with event_number: scrapes that specific event.
+        # continue-on-error so a transient network/site failure doesn't
+        # block the commit step for any data that did change.
+        continue-on-error: true
         run: |
           if [ -z "${{ github.event.inputs.event_number }}" ]; then
             python scrape_odds.py
           else
-            python scrape_odds.py ${{ github.event.inputs.event_number }}
+            python scrape_odds.py "${{ github.event.inputs.event_number }}"
           fi
 
-      # -----------------------------
-      # COMMIT & PUSH (NO REBASE)
-      # -----------------------------
       - name: Commit and push data
         run: |
           git config user.name "github-actions[bot]"
@@ -80,7 +73,9 @@ jobs:
             exit 0
           fi
 
-          git commit -m "Update UFC cards & odds"
+          git commit -m "chore: update UFC cards & odds [skip ci]"
 
-          # Push directly — no rebase, no merge
+          # Fetch + rebase to handle concurrent pushes cleanly
+          git fetch origin main
+          git rebase origin/main
           git push origin main

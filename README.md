@@ -29,6 +29,44 @@ This repository also documents a full UFC fight prediction pipeline, starting fr
 
 ---
 
+## Automation Workflow
+
+The notebook is no longer the only operational path. The repo now includes CLI scripts for the raw UFCStats scrape, model training, and an end-to-end refresh entrypoint.
+
+Raw UFCStats data now lives under:
+
+`data/raw/ufcstats/`
+
+Common commands:
+
+```bash
+# 1) Incrementally refresh the raw UFCStats CSV bundle
+python -m pipelines.scrape_ufcstats all
+
+# 2) Rebuild just fighters_latest.csv from raw CSVs
+python -m pipelines.refresh_fighters --data-dir data/raw/ufcstats
+
+# 3) Retrain and export all production model artifacts
+python -m pipelines.train_model --data-dir data/raw/ufcstats
+
+# 4) Run the full workflow in one shot
+python -m pipelines.refresh_all --card-events 324 --odds-events 324 325
+```
+
+Useful flags:
+
+- `python -m pipelines.scrape_ufcstats all --full` for a from-scratch raw rebuild
+- `python -m pipelines.train_model --data-dir data/raw/ufcstats --tune-trials 0` to skip Optuna and use baked-in XGBoost defaults
+- `python -m pipelines.refresh_all --skip-train` to refresh raw data and snapshot only
+
+Recommended cadence:
+
+- After each completed UFC event: `scrape_ufcstats` + `train_model` (or at minimum `refresh_fighters`)
+- Before upcoming events: refresh `scrape_cards.py` and `scrape_odds.py` data for the target event numbers
+- For deployment automation: run these jobs in GitHub Actions or another scheduled runner, then deploy the frontend/API using the refreshed artifacts
+
+---
+
 ## 1️⃣ Premodeling & Data Engineering (THE MOST IMPORTANT PART)
 
 Before any model is trained, the notebook enforces hard constraints that define what is legally usable at prediction time.
