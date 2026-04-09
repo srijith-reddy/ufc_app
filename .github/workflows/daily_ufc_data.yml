@@ -51,11 +51,13 @@ jobs:
           fi
 
       - name: Scrape UFC odds
-        # On daily schedule: auto-detects the next upcoming event.
-        # On manual dispatch with event_number: scrapes that specific event.
-        # continue-on-error so a transient network/site failure doesn't
-        # block the commit step for any data that did change.
+        # Pull bookmaker odds from The Odds API and map them onto any locally
+        # tracked UFC/Fight Night cards.
+        # continue-on-error so a transient provider issue doesn't block the
+        # commit step for card changes that did succeed.
         continue-on-error: true
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: |
           if [ -z "${{ github.event.inputs.event_number }}" ]; then
             python scrape_odds.py

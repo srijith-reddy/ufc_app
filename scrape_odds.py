@@ -1,36 +1,42 @@
 """
-scrape_odds.py — scrape UFC moneyline odds from fightodds.io.
-
-Uses Playwright (headless Chromium). Must be run after
-`playwright install chromium && playwright install-deps chromium`.
+scrape_odds.py — fetch UFC/MMA moneyline odds from The Odds API.
 
 Usage:
-    python scrape_odds.py                     # auto-detect next upcoming UFC event slug
-    python scrape_odds.py <EVENT_REF>         # specific numbered card or fight-night slug
+    python scrape_odds.py                        # refresh all locally tracked card events
+    python scrape_odds.py <EVENT_REF> [...]      # refresh one or more specific events
+
+Required env:
+    ODDS_API_KEY=...                             # The Odds API key
 
 Output:
     odds/ufc_<event_number>.json for numbered cards
     odds/<event_slug>.json for Fight Nights and other slug events
 """
+from __future__ import annotations
+
 import json
-import re
+import os
 import sys
 from datetime import datetime
 from pathlib import Path
+from typing import Any
 
-from playwright.sync_api import sync_playwright
+import requests
 
-# normalize_name and name_aliases are the single canonical implementations
-# in core/names.py. All three entry points (scraper, app, API) must share them.
-from core.names import name_aliases, normalize_name
 from core.config import ODDS_DIR
-from core.event import event_number_from_id, normalize_event_id
+from core.event import (
+    event_number_from_id,
+    list_available_event_items,
+    load_fight_card,
+    normalize_event_id,
+)
+from core.names import normalize_name
 
 ODDS_DIR.mkdir(exist_ok=True)
-BASE_URL = "https://fightodds.io"
 
+ODDS_API_BASE_URL = "https://api.the-odds-api.com/v4/sports/mma_mixed_martial_arts/odds"
+ODDS_API_SOURCE = "https://the-odds-api.com"
 
-# ── Event discovery ────────────────────────────────────────────────────────────
 
 def _output_path_for_event(event_id: str) -> Path:
     event_number = event_number_from_id(event_id)
@@ -39,137 +45,173 @@ def _output_path_for_event(event_id: str) -> Path:
     return ODDS_DIR / f"{event_id}.json"
 
 
-def _slug_from_href(href: str) -> str | None:
-    match = re.search(r"/odds/\d+/([^/?#]+)", href.lower())
-    return match.group(1) if match else None
+def _fight_key(name_a: str, name_b: str) -> tuple[str, str]:
+    return tuple(sorted((normalize_name(name_a), normalize_name(name_b))))
 
 
-def get_fightodds_event_url(event_ref: int | str, page) -> str | None:
-    """Scroll fightodds.io homepage to find the link for a specific event slug."""
-    target = normalize_event_id(event_ref)
-
-    for _ in range(6):
-        page.mouse.wheel(0, 3000)
-        page.wait_for_timeout(1000)
-
-    for a in page.query_selector_all("a[href^='/odds/']"):
-        href = a.get_attribute("href")
-        slug = _slug_from_href(href or "")
-        if slug and (slug == target or target in slug or slug in target):
-            return BASE_URL + href
-
-    return None
+def _get_api_key() -> str:
+    api_key = os.getenv("ODDS_API_KEY", "").strip()
+    if not api_key:
+        raise RuntimeError(
+            "Missing ODDS_API_KEY. Add it locally or as a GitHub Actions secret."
+        )
+    return api_key
 
 
-def get_next_ufc_event_id(page) -> str:
-    """Auto-detect the next upcoming UFC event slug from fightodds.io."""
-    page.goto(BASE_URL, timeout=30_000)
-    page.wait_for_timeout(3000)
-
-    for _ in range(6):
-        page.mouse.wheel(0, 3000)
-        page.wait_for_timeout(800)
-
-    for a in page.query_selector_all("a[href^='/odds/']"):
-        href = a.get_attribute("href")
-        if not href:
-            continue
-        slug = _slug_from_href(href)
-        if slug and slug.startswith("ufc"):
-            return slug
-
-    raise RuntimeError("Could not auto-detect upcoming UFC event from fightodds.io")
-
-
-# ── Odds scraper ───────────────────────────────────────────────────────────────
-
-def scrape_event(event_ref: int | str) -> dict[str, list[int]]:
+def fetch_upcoming_odds() -> list[dict[str, Any]]:
     """
-    Scrape all available moneyline odds for the given event.
+    Fetch upcoming MMA h2h odds from The Odds API.
 
-    Returns dict mapping fighter aliases → sorted list of American odds.
+    Official docs:
+    https://the-odds-api.com/sports-odds-data/mma-odds.html
     """
-    odds_map: dict[str, set[int]] = {}
-    event_id = normalize_event_id(event_ref)
-
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
-
-        page.goto(BASE_URL, timeout=30_000)
-        page.wait_for_timeout(3000)
-
-        event_url = get_fightodds_event_url(event_id, page)
-        if not event_url:
-            browser.close()
-            raise RuntimeError(f"Event '{event_id}' not found on fightodds.io")
-
-        page.goto(event_url, timeout=30_000)
-        page.wait_for_selector("table tbody tr", timeout=15_000)
-
-        for tr in page.query_selector_all("table tbody tr"):
-            if not tr.is_visible():
-                continue
-
-            tds = tr.query_selector_all("td")
-            if len(tds) < 2:
-                continue
-
-            raw_name = tds[0].inner_text().strip()
-            aliases = name_aliases(raw_name)
-
-            row_odds: set[int] = set()
-            for td in tds[1:]:
-                for s in td.query_selector_all("span"):
-                    txt = s.inner_text().replace("−", "-").strip()
-                    if re.fullmatch(r"[+-]\d+", txt):
-                        val = int(txt)
-                        if -5000 < val < 5000 and val != 0:
-                            row_odds.add(val)
-
-            if not row_odds:
-                continue
-
-            canonical = normalize_name(raw_name)
-            odds_map.setdefault(canonical, set()).update(row_odds)
-
-            # All aliases point to the same set (no duplication on lookup)
-            for a in aliases:
-                odds_map[a] = odds_map[canonical]
-
-        browser.close()
-
-    return {k: sorted(v) for k, v in odds_map.items()}
-
-
-# ── CLI entrypoint ─────────────────────────────────────────────────────────────
-
-if __name__ == "__main__":
-    # Determine event id (manual override or auto-detect)
-    if len(sys.argv) == 2:
-        event_id = normalize_event_id(sys.argv[1])
-    else:
-        print("No event reference provided — auto-detecting next UFC event...")
-        with sync_playwright() as p:
-            browser = p.chromium.launch(headless=True)
-            page = browser.new_page()
-            event_id = get_next_ufc_event_id(page)
-            browser.close()
-        print(f"Auto-detected: {event_id}")
-
-    output_path = _output_path_for_event(event_id)
-    event_number = event_number_from_id(event_id)
-
-    data = {
-        "event": event_number or event_id,
-        "event_id": event_id,
-        "event_number": event_number,
-        "scraped_at": datetime.utcnow().isoformat(),
-        "source": BASE_URL,
-        "odds": scrape_event(event_id),
+    params = {
+        "apiKey": _get_api_key(),
+        "regions": os.getenv("ODDS_API_REGIONS", "us,us2"),
+        "markets": "h2h",
+        "oddsFormat": "american",
     }
 
-    with open(output_path, "w") as f:
-        json.dump(data, f, indent=2)
+    response = requests.get(ODDS_API_BASE_URL, params=params, timeout=60)
+    response.raise_for_status()
+    payload = response.json()
 
-    print(f"Saved odds → {output_path}")
+    if not isinstance(payload, list):
+        raise RuntimeError("Unexpected odds API response format: expected a list of fight events.")
+
+    return payload
+
+
+def _matchup_price_map(odds_payload: list[dict[str, Any]]) -> dict[tuple[str, str], dict[str, set[int]]]:
+    """
+    Build matchup-keyed price maps from The Odds API response.
+
+    Returns:
+      {
+        ("jiro prochazka", "carlos ulberg"): {
+          "jiri prochazka": {-113, -112, ...},
+          "carlos ulberg": {-107, +100, ...},
+        },
+        ...
+      }
+    """
+    by_matchup: dict[tuple[str, str], dict[str, set[int]]] = {}
+
+    for event in odds_payload:
+        fighter_a = event.get("home_team")
+        fighter_b = event.get("away_team")
+        if not fighter_a or not fighter_b:
+            continue
+
+        matchup_key = _fight_key(fighter_a, fighter_b)
+        matchup_prices = by_matchup.setdefault(matchup_key, {})
+
+        for bookmaker in event.get("bookmakers", []):
+            for market in bookmaker.get("markets", []):
+                if market.get("key") != "h2h":
+                    continue
+
+                for outcome in market.get("outcomes", []):
+                    fighter_name = outcome.get("name")
+                    price = outcome.get("price")
+                    if not fighter_name or not isinstance(price, int):
+                        continue
+                    if price == 0 or abs(price) >= 5000:
+                        continue
+
+                    fighter_key = normalize_name(fighter_name)
+                    matchup_prices.setdefault(fighter_key, set()).add(int(price))
+
+    return by_matchup
+
+
+def build_event_odds_map(
+    event_id: str,
+    fights: list[list[str]],
+    odds_payload: list[dict[str, Any]],
+) -> dict[str, list[int]]:
+    """
+    Map The Odds API fight-level odds into the repo's event odds format.
+    """
+    matchup_prices = _matchup_price_map(odds_payload)
+    event_odds: dict[str, set[int]] = {}
+
+    for fighter_a, fighter_b in fights:
+        matchup_key = _fight_key(fighter_a, fighter_b)
+        prices = matchup_prices.get(matchup_key)
+        if not prices:
+            continue
+
+        for fighter in (fighter_a, fighter_b):
+            fighter_key = normalize_name(fighter)
+            if fighter_key in prices:
+                event_odds.setdefault(fighter_key, set()).update(prices[fighter_key])
+
+    return {fighter: sorted(values) for fighter, values in event_odds.items()}
+
+
+def _default_event_ids() -> list[str]:
+    """
+    Refresh all locally tracked event cards.
+
+    We use the local card inventory as the source of truth for which UFC events
+    the product currently cares about, then enrich those matchups with odds if
+    the external provider has them available.
+    """
+    return [
+        item["event_id"]
+        for item in list_available_event_items()
+        if item.get("has_card")
+    ]
+
+
+def refresh_events(event_refs: list[str]) -> list[Path]:
+    """
+    Fetch odds once, then write one file per event when matching bouts exist.
+    """
+    odds_payload = fetch_upcoming_odds()
+    written_paths: list[Path] = []
+
+    for ref in event_refs:
+        event_id = normalize_event_id(ref)
+        fights = load_fight_card(event_id)
+        odds_map = build_event_odds_map(event_id, fights, odds_payload)
+
+        if not odds_map:
+            print(f"No matching upcoming odds found for {event_id} — skipping write.")
+            continue
+
+        event_number = event_number_from_id(event_id)
+        output_path = _output_path_for_event(event_id)
+        data = {
+            "event": event_number or event_id,
+            "event_id": event_id,
+            "event_number": event_number,
+            "scraped_at": datetime.utcnow().isoformat(),
+            "source": ODDS_API_SOURCE,
+            "odds": odds_map,
+        }
+
+        with open(output_path, "w") as f:
+            json.dump(data, f, indent=2)
+
+        written_paths.append(output_path)
+        print(f"Saved odds → {output_path}")
+
+    return written_paths
+
+
+if __name__ == "__main__":
+    event_refs = sys.argv[1:] or _default_event_ids()
+    if not event_refs:
+        print("No local card events available to refresh odds for.")
+        sys.exit(0)
+
+    try:
+        written = refresh_events(event_refs)
+    except Exception as exc:
+        print(f"Odds refresh failed: {exc}", file=sys.stderr)
+        raise
+
+    if not written:
+        print("No odds files were updated.")
