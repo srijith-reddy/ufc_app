@@ -4,7 +4,7 @@ pipelines/refresh_fighters.py
 Rebuild models/fighters_latest.csv from raw ufcstats CSV files.
 
 This script is the extracted, runnable version of the feature
-engineering pipeline from ufc_pipeline.ipynb (cells 9–42 minus
+engineering pipeline from notebooks/ufc_pipeline.ipynb (cells 9–42 minus
 model training).  Run it after new fight data is available to
 keep the fighter snapshot current.
 
@@ -21,7 +21,7 @@ What it does
 
 What it does NOT do
 ───────────────────
-  - Re-train the XGBoost model (run ufc_pipeline.ipynb for that)
+  - Re-train the XGBoost model (run `python -m pipelines.train_model` for that)
   - Scrape raw data from ufcstats.com (provide --data-dir yourself)
   - Update clip_bounds.json (those are fit on training data only
     and must be re-saved when the model is retrained)

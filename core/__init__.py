@@ -27,8 +27,14 @@ from .eligibility import (
     EventCoverage,
 )
 from .event import (
+    event_number_from_id,
+    format_event_title,
     load_fight_card,
+    load_odds_payload,
     load_odds_map,
     get_odds_for_fighter,
     list_available_events,
+    list_available_event_ids,
+    list_available_event_items,
+    normalize_event_id,
 )

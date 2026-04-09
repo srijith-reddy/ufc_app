@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       event_number:
-        description: "Optional UFC event number (e.g. 324)"
+        description: "Optional event ref (e.g. 324 or ufc-fight-night-emmett-vs-vallejos)"
         required: false
 
 permissions:
@@ -39,11 +39,12 @@ jobs:
           playwright install-deps chromium
 
       - name: Scrape UFC fight card
-        # Only runs when an event number is explicitly provided (manual dispatch).
-        # Cards are stable once published, so daily auto-runs skip this.
+        # On daily schedule: discovers and refreshes the next few upcoming UFC
+        # event cards, including Fight Nights.
+        # On manual dispatch: refreshes the specific event ref provided.
         run: |
           if [ -z "${{ github.event.inputs.event_number }}" ]; then
-            echo "No event number provided — skipping card scrape"
+            python scrape_cards.py
           else
             python scrape_cards.py "${{ github.event.inputs.event_number }}"
           fi

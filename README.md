@@ -1,37 +1,75 @@
-# 🥊 UFC Fight Prediction 
+# Octagon Intel
 
-🚀 Interactive Streamlit App (Try It Live)
+Premium UFC betting intelligence built around calibrated prefight-only prediction support.
 
-👉 Live App:
-https://srijith-reddy-ufc-app-app-2grqrv.streamlit.app/
+This repository is no longer organized as a notebook wrapper or a Streamlit-first demo. The flagship product surface is now a Vercel-friendly Next.js frontend backed by a clean FastAPI inference layer that preserves the original modeling discipline:
 
-https://github.com/user-attachments/assets/e614be12-7eae-4e93-a062-54c32c07e0c0
+- strictly prefight-only features
+- deterministic inference
+- calibrated probabilities
+- no leakage
+- explicit event and fight support checks
+- graceful unsupported-fight handling
 
-App highlights:
+The product is designed around real event consumption:
 
-Select fighters from the latest prefight snapshot
+- browse UFC event coverage
+- see which bouts are supportable from current artifacts
+- compare calibrated model probability to market price when odds exist
+- inspect grounded prefight feature differences in a premium fight breakdown
+- surface unavailable predictions clearly instead of faking support
 
-Deterministic, leakage-free probability inference
+Streamlit remains available only as a secondary local debugging surface.
 
-Calibrated win probabilities (no post-fight or in-fight data)
+---
 
-Clean fight-by-fight breakdown for full event cards
+## Repo Layout
 
-Odds integration:
+The repo is separated by product role:
 
-Betting odds for the current UFC event (e.g., UFC 324) are scraped and refreshed daily
+- `frontend/` — Next.js premium product UI for landing, events, and event detail pages
+- `apps/vercel/api/main.py` — FastAPI inference API with product-friendly `/v1` routes
+- `backend/` — product service layer that assembles event and fight payloads
+- `core/` — shared model, eligibility, odds, and inference logic
+- `pipelines/` — raw UFCStats scrape, fighter snapshot refresh, training, and orchestration scripts
+- `apps/streamlit/app.py` — local-only secondary Streamlit surface
+- `notebooks/ufc_pipeline.ipynb` — archived research notebook, no longer the operational path
 
-Odds for future events (e.g., UFC 325) are automatically generated and populated once the prior event concludes
+Preferred run commands:
 
-This design mirrors real-world usage: predictions are always made using only information available before the fight, ensuring the app remains realistic, reproducible, and suitable for evaluation against live betting markets.
+```bash
+uvicorn apps.vercel.api.main:app --reload
+cd frontend && npm install && npm run dev
+```
 
-This repository also documents a full UFC fight prediction pipeline, starting from raw data construction and pre-modeling hygiene, through multiple modeling approaches.
+Optional local debug surface:
+
+```bash
+streamlit run apps/streamlit/app.py
+```
+
+---
+
+## Product API
+
+Primary frontend-facing routes:
+
+- `GET /v1/health` — product API health and available event list
+- `GET /v1/events` — event summaries with coverage status
+- `GET /v1/events/{event_number}` — premium event detail payload with supported and unsupported fights
+
+Legacy low-level routes remain available for direct debugging:
+
+- `GET /health`
+- `GET /events`
+- `GET /events/{event_number}/coverage`
+- `GET /events/{event_number}/predictions`
 
 ---
 
 ## Automation Workflow
 
-The notebook is no longer the only operational path. The repo now includes CLI scripts for the raw UFCStats scrape, model training, and an end-to-end refresh entrypoint.
+The notebook is no longer the operational path. The repo now includes CLI scripts for the raw UFCStats scrape, model training, and an end-to-end refresh entrypoint.
 
 Raw UFCStats data now lives under:
 
@@ -69,7 +107,7 @@ Recommended cadence:
 
 ## 1️⃣ Premodeling & Data Engineering (THE MOST IMPORTANT PART)
 
-Before any model is trained, the notebook enforces hard constraints that define what is legally usable at prediction time.
+Before any model is trained, the training pipeline enforces hard constraints that define what is legally usable at prediction time.
 
 ### 1.1 Canonical fight universe
 - Only win / loss outcomes kept  

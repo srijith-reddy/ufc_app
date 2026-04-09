@@ -1,9 +1,14 @@
 """
 UFC Fight Predictor — FastAPI backend.
 
-Exposes three read-only endpoints for the Next.js frontend:
+This is the Vercel/API entrypoint.
+
+Exposes both low-level and product-facing read-only endpoints:
   GET /health                               liveness check
   GET /events                               list events with available cards
+  GET /v1/health                            product API health
+  GET /v1/events                            product event summaries
+  GET /v1/events/{event_number}             premium event detail payload
   GET /events/{event_number}/coverage       eligibility per fight
   GET /events/{event_number}/predictions    full predictions + odds + betting metrics
 
@@ -12,19 +17,26 @@ Inference is deterministic: given the same fighter snapshot + event card,
 the same probabilities are always returned.
 
 Deployment:
-  Local:   uvicorn api.main:app --reload
-  Prod:    uvicorn api.main:app --host 0.0.0.0 --port 8000
+  Local:   uvicorn apps.vercel.api.main:app --reload
+  Prod:    uvicorn apps.vercel.api.main:app --host 0.0.0.0 --port 8000
 """
 from __future__ import annotations
 
+import sys
+from pathlib import Path
 import math
 from contextlib import asynccontextmanager
 from typing import Any
+
+REPO_ROOT = Path(__file__).resolve().parents[3]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 
 import numpy as np
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
+from backend.service import build_event_detail, list_event_summaries
 from core import (
     american_to_decimal,
     check_event_coverage,
@@ -33,10 +45,12 @@ from core import (
     implied_prob_from_decimal,
     kelly_fraction,
     kelly_note,
+    list_available_event_ids,
     list_available_events,
     load_artifacts,
     load_fight_card,
     load_odds_map,
+    normalize_event_id,
 )
 
 # ── Globals populated at startup ───────────────────────────────────────────────
@@ -165,6 +179,56 @@ def get_events():
     Odds availability is separate — check /events/{n}/predictions.
     """
     return {"events": list_available_events()}
+
+
+@app.get("/v1/health")
+def product_health():
+    """Product API liveness check for the premium frontend."""
+    return {
+        "status": "ok",
+        "product_api": True,
+        "artifacts_loaded": _booster is not None,
+        "available_events": list_available_event_ids(),
+        "available_numbered_events": list_available_events(),
+    }
+
+
+@app.get("/v1/events")
+def get_product_events():
+    """Return product-ready event summaries for the premium frontend."""
+    events = list_event_summaries(
+        _fighters_df,
+        _fighter_lookup,
+        _feature_cols,
+        _clip_bounds,
+        _booster,
+        _calibrator,
+    )
+    future_events = [event for event in events if event.get("timeline") == "future"]
+    past_events = [event for event in events if event.get("timeline") == "past"]
+    return {
+        "events": events,
+        "future_events": future_events,
+        "past_events": past_events,
+        "featured_event": future_events[0] if future_events else events[0] if events else None,
+    }
+
+
+@app.get("/v1/events/{event_id:path}")
+def get_product_event_detail(event_id: str):
+    """Return the full premium event payload with supported and unsupported fights."""
+    try:
+        return build_event_detail(
+            normalize_event_id(event_id),
+            _fighters_df,
+            _fighter_lookup,
+            _feature_cols,
+            _clip_bounds,
+            _booster,
+            _calibrator,
+        )
+    except FileNotFoundError as exc:
+        raise HTTPException(status_code=404, detail=str(exc))
 
 
 @app.get("/events/{event_number}/coverage")

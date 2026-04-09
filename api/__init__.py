@@ -1,1 +1,0 @@
-# UFC Predictor API package

@@ -1,0 +1,1 @@
+"""Vercel app entrypoint package."""

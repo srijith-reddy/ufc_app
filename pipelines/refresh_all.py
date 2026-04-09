@@ -18,31 +18,42 @@ from pathlib import Path
 from core.config import CARDS_DIR, ODDS_DIR, UFCSTATS_DATA_DIR
 from pipelines import refresh_fighters, train_model
 from pipelines.scrape_ufcstats import run_all as scrape_ufcstats_all
+from core.event import event_number_from_id, normalize_event_id
 from scrape_cards import scrape_event_card
 from scrape_odds import scrape_event
 
 
-def refresh_cards(events: list[int]) -> None:
-    """Scrape and persist one or more UFC event cards."""
+def refresh_cards(events: list[str]) -> None:
+    """Scrape and persist one or more UFC event cards or Fight Night slugs."""
     CARDS_DIR.mkdir(exist_ok=True)
-    for event in events:
-        fights = scrape_event_card(event)
-        output_path = CARDS_DIR / f"ufc_{event}.json"
+    for ref in events:
+        event_id = normalize_event_id(ref)
+        event_number = event_number_from_id(event_id)
+        fights = scrape_event_card(event_id)
+        output_path = CARDS_DIR / (
+            f"ufc_{event_number}.json" if event_number is not None else f"{event_id}.json"
+        )
         with open(output_path, "w") as f:
             json.dump(fights, f, indent=2)
         print(f"Saved fight card → {output_path} ({len(fights)} fights)")
 
 
-def refresh_odds(events: list[int]) -> None:
-    """Scrape and persist odds files for one or more UFC events."""
+def refresh_odds(events: list[str]) -> None:
+    """Scrape and persist odds files for one or more UFC events or Fight Night slugs."""
     ODDS_DIR.mkdir(exist_ok=True)
-    for event in events:
-        output_path = ODDS_DIR / f"ufc_{event}.json"
+    for ref in events:
+        event_id = normalize_event_id(ref)
+        event_number = event_number_from_id(event_id)
+        output_path = ODDS_DIR / (
+            f"ufc_{event_number}.json" if event_number is not None else f"{event_id}.json"
+        )
         payload = {
-            "event": event,
+            "event": event_number or event_id,
+            "event_id": event_id,
+            "event_number": event_number,
             "scraped_at": datetime.now(timezone.utc).isoformat(),
             "source": "https://fightodds.io",
-            "odds": scrape_event(event),
+            "odds": scrape_event(event_id),
         }
         with open(output_path, "w") as f:
             json.dump(payload, f, indent=2)
@@ -88,16 +99,14 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--card-events",
         nargs="*",
-        type=int,
         default=[],
-        help="Optional UFC event numbers whose cards should be scraped.",
+        help="Optional event refs whose cards should be scraped, e.g. 324 or ufc-fight-night-emmett-vs-vallejos.",
     )
     parser.add_argument(
         "--odds-events",
         nargs="*",
-        type=int,
         default=[],
-        help="Optional UFC event numbers whose odds should be scraped.",
+        help="Optional event refs whose odds should be scraped, e.g. 324 or ufc-fight-night-emmett-vs-vallejos.",
     )
     parser.add_argument(
         "--dry-run",

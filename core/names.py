@@ -3,10 +3,10 @@ Fighter name normalization.
 
 This is the single canonical implementation used by:
   - core/ (inference, eligibility)
-  - app.py (Streamlit)
+  - apps/streamlit/app.py
   - scrape_cards.py
   - scrape_odds.py
-  - api/main.py
+  - apps/vercel/api/main.py
   - tests/
 
 All four entry points previously duplicated this code. Any change to

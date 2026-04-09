@@ -1,7 +1,7 @@
 """
 Betting math utilities (pure functions, no I/O, no UI dependencies).
 
-All formulas match those documented in app.py's Betting Guide page.
+All formulas match those documented in the Streamlit Betting Guide page.
 """
 from __future__ import annotations
 import numpy as np
