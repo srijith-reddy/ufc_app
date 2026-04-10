@@ -1,0 +1,361 @@
+{
+  "event": "ufc-fight-night-april-18-2026",
+  "event_id": "ufc-fight-night-april-18-2026",
+  "event_number": null,
+  "scraped_at": "2026-04-10T07:27:42.135644",
+  "source": "https://the-odds-api.com",
+  "odds": {
+    "gilbert burns": [
+      390,
+      425
+    ],
+    "mike malott": [
+      -600,
+      -590
+    ],
+    "kyler phillips": [
+      130,
+      135,
+      146
+    ],
+    "charles jourdain": [
+      -188,
+      -155
+    ],
+    "mandel nallo": [
+      -170,
+      -156
+    ],
+    "jai herbert": [
+      122,
+      142,
+      145
+    ],
+    "jasmine jasudavicius": [
+      -340,
+      -300
+    ],
+    "karine silva": [
+      246,
+      250
+    ],
+    "thiago moises": [
+      102,
+      105
+    ],
+    "gauge young": [
+      -130,
+      -125
+    ],
+    "dennis buzukja": [
+      300,
+      309
+    ],
+    "marcio barbosa": [
+      -400
+    ],
+    "julien leblanc": [
+      -150,
+      -125
+    ],
+    "robert valentin": [
+      105,
+      118
+    ],
+    "tanner boser": [
+      130,
+      132,
+      135
+    ],
+    "gokhan saricam": [
+      -170,
+      -155
+    ],
+    "mitch raposo": [
+      230,
+      240,
+      255
+    ],
+    "allan nascimento": [
+      -350,
+      -280
+    ],
+    "jj aldrich": [
+      172,
+      174,
+      180
+    ],
+    "jameylyn horth": [
+      -225,
+      -210
+    ],
+    "john castaneda": [
+      106,
+      110
+    ],
+    "mark vologdin": [
+      -136,
+      -130
+    ]
+  },
+  "books": {
+    "gilbert burns-vs-mike malott": {
+      "fighter_a": "GILBERT BURNS",
+      "fighter_b": "MIKE MALOTT",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-10T07:26:44Z",
+          "fighter_a_price": 425,
+          "fighter_b_price": -600
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-04-10T07:27:30Z",
+          "fighter_a_price": 390,
+          "fighter_b_price": -590
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-04-10T07:25:37Z",
+          "fighter_a_price": 425,
+          "fighter_b_price": -600
+        }
+      ]
+    },
+    "kyler phillips-vs-charles jourdain": {
+      "fighter_a": "KYLER PHILLIPS",
+      "fighter_b": "CHARLES JOURDAIN",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-10T07:26:44Z",
+          "fighter_a_price": 135,
+          "fighter_b_price": -155
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-04-10T07:27:30Z",
+          "fighter_a_price": 146,
+          "fighter_b_price": -188
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-04-10T07:25:37Z",
+          "fighter_a_price": 130,
+          "fighter_b_price": -155
+        }
+      ]
+    },
+    "mandel nallo-vs-jai herbert": {
+      "fighter_a": "MANDEL NALLO",
+      "fighter_b": "JAI HERBERT",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-10T07:26:44Z",
+          "fighter_a_price": -170,
+          "fighter_b_price": 145
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-04-10T07:27:30Z",
+          "fighter_a_price": -156,
+          "fighter_b_price": 122
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-04-10T07:25:37Z",
+          "fighter_a_price": -170,
+          "fighter_b_price": 142
+        }
+      ]
+    },
+    "jasmine jasudavicius-vs-karine silva": {
+      "fighter_a": "JASMINE JASUDAVICIUS",
+      "fighter_b": "KARINE SILVA",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-10T07:26:44Z",
+          "fighter_a_price": -300,
+          "fighter_b_price": 250
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-04-10T07:27:30Z",
+          "fighter_a_price": -340,
+          "fighter_b_price": 250
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-04-10T07:25:37Z",
+          "fighter_a_price": -300,
+          "fighter_b_price": 246
+        }
+      ]
+    },
+    "thiago moises-vs-gauge young": {
+      "fighter_a": "THIAGO MOIS\u00c9S",
+      "fighter_b": "GAUGE YOUNG",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-10T07:26:44Z",
+          "fighter_a_price": 105,
+          "fighter_b_price": -125
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-04-10T07:27:30Z",
+          "fighter_a_price": 102,
+          "fighter_b_price": -130
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-04-10T07:25:37Z",
+          "fighter_a_price": 105,
+          "fighter_b_price": -125
+        }
+      ]
+    },
+    "dennis buzukja-vs-marcio barbosa": {
+      "fighter_a": "DENNIS BUZUKJA",
+      "fighter_b": "MARCIO BARBOSA",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-10T07:26:44Z",
+          "fighter_a_price": 300,
+          "fighter_b_price": -400
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-04-10T07:25:37Z",
+          "fighter_a_price": 309,
+          "fighter_b_price": -400
+        }
+      ]
+    },
+    "julien leblanc-vs-robert valentin": {
+      "fighter_a": "JULIEN LEBLANC",
+      "fighter_b": "ROBERT VALENTIN",
+      "quotes": [
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-04-10T07:27:30Z",
+          "fighter_a_price": -150,
+          "fighter_b_price": 118
+        },
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-10T07:26:44Z",
+          "fighter_a_price": -125,
+          "fighter_b_price": 105
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-04-10T07:25:37Z",
+          "fighter_a_price": -125,
+          "fighter_b_price": 105
+        }
+      ]
+    },
+    "tanner boser-vs-gokhan saricam": {
+      "fighter_a": "TANNER BOSER",
+      "fighter_b": "GOKHAN SARICAM",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-10T07:26:44Z",
+          "fighter_a_price": 135,
+          "fighter_b_price": -155
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-04-10T07:27:30Z",
+          "fighter_a_price": 132,
+          "fighter_b_price": -170
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-04-10T07:25:37Z",
+          "fighter_a_price": 130,
+          "fighter_b_price": -155
+        }
+      ]
+    },
+    "mitch raposo-vs-allan nascimento": {
+      "fighter_a": "MITCH RAPOSO",
+      "fighter_b": "ALLAN NASCIMENTO",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-10T07:26:44Z",
+          "fighter_a_price": 240,
+          "fighter_b_price": -280
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-04-10T07:27:30Z",
+          "fighter_a_price": 255,
+          "fighter_b_price": -350
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-04-10T07:25:37Z",
+          "fighter_a_price": 230,
+          "fighter_b_price": -280
+        }
+      ]
+    },
+    "jj aldrich-vs-jameylyn horth": {
+      "fighter_a": "JJ ALDRICH",
+      "fighter_b": "JAMEY-LYN HORTH",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-10T07:26:44Z",
+          "fighter_a_price": 180,
+          "fighter_b_price": -210
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-04-10T07:27:30Z",
+          "fighter_a_price": 172,
+          "fighter_b_price": -225
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-04-10T07:25:37Z",
+          "fighter_a_price": 174,
+          "fighter_b_price": -210
+        }
+      ]
+    },
+    "john castaneda-vs-mark vologdin": {
+      "fighter_a": "JOHN CASTANEDA",
+      "fighter_b": "MARK VOLOGDIN",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-10T07:26:44Z",
+          "fighter_a_price": 110,
+          "fighter_b_price": -130
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-04-10T07:27:30Z",
+          "fighter_a_price": 106,
+          "fighter_b_price": -136
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-04-10T07:25:37Z",
+          "fighter_a_price": 110,
+          "fighter_b_price": -130
+        }
+      ]
+    }
+  }
+}
