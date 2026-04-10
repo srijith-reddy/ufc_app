@@ -539,7 +539,10 @@ def add_temporal_features(df: pd.DataFrame) -> pd.DataFrame:
     df["fights_before"] = df.groupby("fighter").cumcount()
     df["days_since_last_fight"] = df.groupby("fighter")["date"].diff().dt.days
 
-    df["wins_before"] = df.groupby("fighter")["target"].cumsum().shift(1)
+    grouped_target = df.groupby("fighter", sort=False)["target"]
+
+    # Keep all cumulative/rolling calculations fighter-local.
+    df["wins_before"] = grouped_target.transform(lambda s: s.cumsum().shift(1))
     df["win_rate_before"] = np.where(
         df["fights_before"] > 0,
         df["wins_before"] / df["fights_before"],
@@ -547,10 +550,10 @@ def add_temporal_features(df: pd.DataFrame) -> pd.DataFrame:
     )
 
     df["recent_win_rate_3"] = (
-        df.groupby("fighter")["target"].shift(1).rolling(3).mean()
+        grouped_target.transform(lambda s: s.shift(1).rolling(3).mean())
     )
     df["recent_win_rate_5"] = (
-        df.groupby("fighter")["target"].shift(1).rolling(5).mean()
+        grouped_target.transform(lambda s: s.shift(1).rolling(5).mean())
     )
 
     for col in ["days_since_last_fight", "recent_win_rate_3", "recent_win_rate_5"]:

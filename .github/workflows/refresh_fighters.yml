@@ -10,15 +10,20 @@ on:
       tune_trials:
         description: "Optuna trial count (0 = use baked-in defaults)"
         required: false
-        default: "0"
+        default: "25"
       full_raw:
         description: "Run a full raw UFCStats rebuild instead of incremental"
         required: false
         type: boolean
         default: false
 
+concurrency:
+  group: refresh-fighters
+  cancel-in-progress: true
+
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   refresh:
@@ -28,13 +33,23 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           ref: main
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
+          cache: "pip"
           python-version: "3.11"
+
+      - name: Restore cached raw UFCStats bundle
+        uses: actions/cache@v4
+        with:
+          path: data/raw/ufcstats
+          key: ufcstats-raw-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            ufcstats-raw-${{ runner.os }}-
 
       - name: Install dependencies
         run: |
@@ -45,7 +60,7 @@ jobs:
         id: inputs
         run: |
           if [ "${{ github.event_name }}" = "schedule" ]; then
-            echo "tune_trials=0" >> "$GITHUB_OUTPUT"
+            echo "tune_trials=25" >> "$GITHUB_OUTPUT"
             echo "full_raw=false" >> "$GITHUB_OUTPUT"
           else
             echo "tune_trials=${{ github.event.inputs.tune_trials }}" >> "$GITHUB_OUTPUT"
@@ -66,21 +81,20 @@ jobs:
             --data-dir data/raw/ufcstats \
             --tune-trials "${{ steps.inputs.outputs.tune_trials }}"
 
-      - name: Commit and push refreshed data/artifacts
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Open refresh pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: refresh UFC raw data + model artifacts [skip ci]"
+          title: "chore: refresh UFC raw data + model artifacts"
+          body: |
+            ## Summary
+            - refresh raw UFCStats CSVs
+            - retrain and export model artifacts
 
-          git add data/raw/ufcstats/ models/
-
-          if git diff --cached --quiet; then
-            echo "No raw/model changes to commit"
-            exit 0
-          fi
-
-          MONTH=$(date +%Y-%m)
-          git commit -m "chore: refresh UFC raw data + model artifacts ${MONTH} [skip ci]"
-
-          git fetch origin main
-          git rebase origin/main
-          git push origin main
+            This PR was created automatically by `refresh_fighters.yml`.
+          branch: automation/refresh-ufc-data
+          delete-branch: true
+          add-paths: |
+            data/raw/ufcstats
+            models

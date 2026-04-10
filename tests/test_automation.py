@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import pandas as pd
 
+from pipelines.refresh_fighters import add_temporal_features
 from pipelines.scrape_ufcstats import merge_records, parse_scheduled_rounds
 from pipelines.train_model import apply_train_fit_preprocessing, prepare_model_frame
 
@@ -114,3 +115,52 @@ def test_apply_train_fit_preprocessing_adds_log_columns_and_bounds():
         "opp_fights_before",
     }
     assert test_out["days_since_last_fight"].iloc[0] <= clip_bounds["days_since_last_fight"]["hi"]
+
+
+def test_add_temporal_features_keeps_wins_before_fighter_local():
+    df = pd.DataFrame([
+        {
+            "fight_url": "f1",
+            "fighter": "Alpha",
+            "opponent": "Opp 1",
+            "result": "win",
+            "date": "2020-01-01",
+            "g_rating_before": 1500.0,
+            "opp_rating_before": 1500.0,
+        },
+        {
+            "fight_url": "f2",
+            "fighter": "Alpha",
+            "opponent": "Opp 2",
+            "result": "loss",
+            "date": "2020-02-01",
+            "g_rating_before": 1510.0,
+            "opp_rating_before": 1490.0,
+        },
+        {
+            "fight_url": "f3",
+            "fighter": "Bravo",
+            "opponent": "Opp 3",
+            "result": "loss",
+            "date": "2020-01-05",
+            "g_rating_before": 1490.0,
+            "opp_rating_before": 1510.0,
+        },
+        {
+            "fight_url": "f4",
+            "fighter": "Bravo",
+            "opponent": "Opp 4",
+            "result": "win",
+            "date": "2020-02-05",
+            "g_rating_before": 1505.0,
+            "opp_rating_before": 1495.0,
+        },
+    ])
+
+    enriched = add_temporal_features(df)
+    bravo_rows = enriched[enriched["fighter"] == "Bravo"].reset_index(drop=True)
+
+    assert pd.isna(bravo_rows.loc[0, "wins_before"])
+    assert bravo_rows.loc[1, "wins_before"] == 0.0
+    assert bravo_rows.loc[0, "win_rate_before"] == 0.0
+    assert bravo_rows.loc[1, "win_rate_before"] == 0.0
