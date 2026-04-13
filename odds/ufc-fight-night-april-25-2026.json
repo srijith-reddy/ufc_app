@@ -1,0 +1,173 @@
+{
+  "event": "ufc-fight-night-april-25-2026",
+  "event_id": "ufc-fight-night-april-25-2026",
+  "event_number": null,
+  "scraped_at": "2026-04-13T08:03:13.387835",
+  "source": "https://the-odds-api.com",
+  "odds": {
+    "aljamain sterling": [
+      114
+    ],
+    "youssef zalal": [
+      -134
+    ],
+    "montel jackson": [
+      -180
+    ],
+    "raoni barcelos": [
+      155
+    ],
+    "norma dumont": [
+      -165
+    ],
+    "joselyne edwards": [
+      145
+    ],
+    "talita alencar": [
+      140
+    ],
+    "julia polastri": [
+      -160
+    ],
+    "rodolfo vieira": [
+      -251
+    ],
+    "eric mcconico": [
+      211
+    ],
+    "jafel filho": [
+      -300
+    ],
+    "lucas rocha": [
+      250
+    ],
+    "marcus buchecha": [
+      -110
+    ],
+    "ryan spann": [
+      -110
+    ],
+    "mayra bueno silva": [
+      290
+    ],
+    "michelle montague": [
+      -355
+    ],
+    "jackson mcvey": [
+      -199
+    ],
+    "sedriques dumas": [
+      174
+    ]
+  },
+  "books": {
+    "aljamain sterling-vs-youssef zalal": {
+      "fighter_a": "ALJAMAIN STERLING",
+      "fighter_b": "YOUSSEF ZALAL",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-13T08:02:33Z",
+          "fighter_a_price": 114,
+          "fighter_b_price": -134
+        }
+      ]
+    },
+    "montel jackson-vs-raoni barcelos": {
+      "fighter_a": "MONTEL JACKSON",
+      "fighter_b": "RAONI BARCELOS",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-13T08:02:33Z",
+          "fighter_a_price": -180,
+          "fighter_b_price": 155
+        }
+      ]
+    },
+    "norma dumont-vs-joselyne edwards": {
+      "fighter_a": "NORMA DUMONT",
+      "fighter_b": "JOSELYNE EDWARDS",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-13T08:02:33Z",
+          "fighter_a_price": -165,
+          "fighter_b_price": 145
+        }
+      ]
+    },
+    "talita alencar-vs-julia polastri": {
+      "fighter_a": "TALITA ALENCAR",
+      "fighter_b": "JULIA POLASTRI",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-13T08:02:33Z",
+          "fighter_a_price": 140,
+          "fighter_b_price": -160
+        }
+      ]
+    },
+    "rodolfo vieira-vs-eric mcconico": {
+      "fighter_a": "RODOLFO VIEIRA",
+      "fighter_b": "ERIC MCCONICO",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-13T08:02:33Z",
+          "fighter_a_price": -251,
+          "fighter_b_price": 211
+        }
+      ]
+    },
+    "jafel filho-vs-lucas rocha": {
+      "fighter_a": "JAFEL FILHO",
+      "fighter_b": "LUCAS ROCHA",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-13T08:02:33Z",
+          "fighter_a_price": -300,
+          "fighter_b_price": 250
+        }
+      ]
+    },
+    "marcus buchecha-vs-ryan spann": {
+      "fighter_a": "MARCUS BUCHECHA",
+      "fighter_b": "RYAN SPANN",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-13T08:02:33Z",
+          "fighter_a_price": -110,
+          "fighter_b_price": -110
+        }
+      ]
+    },
+    "mayra bueno silva-vs-michelle montague": {
+      "fighter_a": "MAYRA BUENO SILVA",
+      "fighter_b": "MICHELLE MONTAGUE",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-13T08:02:33Z",
+          "fighter_a_price": 290,
+          "fighter_b_price": -355
+        }
+      ]
+    },
+    "jackson mcvey-vs-sedriques dumas": {
+      "fighter_a": "JACKSON MCVEY",
+      "fighter_b": "SEDRIQUES DUMAS",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-13T08:02:33Z",
+          "fighter_a_price": -199,
+          "fighter_b_price": 174
+        }
+      ]
+    }
+  }
+}
