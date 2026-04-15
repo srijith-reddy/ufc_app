@@ -2,61 +2,95 @@
   "event": "ufc-fight-night-april-25-2026",
   "event_id": "ufc-fight-night-april-25-2026",
   "event_number": null,
-  "scraped_at": "2026-04-13T08:03:13.387835",
+  "scraped_at": "2026-04-15T07:45:44.344100",
   "source": "https://the-odds-api.com",
   "odds": {
     "aljamain sterling": [
-      114
+      114,
+      115
     ],
     "youssef zalal": [
-      -134
+      -146,
+      -135
+    ],
+    "davey grant": [
+      125
+    ],
+    "juan martinetti": [
+      -145
     ],
     "montel jackson": [
-      -180
-    ],
-    "raoni barcelos": [
-      155
-    ],
-    "norma dumont": [
+      -178,
+      -166,
       -165
     ],
-    "joselyne edwards": [
+    "raoni barcelos": [
+      138,
+      140,
       145
     ],
+    "norma dumont": [
+      -172,
+      -155,
+      -148
+    ],
+    "joselyne edwards": [
+      124,
+      134,
+      135
+    ],
+    "marcus buchecha": [
+      -135,
+      -130
+    ],
+    "ryan spann": [
+      102,
+      110,
+      115
+    ],
     "talita alencar": [
-      140
+      180
     ],
     "julia polastri": [
-      -160
+      -235,
+      -218,
+      -210
     ],
     "rodolfo vieira": [
+      -265,
       -251
     ],
     "eric mcconico": [
+      200,
       211
     ],
     "jafel filho": [
+      -330,
+      -305,
       -300
     ],
     "lucas rocha": [
+      240,
+      245,
       250
     ],
-    "marcus buchecha": [
-      -110
-    ],
-    "ryan spann": [
-      -110
-    ],
     "mayra bueno silva": [
-      290
+      285,
+      290,
+      300
     ],
     "michelle montague": [
+      -430,
+      -360,
       -355
     ],
     "jackson mcvey": [
-      -199
+      -215,
+      -199,
+      -198
     ],
     "sedriques dumas": [
+      164,
       174
     ]
   },
@@ -67,9 +101,33 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-04-13T08:02:33Z",
+          "last_update": "2026-04-15T07:44:46Z",
+          "fighter_a_price": 115,
+          "fighter_b_price": -135
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-04-15T07:44:50Z",
           "fighter_a_price": 114,
-          "fighter_b_price": -134
+          "fighter_b_price": -135
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-04-15T07:45:11Z",
+          "fighter_a_price": 114,
+          "fighter_b_price": -146
+        }
+      ]
+    },
+    "davey grant-vs-juan martinetti": {
+      "fighter_a": "DAVEY GRANT",
+      "fighter_b": "JUAN MARTINETTI",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-15T07:44:46Z",
+          "fighter_a_price": 125,
+          "fighter_b_price": -145
         }
       ]
     },
@@ -79,9 +137,21 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-04-13T08:02:33Z",
-          "fighter_a_price": -180,
-          "fighter_b_price": 155
+          "last_update": "2026-04-15T07:44:46Z",
+          "fighter_a_price": -165,
+          "fighter_b_price": 145
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-04-15T07:44:50Z",
+          "fighter_a_price": -166,
+          "fighter_b_price": 140
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-04-15T07:45:11Z",
+          "fighter_a_price": -178,
+          "fighter_b_price": 138
         }
       ]
     },
@@ -91,45 +161,21 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-04-13T08:02:33Z",
-          "fighter_a_price": -165,
-          "fighter_b_price": 145
-        }
-      ]
-    },
-    "talita alencar-vs-julia polastri": {
-      "fighter_a": "TALITA ALENCAR",
-      "fighter_b": "JULIA POLASTRI",
-      "quotes": [
+          "last_update": "2026-04-15T07:44:46Z",
+          "fighter_a_price": -155,
+          "fighter_b_price": 135
+        },
         {
-          "sportsbook": "BetOnline.ag",
-          "last_update": "2026-04-13T08:02:33Z",
-          "fighter_a_price": 140,
-          "fighter_b_price": -160
-        }
-      ]
-    },
-    "rodolfo vieira-vs-eric mcconico": {
-      "fighter_a": "RODOLFO VIEIRA",
-      "fighter_b": "ERIC MCCONICO",
-      "quotes": [
+          "sportsbook": "DraftKings",
+          "last_update": "2026-04-15T07:44:50Z",
+          "fighter_a_price": -148,
+          "fighter_b_price": 124
+        },
         {
-          "sportsbook": "BetOnline.ag",
-          "last_update": "2026-04-13T08:02:33Z",
-          "fighter_a_price": -251,
-          "fighter_b_price": 211
-        }
-      ]
-    },
-    "jafel filho-vs-lucas rocha": {
-      "fighter_a": "JAFEL FILHO",
-      "fighter_b": "LUCAS ROCHA",
-      "quotes": [
-        {
-          "sportsbook": "BetOnline.ag",
-          "last_update": "2026-04-13T08:02:33Z",
-          "fighter_a_price": -300,
-          "fighter_b_price": 250
+          "sportsbook": "FanDuel",
+          "last_update": "2026-04-15T07:45:11Z",
+          "fighter_a_price": -172,
+          "fighter_b_price": 134
         }
       ]
     },
@@ -139,9 +185,87 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-04-13T08:02:33Z",
-          "fighter_a_price": -110,
-          "fighter_b_price": -110
+          "last_update": "2026-04-15T07:44:46Z",
+          "fighter_a_price": -135,
+          "fighter_b_price": 115
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-04-15T07:44:50Z",
+          "fighter_a_price": -130,
+          "fighter_b_price": 110
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-04-15T07:45:11Z",
+          "fighter_a_price": -130,
+          "fighter_b_price": 102
+        }
+      ]
+    },
+    "talita alencar-vs-julia polastri": {
+      "fighter_a": "TALITA ALENCAR",
+      "fighter_b": "JULIA POLASTRI",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-15T07:44:46Z",
+          "fighter_a_price": 180,
+          "fighter_b_price": -210
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-04-15T07:44:50Z",
+          "fighter_a_price": 180,
+          "fighter_b_price": -218
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-04-15T07:45:11Z",
+          "fighter_a_price": 180,
+          "fighter_b_price": -235
+        }
+      ]
+    },
+    "rodolfo vieira-vs-eric mcconico": {
+      "fighter_a": "RODOLFO VIEIRA",
+      "fighter_b": "ERIC MCCONICO",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-15T07:44:46Z",
+          "fighter_a_price": -251,
+          "fighter_b_price": 211
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-04-15T07:45:11Z",
+          "fighter_a_price": -265,
+          "fighter_b_price": 200
+        }
+      ]
+    },
+    "jafel filho-vs-lucas rocha": {
+      "fighter_a": "JAFEL FILHO",
+      "fighter_b": "LUCAS ROCHA",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-15T07:44:46Z",
+          "fighter_a_price": -300,
+          "fighter_b_price": 250
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-04-15T07:44:50Z",
+          "fighter_a_price": -305,
+          "fighter_b_price": 245
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-04-15T07:45:11Z",
+          "fighter_a_price": -330,
+          "fighter_b_price": 240
         }
       ]
     },
@@ -151,9 +275,21 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-04-13T08:02:33Z",
+          "last_update": "2026-04-15T07:44:46Z",
           "fighter_a_price": 290,
           "fighter_b_price": -355
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-04-15T07:44:50Z",
+          "fighter_a_price": 285,
+          "fighter_b_price": -360
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-04-15T07:45:11Z",
+          "fighter_a_price": 300,
+          "fighter_b_price": -430
         }
       ]
     },
@@ -163,9 +299,21 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-04-13T08:02:33Z",
+          "last_update": "2026-04-15T07:44:46Z",
           "fighter_a_price": -199,
           "fighter_b_price": 174
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-04-15T07:44:50Z",
+          "fighter_a_price": -198,
+          "fighter_b_price": 164
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-04-15T07:45:11Z",
+          "fighter_a_price": -215,
+          "fighter_b_price": 164
         }
       ]
     }
