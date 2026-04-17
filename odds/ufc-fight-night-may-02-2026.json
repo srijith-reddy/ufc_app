@@ -2,7 +2,7 @@
   "event": "ufc-fight-night-may-02-2026",
   "event_id": "ufc-fight-night-may-02-2026",
   "event_number": null,
-  "scraped_at": "2026-04-16T07:45:49.485166",
+  "scraped_at": "2026-04-17T07:46:45.859371",
   "source": "https://the-odds-api.com",
   "odds": {
     "jack della maddalena": [
@@ -21,19 +21,19 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-04-16T07:45:32Z",
+          "last_update": "2026-04-17T07:45:58Z",
           "fighter_a_price": -115,
           "fighter_b_price": -105
         },
         {
           "sportsbook": "DraftKings",
-          "last_update": "2026-04-16T07:44:48Z",
+          "last_update": "2026-04-17T07:46:25Z",
           "fighter_a_price": -115,
           "fighter_b_price": -105
         },
         {
           "sportsbook": "FanDuel",
-          "last_update": "2026-04-16T07:45:36Z",
+          "last_update": "2026-04-17T07:46:24Z",
           "fighter_a_price": -120,
           "fighter_b_price": -106
         }
