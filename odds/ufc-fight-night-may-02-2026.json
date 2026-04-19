@@ -2,16 +2,16 @@
   "event": "ufc-fight-night-may-02-2026",
   "event_id": "ufc-fight-night-may-02-2026",
   "event_number": null,
-  "scraped_at": "2026-04-18T07:07:39.133524",
+  "scraped_at": "2026-04-19T07:19:29.326111",
   "source": "https://the-odds-api.com",
   "odds": {
     "jack della maddalena": [
       -120,
-      -115
+      -110
     ],
     "carlos prates": [
-      -106,
-      -105
+      -110,
+      -106
     ]
   },
   "books": {
@@ -21,19 +21,19 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-04-18T07:07:30Z",
-          "fighter_a_price": -115,
-          "fighter_b_price": -105
+          "last_update": "2026-04-19T07:18:38Z",
+          "fighter_a_price": -110,
+          "fighter_b_price": -110
         },
         {
           "sportsbook": "DraftKings",
-          "last_update": "2026-04-18T07:07:26Z",
-          "fighter_a_price": -115,
-          "fighter_b_price": -105
+          "last_update": "2026-04-19T07:19:25Z",
+          "fighter_a_price": -110,
+          "fighter_b_price": -110
         },
         {
           "sportsbook": "FanDuel",
-          "last_update": "2026-04-18T07:07:37Z",
+          "last_update": "2026-04-19T07:19:14Z",
           "fighter_a_price": -120,
           "fighter_b_price": -106
         }
