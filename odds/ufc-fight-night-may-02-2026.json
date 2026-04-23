@@ -2,16 +2,67 @@
   "event": "ufc-fight-night-may-02-2026",
   "event_id": "ufc-fight-night-may-02-2026",
   "event_number": null,
-  "scraped_at": "2026-04-22T07:47:04.060062",
+  "scraped_at": "2026-04-23T07:52:14.203453",
   "source": "https://the-odds-api.com",
   "odds": {
     "jack della maddalena": [
       -120,
-      -115
+      -118,
+      -110
     ],
     "carlos prates": [
+      -120,
+      -110,
       -106,
-      -105
+      -102
+    ],
+    "beneil dariush": [
+      375
+    ],
+    "quillan salkilld": [
+      -500
+    ],
+    "shamil gaziev": [
+      135
+    ],
+    "brando pericic": [
+      -155
+    ],
+    "cam rowston": [
+      -260
+    ],
+    "robert bryczek": [
+      220
+    ],
+    "junior tafa": [
+      -185
+    ],
+    "kevin christian": [
+      160
+    ],
+    "jacob malkoun": [
+      -800
+    ],
+    "gerald meerschaert": [
+      550
+    ],
+    "colby thicknesse": [
+      -153
+    ],
+    "vince morales": [
+      133
+    ],
+    "jonathan micallef": [
+      -285
+    ],
+    "themba gorimbo": [
+      245
+    ],
+    "dom mar fan": [
+      143
+    ],
+    "kody steele": [
+      -163
     ]
   },
   "books": {
@@ -21,27 +72,147 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-04-22T07:46:07Z",
-          "fighter_a_price": -115,
-          "fighter_b_price": -105
+          "last_update": "2026-04-23T07:51:09Z",
+          "fighter_a_price": -110,
+          "fighter_b_price": -110
         },
         {
           "sportsbook": "DraftKings",
-          "last_update": "2026-04-22T07:46:03Z",
-          "fighter_a_price": -115,
-          "fighter_b_price": -105
+          "last_update": "2026-04-23T07:49:59Z",
+          "fighter_a_price": -118,
+          "fighter_b_price": -102
         },
         {
           "sportsbook": "FanDuel",
-          "last_update": "2026-04-22T07:46:54Z",
+          "last_update": "2026-04-23T07:51:41Z",
           "fighter_a_price": -120,
           "fighter_b_price": -106
         },
         {
           "sportsbook": "BetUS",
-          "last_update": "2026-04-22T07:46:43Z",
-          "fighter_a_price": -115,
-          "fighter_b_price": -105
+          "last_update": "2026-04-23T07:51:41Z",
+          "fighter_a_price": -110,
+          "fighter_b_price": -110
+        },
+        {
+          "sportsbook": "Bally Bet",
+          "last_update": "2026-04-23T07:51:41Z",
+          "fighter_a_price": -110,
+          "fighter_b_price": -120
+        },
+        {
+          "sportsbook": "betPARX",
+          "last_update": "2026-04-23T07:51:55Z",
+          "fighter_a_price": -110,
+          "fighter_b_price": -120
+        },
+        {
+          "sportsbook": "BetRivers",
+          "last_update": "2026-04-23T07:51:55Z",
+          "fighter_a_price": -110,
+          "fighter_b_price": -120
+        },
+        {
+          "sportsbook": "Hard Rock Bet",
+          "last_update": "2026-04-23T07:51:54Z",
+          "fighter_a_price": -110,
+          "fighter_b_price": -120
+        }
+      ]
+    },
+    "beneil dariush-vs-quillan salkilld": {
+      "fighter_a": "BENEIL DARIUSH",
+      "fighter_b": "QUILLAN SALKILLD",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-23T07:51:09Z",
+          "fighter_a_price": 375,
+          "fighter_b_price": -500
+        }
+      ]
+    },
+    "shamil gaziev-vs-brando pericic": {
+      "fighter_a": "SHAMIL GAZIEV",
+      "fighter_b": "BRANDO PERI\u010cI\u0106",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-23T07:51:09Z",
+          "fighter_a_price": 135,
+          "fighter_b_price": -155
+        }
+      ]
+    },
+    "cam rowston-vs-robert bryczek": {
+      "fighter_a": "CAM ROWSTON",
+      "fighter_b": "ROBERT BRYCZEK",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-23T07:51:09Z",
+          "fighter_a_price": -260,
+          "fighter_b_price": 220
+        }
+      ]
+    },
+    "junior tafa-vs-kevin christian": {
+      "fighter_a": "JUNIOR TAFA",
+      "fighter_b": "KEVIN CHRISTIAN",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-23T07:51:09Z",
+          "fighter_a_price": -185,
+          "fighter_b_price": 160
+        }
+      ]
+    },
+    "jacob malkoun-vs-gerald meerschaert": {
+      "fighter_a": "JACOB MALKOUN",
+      "fighter_b": "GERALD MEERSCHAERT",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-23T07:51:09Z",
+          "fighter_a_price": -800,
+          "fighter_b_price": 550
+        }
+      ]
+    },
+    "colby thicknesse-vs-vince morales": {
+      "fighter_a": "COLBY THICKNESSE",
+      "fighter_b": "VINCE MORALES",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-23T07:51:09Z",
+          "fighter_a_price": -153,
+          "fighter_b_price": 133
+        }
+      ]
+    },
+    "jonathan micallef-vs-themba gorimbo": {
+      "fighter_a": "JONATHAN MICALLEF",
+      "fighter_b": "THEMBA GORIMBO",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-23T07:51:09Z",
+          "fighter_a_price": -285,
+          "fighter_b_price": 245
+        }
+      ]
+    },
+    "dom mar fan-vs-kody steele": {
+      "fighter_a": "DOM MAR FAN",
+      "fighter_b": "KODY STEELE",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-04-23T07:51:09Z",
+          "fighter_a_price": 143,
+          "fighter_b_price": -163
         }
       ]
     }
