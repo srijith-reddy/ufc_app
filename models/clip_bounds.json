@@ -1,1 +1,18 @@
-{"days_since_last_fight": {"lo": 0.0, "hi": 2318.932000000037}, "opp_days_since_last_fight": {"lo": 0.0, "hi": 2318.932000000037}, "fights_before": {"lo": 0.0, "hi": 29.819000000001324}, "opp_fights_before": {"lo": 0.0, "hi": 29.819000000001324}}
+{
+  "days_since_last_fight": {
+    "lo": 0.0,
+    "hi": 2324.0420000000086
+  },
+  "opp_days_since_last_fight": {
+    "lo": 0.0,
+    "hi": 2324.0420000000086
+  },
+  "fights_before": {
+    "lo": 0.0,
+    "hi": 30.0
+  },
+  "opp_fights_before": {
+    "lo": 0.0,
+    "hi": 30.0
+  }
+}
