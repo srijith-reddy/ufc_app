@@ -1,0 +1,209 @@
+{
+  "event": "ufc-fight-night-may-16-2026",
+  "event_id": "ufc-fight-night-may-16-2026",
+  "event_number": null,
+  "scraped_at": "2026-05-08T07:41:53.183214",
+  "source": "https://the-odds-api.com",
+  "odds": {
+    "arnold allen": [
+      -170
+    ],
+    "melquizael costa": [
+      145
+    ],
+    "dooho choi": [
+      115
+    ],
+    "daniel santos": [
+      -135
+    ],
+    "malcolm wellmaker": [
+      -210
+    ],
+    "juan diaz": [
+      180
+    ],
+    "modestas bukauskas": [
+      -130
+    ],
+    "rodolfo bellato": [
+      110
+    ],
+    "tuco tokkos": [
+      165
+    ],
+    "ivan erslan": [
+      -190
+    ],
+    "trey ogden": [
+      205
+    ],
+    "thomas gantt": [
+      -240
+    ],
+    "ketlen vieira": [
+      120
+    ],
+    "jacqueline cavalcanti": [
+      -140
+    ],
+    "cody brundage": [
+      170
+    ],
+    "andre petroski": [
+      -200
+    ],
+    "alice ardelean": [
+      -200
+    ],
+    "polyana viana": [
+      170
+    ],
+    "daniel barez": [
+      -115
+    ],
+    "luis gurule": [
+      -105
+    ],
+    "shauna bannon": [
+      155
+    ],
+    "nicolle caliari": [
+      -180
+    ]
+  },
+  "books": {
+    "arnold allen-vs-melquizael costa": {
+      "fighter_a": "ARNOLD ALLEN",
+      "fighter_b": "MELQUIZAEL COSTA",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-08T07:41:16Z",
+          "fighter_a_price": -170,
+          "fighter_b_price": 145
+        }
+      ]
+    },
+    "dooho choi-vs-daniel santos": {
+      "fighter_a": "DOOHO CHOI",
+      "fighter_b": "DANIEL SANTOS",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-08T07:41:16Z",
+          "fighter_a_price": 115,
+          "fighter_b_price": -135
+        }
+      ]
+    },
+    "malcolm wellmaker-vs-juan diaz": {
+      "fighter_a": "MALCOLM WELLMAKER",
+      "fighter_b": "JUAN DIAZ",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-08T07:41:16Z",
+          "fighter_a_price": -210,
+          "fighter_b_price": 180
+        }
+      ]
+    },
+    "modestas bukauskas-vs-rodolfo bellato": {
+      "fighter_a": "MODESTAS BUKAUSKAS",
+      "fighter_b": "RODOLFO BELLATO",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-08T07:41:16Z",
+          "fighter_a_price": -130,
+          "fighter_b_price": 110
+        }
+      ]
+    },
+    "tuco tokkos-vs-ivan erslan": {
+      "fighter_a": "TUCO TOKKOS",
+      "fighter_b": "IVAN ERSLAN",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-08T07:41:16Z",
+          "fighter_a_price": 165,
+          "fighter_b_price": -190
+        }
+      ]
+    },
+    "trey ogden-vs-thomas gantt": {
+      "fighter_a": "TREY OGDEN",
+      "fighter_b": "THOMAS GANTT",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-08T07:41:16Z",
+          "fighter_a_price": 205,
+          "fighter_b_price": -240
+        }
+      ]
+    },
+    "ketlen vieira-vs-jacqueline cavalcanti": {
+      "fighter_a": "KETLEN VIEIRA",
+      "fighter_b": "JACQUELINE CAVALCANTI",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-08T07:41:16Z",
+          "fighter_a_price": 120,
+          "fighter_b_price": -140
+        }
+      ]
+    },
+    "cody brundage-vs-andre petroski": {
+      "fighter_a": "CODY BRUNDAGE",
+      "fighter_b": "ANDRE PETROSKI",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-08T07:41:16Z",
+          "fighter_a_price": 170,
+          "fighter_b_price": -200
+        }
+      ]
+    },
+    "alice ardelean-vs-polyana viana": {
+      "fighter_a": "ALICE ARDELEAN",
+      "fighter_b": "POLYANA VIANA",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-08T07:41:16Z",
+          "fighter_a_price": -200,
+          "fighter_b_price": 170
+        }
+      ]
+    },
+    "daniel barez-vs-luis gurule": {
+      "fighter_a": "DANIEL BAREZ",
+      "fighter_b": "LUIS GURULE",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-08T07:41:16Z",
+          "fighter_a_price": -115,
+          "fighter_b_price": -105
+        }
+      ]
+    },
+    "shauna bannon-vs-nicolle caliari": {
+      "fighter_a": "SHAUNA BANNON",
+      "fighter_b": "NICOLLE CALIARI",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-08T07:41:16Z",
+          "fighter_a_price": 155,
+          "fighter_b_price": -180
+        }
+      ]
+    }
+  }
+}
