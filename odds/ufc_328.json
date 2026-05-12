@@ -2,14 +2,14 @@
   "event": 328,
   "event_id": "ufc-328",
   "event_number": 328,
-  "scraped_at": "2026-05-11T09:38:46.715109",
+  "scraped_at": "2026-05-12T08:39:30.369585",
   "source": "https://the-odds-api.com",
   "odds": {
     "khamzat chimaev": [
-      -185
+      -205
     ],
     "sean strickland": [
-      160
+      175
     ]
   },
   "books": {
@@ -19,9 +19,9 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-05-11T09:37:48Z",
-          "fighter_a_price": -185,
-          "fighter_b_price": 160
+          "last_update": "2026-05-12T08:38:45Z",
+          "fighter_a_price": -205,
+          "fighter_b_price": 175
         }
       ]
     }
