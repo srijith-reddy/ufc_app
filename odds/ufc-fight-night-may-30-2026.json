@@ -1,0 +1,101 @@
+{
+  "event": "ufc-fight-night-may-30-2026",
+  "event_id": "ufc-fight-night-may-30-2026",
+  "event_number": null,
+  "scraped_at": "2026-05-14T08:40:20.966630",
+  "source": "https://the-odds-api.com",
+  "odds": {
+    "song yadong": [
+      -410
+    ],
+    "deiveson figueiredo": [
+      310
+    ],
+    "zhang mingyang": [
+      -220
+    ],
+    "alonzo menifield": [
+      185
+    ],
+    "kai asakura": [
+      -300
+    ],
+    "cameron smotherman": [
+      250
+    ],
+    "muslim salikhov": [
+      205
+    ],
+    "jake matthews": [
+      -240
+    ],
+    "loma lookboonmee": [
+      130
+    ],
+    "jaqueline amorim": [
+      -150
+    ]
+  },
+  "books": {
+    "song yadong-vs-deiveson figueiredo": {
+      "fighter_a": "SONG YADONG",
+      "fighter_b": "DEIVESON FIGUEIREDO",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-14T08:39:39Z",
+          "fighter_a_price": -410,
+          "fighter_b_price": 310
+        }
+      ]
+    },
+    "zhang mingyang-vs-alonzo menifield": {
+      "fighter_a": "ZHANG MINGYANG",
+      "fighter_b": "ALONZO MENIFIELD",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-14T08:39:39Z",
+          "fighter_a_price": -220,
+          "fighter_b_price": 185
+        }
+      ]
+    },
+    "kai asakura-vs-cameron smotherman": {
+      "fighter_a": "KAI ASAKURA",
+      "fighter_b": "CAMERON SMOTHERMAN",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-14T08:39:39Z",
+          "fighter_a_price": -300,
+          "fighter_b_price": 250
+        }
+      ]
+    },
+    "muslim salikhov-vs-jake matthews": {
+      "fighter_a": "MUSLIM SALIKHOV",
+      "fighter_b": "JAKE MATTHEWS",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-14T08:39:39Z",
+          "fighter_a_price": 205,
+          "fighter_b_price": -240
+        }
+      ]
+    },
+    "loma lookboonmee-vs-jaqueline amorim": {
+      "fighter_a": "LOMA LOOKBOONMEE",
+      "fighter_b": "JAQUELINE AMORIM",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-14T08:39:39Z",
+          "fighter_a_price": 130,
+          "fighter_b_price": -150
+        }
+      ]
+    }
+  }
+}
