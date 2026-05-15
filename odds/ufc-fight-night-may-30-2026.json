@@ -2,38 +2,47 @@
   "event": "ufc-fight-night-may-30-2026",
   "event_id": "ufc-fight-night-may-30-2026",
   "event_number": null,
-  "scraped_at": "2026-05-14T08:40:20.966630",
+  "scraped_at": "2026-05-15T08:48:38.281113",
   "source": "https://the-odds-api.com",
   "odds": {
     "song yadong": [
       -410
     ],
     "deiveson figueiredo": [
-      310
+      310,
+      320
     ],
     "zhang mingyang": [
-      -220
+      -220,
+      -218
     ],
     "alonzo menifield": [
+      180,
       185
     ],
     "kai asakura": [
+      -305,
       -300
     ],
     "cameron smotherman": [
+      245,
       250
     ],
     "muslim salikhov": [
+      200,
       205
     ],
     "jake matthews": [
+      -245,
       -240
     ],
     "loma lookboonmee": [
+      124,
       130
     ],
     "jaqueline amorim": [
-      -150
+      -150,
+      -148
     ]
   },
   "books": {
@@ -43,9 +52,15 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-05-14T08:39:39Z",
+          "last_update": "2026-05-15T08:47:56Z",
           "fighter_a_price": -410,
           "fighter_b_price": 310
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-05-15T08:47:48Z",
+          "fighter_a_price": -410,
+          "fighter_b_price": 320
         }
       ]
     },
@@ -55,9 +70,15 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-05-14T08:39:39Z",
+          "last_update": "2026-05-15T08:47:56Z",
           "fighter_a_price": -220,
           "fighter_b_price": 185
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-05-15T08:47:48Z",
+          "fighter_a_price": -218,
+          "fighter_b_price": 180
         }
       ]
     },
@@ -67,9 +88,15 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-05-14T08:39:39Z",
+          "last_update": "2026-05-15T08:47:56Z",
           "fighter_a_price": -300,
           "fighter_b_price": 250
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-05-15T08:47:48Z",
+          "fighter_a_price": -305,
+          "fighter_b_price": 245
         }
       ]
     },
@@ -79,9 +106,15 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-05-14T08:39:39Z",
+          "last_update": "2026-05-15T08:47:56Z",
           "fighter_a_price": 205,
           "fighter_b_price": -240
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-05-15T08:47:48Z",
+          "fighter_a_price": 200,
+          "fighter_b_price": -245
         }
       ]
     },
@@ -91,9 +124,15 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-05-14T08:39:39Z",
+          "last_update": "2026-05-15T08:47:56Z",
           "fighter_a_price": 130,
           "fighter_b_price": -150
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-05-15T08:47:48Z",
+          "fighter_a_price": 124,
+          "fighter_b_price": -148
         }
       ]
     }
