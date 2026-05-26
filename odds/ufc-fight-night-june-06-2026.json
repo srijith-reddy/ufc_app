@@ -1,0 +1,155 @@
+{
+  "event": "ufc-fight-night-june-06-2026",
+  "event_id": "ufc-fight-night-june-06-2026",
+  "event_number": null,
+  "scraped_at": "2026-05-26T09:55:47.041718",
+  "source": "https://the-odds-api.com",
+  "odds": {
+    "belal muhammad": [
+      -130
+    ],
+    "gabriel bonfim": [
+      110
+    ],
+    "brendan allen": [
+      -240
+    ],
+    "edmen shahbazyan": [
+      205
+    ],
+    "bryce mitchell": [
+      -250
+    ],
+    "victor henry": [
+      210
+    ],
+    "imanol rodriguez": [
+      -1250
+    ],
+    "matt schnell": [
+      825
+    ],
+    "bruno silva": [
+      -120
+    ],
+    "edgar chairez": [
+      100
+    ],
+    "jordan leavitt": [
+      175
+    ],
+    "joanderson brito": [
+      -205
+    ],
+    "fares ziam": [
+      -250
+    ],
+    "tom nolan": [
+      210
+    ],
+    "priscila cachoeira": [
+      -105
+    ],
+    "chelsea chandler": [
+      -115
+    ]
+  },
+  "books": {
+    "belal muhammad-vs-gabriel bonfim": {
+      "fighter_a": "BELAL MUHAMMAD",
+      "fighter_b": "GABRIEL BONFIM",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-26T09:55:42Z",
+          "fighter_a_price": -130,
+          "fighter_b_price": 110
+        }
+      ]
+    },
+    "brendan allen-vs-edmen shahbazyan": {
+      "fighter_a": "BRENDAN ALLEN",
+      "fighter_b": "EDMEN SHAHBAZYAN",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-26T09:55:42Z",
+          "fighter_a_price": -240,
+          "fighter_b_price": 205
+        }
+      ]
+    },
+    "bryce mitchell-vs-victor henry": {
+      "fighter_a": "BRYCE MITCHELL",
+      "fighter_b": "VICTOR HENRY",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-26T09:55:42Z",
+          "fighter_a_price": -250,
+          "fighter_b_price": 210
+        }
+      ]
+    },
+    "imanol rodriguez-vs-matt schnell": {
+      "fighter_a": "IMANOL RODRIGUEZ",
+      "fighter_b": "MATT SCHNELL",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-26T09:55:42Z",
+          "fighter_a_price": -1250,
+          "fighter_b_price": 825
+        }
+      ]
+    },
+    "bruno silva-vs-edgar chairez": {
+      "fighter_a": "BRUNO SILVA",
+      "fighter_b": "EDGAR CHAIREZ",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-26T09:55:42Z",
+          "fighter_a_price": -120,
+          "fighter_b_price": 100
+        }
+      ]
+    },
+    "jordan leavitt-vs-joanderson brito": {
+      "fighter_a": "JORDAN LEAVITT",
+      "fighter_b": "JOANDERSON BRITO",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-26T09:55:42Z",
+          "fighter_a_price": 175,
+          "fighter_b_price": -205
+        }
+      ]
+    },
+    "fares ziam-vs-tom nolan": {
+      "fighter_a": "FAR\u00c8S ZIAM",
+      "fighter_b": "TOM NOLAN",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-26T09:55:42Z",
+          "fighter_a_price": -250,
+          "fighter_b_price": 210
+        }
+      ]
+    },
+    "priscila cachoeira-vs-chelsea chandler": {
+      "fighter_a": "PRISCILA CACHOEIRA",
+      "fighter_b": "CHELSEA CHANDLER",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-26T09:55:42Z",
+          "fighter_a_price": -105,
+          "fighter_b_price": -115
+        }
+      ]
+    }
+  }
+}
