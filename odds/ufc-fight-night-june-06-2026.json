@@ -2,61 +2,58 @@
   "event": "ufc-fight-night-june-06-2026",
   "event_id": "ufc-fight-night-june-06-2026",
   "event_number": null,
-  "scraped_at": "2026-05-28T10:00:53.417097",
+  "scraped_at": "2026-05-29T09:53:37.634032",
   "source": "https://the-odds-api.com",
   "odds": {
     "belal muhammad": [
       -156,
+      -142,
       -140
     ],
     "gabriel bonfim": [
+      118,
       120,
       122
     ],
     "brendan allen": [
       -245,
+      -230,
       -220
     ],
     "edmen shahbazyan": [
+      182,
       185,
-      186
-    ],
-    "bryce mitchell": [
-      -250,
-      -220
-    ],
-    "victor henry": [
-      185,
+      186,
       190
-    ],
-    "imanol rodriguez": [
-      -1400
-    ],
-    "matt schnell": [
-      680,
-      800
-    ],
-    "bruno silva": [
-      -132,
-      -127
-    ],
-    "edgar chairez": [
-      104,
-      107
-    ],
-    "jordan leavitt": [
-      150
-    ],
-    "joanderson brito": [
-      -194,
-      -175
     ],
     "fares ziam": [
       -320,
       -275
     ],
     "tom nolan": [
+      226,
       235
+    ],
+    "bryce mitchell": [
+      -250
+    ],
+    "victor henry": [
+      190
+    ],
+    "imanol rodriguez": [
+      -1400
+    ],
+    "matt schnell": [
+      680
+    ],
+    "bruno silva": [
+      -135,
+      -132
+    ],
+    "edgar chairez": [
+      104,
+      114,
+      115
     ],
     "priscila cachoeira": [
       -106,
@@ -66,11 +63,27 @@
       -125,
       -120
     ],
+    "jordan leavitt": [
+      146,
+      150
+    ],
+    "joanderson brito": [
+      -194,
+      -175
+    ],
     "jeisla chaves": [
       -400
     ],
     "yuneisy duben": [
-      300
+      300,
+      309
+    ],
+    "ketlen souza": [
+      -265
+    ],
+    "ariane carnelossi": [
+      218,
+      225
     ]
   },
   "books": {
@@ -80,15 +93,27 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-05-28T10:00:27Z",
+          "last_update": "2026-05-29T09:52:53Z",
           "fighter_a_price": -140,
           "fighter_b_price": 120
         },
         {
           "sportsbook": "FanDuel",
-          "last_update": "2026-05-28T10:00:33Z",
+          "last_update": "2026-05-29T09:52:58Z",
           "fighter_a_price": -156,
           "fighter_b_price": 122
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-05-29T09:52:59Z",
+          "fighter_a_price": -140,
+          "fighter_b_price": 118
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-05-29T09:53:00Z",
+          "fighter_a_price": -142,
+          "fighter_b_price": 120
         }
       ]
     },
@@ -98,15 +123,51 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-05-28T10:00:27Z",
+          "last_update": "2026-05-29T09:52:53Z",
           "fighter_a_price": -220,
           "fighter_b_price": 185
         },
         {
           "sportsbook": "FanDuel",
-          "last_update": "2026-05-28T10:00:33Z",
+          "last_update": "2026-05-29T09:52:58Z",
           "fighter_a_price": -245,
           "fighter_b_price": 186
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-05-29T09:52:59Z",
+          "fighter_a_price": -220,
+          "fighter_b_price": 182
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-05-29T09:53:00Z",
+          "fighter_a_price": -230,
+          "fighter_b_price": 190
+        }
+      ]
+    },
+    "fares ziam-vs-tom nolan": {
+      "fighter_a": "FAR\u00c8S ZIAM",
+      "fighter_b": "TOM NOLAN",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-29T09:52:53Z",
+          "fighter_a_price": -275,
+          "fighter_b_price": 235
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-05-29T09:52:58Z",
+          "fighter_a_price": -320,
+          "fighter_b_price": 235
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-05-29T09:52:59Z",
+          "fighter_a_price": -275,
+          "fighter_b_price": 226
         }
       ]
     },
@@ -115,14 +176,8 @@
       "fighter_b": "VICTOR HENRY",
       "quotes": [
         {
-          "sportsbook": "BetOnline.ag",
-          "last_update": "2026-05-28T10:00:27Z",
-          "fighter_a_price": -220,
-          "fighter_b_price": 185
-        },
-        {
           "sportsbook": "FanDuel",
-          "last_update": "2026-05-28T10:00:33Z",
+          "last_update": "2026-05-29T09:52:58Z",
           "fighter_a_price": -250,
           "fighter_b_price": 190
         }
@@ -133,14 +188,8 @@
       "fighter_b": "MATT SCHNELL",
       "quotes": [
         {
-          "sportsbook": "BetOnline.ag",
-          "last_update": "2026-05-28T10:00:27Z",
-          "fighter_a_price": -1400,
-          "fighter_b_price": 800
-        },
-        {
           "sportsbook": "FanDuel",
-          "last_update": "2026-05-28T10:00:33Z",
+          "last_update": "2026-05-29T09:52:58Z",
           "fighter_a_price": -1400,
           "fighter_b_price": 680
         }
@@ -152,51 +201,21 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-05-28T10:00:27Z",
-          "fighter_a_price": -127,
-          "fighter_b_price": 107
+          "last_update": "2026-05-29T09:52:53Z",
+          "fighter_a_price": -135,
+          "fighter_b_price": 115
         },
         {
           "sportsbook": "FanDuel",
-          "last_update": "2026-05-28T10:00:33Z",
+          "last_update": "2026-05-29T09:52:58Z",
           "fighter_a_price": -132,
           "fighter_b_price": 104
-        }
-      ]
-    },
-    "jordan leavitt-vs-joanderson brito": {
-      "fighter_a": "JORDAN LEAVITT",
-      "fighter_b": "JOANDERSON BRITO",
-      "quotes": [
-        {
-          "sportsbook": "BetOnline.ag",
-          "last_update": "2026-05-28T10:00:27Z",
-          "fighter_a_price": 150,
-          "fighter_b_price": -175
         },
         {
-          "sportsbook": "FanDuel",
-          "last_update": "2026-05-28T10:00:33Z",
-          "fighter_a_price": 150,
-          "fighter_b_price": -194
-        }
-      ]
-    },
-    "fares ziam-vs-tom nolan": {
-      "fighter_a": "FAR\u00c8S ZIAM",
-      "fighter_b": "TOM NOLAN",
-      "quotes": [
-        {
-          "sportsbook": "BetOnline.ag",
-          "last_update": "2026-05-28T10:00:27Z",
-          "fighter_a_price": -275,
-          "fighter_b_price": 235
-        },
-        {
-          "sportsbook": "FanDuel",
-          "last_update": "2026-05-28T10:00:33Z",
-          "fighter_a_price": -320,
-          "fighter_b_price": 235
+          "sportsbook": "BetUS",
+          "last_update": "2026-05-29T09:52:59Z",
+          "fighter_a_price": -135,
+          "fighter_b_price": 114
         }
       ]
     },
@@ -206,15 +225,45 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-05-28T10:00:27Z",
+          "last_update": "2026-05-29T09:52:53Z",
           "fighter_a_price": 105,
           "fighter_b_price": -125
         },
         {
           "sportsbook": "FanDuel",
-          "last_update": "2026-05-28T10:00:33Z",
+          "last_update": "2026-05-29T09:52:58Z",
           "fighter_a_price": -106,
           "fighter_b_price": -120
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-05-29T09:52:59Z",
+          "fighter_a_price": 105,
+          "fighter_b_price": -125
+        }
+      ]
+    },
+    "jordan leavitt-vs-joanderson brito": {
+      "fighter_a": "JORDAN LEAVITT",
+      "fighter_b": "JOANDERSON BRITO",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-29T09:52:53Z",
+          "fighter_a_price": 150,
+          "fighter_b_price": -175
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-05-29T09:52:58Z",
+          "fighter_a_price": 150,
+          "fighter_b_price": -194
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-05-29T09:52:59Z",
+          "fighter_a_price": 146,
+          "fighter_b_price": -175
         }
       ]
     },
@@ -224,9 +273,33 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-05-28T10:00:27Z",
+          "last_update": "2026-05-29T09:52:53Z",
           "fighter_a_price": -400,
           "fighter_b_price": 300
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-05-29T09:52:59Z",
+          "fighter_a_price": -400,
+          "fighter_b_price": 309
+        }
+      ]
+    },
+    "ketlen souza-vs-ariane carnelossi": {
+      "fighter_a": "KETLEN SOUZA",
+      "fighter_b": "ARIANE CARNELOSSI",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-05-29T09:52:53Z",
+          "fighter_a_price": -265,
+          "fighter_b_price": 225
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-05-29T09:52:59Z",
+          "fighter_a_price": -265,
+          "fighter_b_price": 218
         }
       ]
     }
