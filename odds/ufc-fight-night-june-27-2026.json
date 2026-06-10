@@ -1,0 +1,29 @@
+{
+  "event": "ufc-fight-night-june-27-2026",
+  "event_id": "ufc-fight-night-june-27-2026",
+  "event_number": null,
+  "scraped_at": "2026-06-10T09:59:00.450585",
+  "source": "https://the-odds-api.com",
+  "odds": {
+    "rafael fiziev": [
+      -135
+    ],
+    "manuel torres": [
+      114
+    ]
+  },
+  "books": {
+    "rafael fiziev-vs-manuel torres": {
+      "fighter_a": "RAFAEL FIZIEV",
+      "fighter_b": "MANUEL TORRES",
+      "quotes": [
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-06-10T09:58:06Z",
+          "fighter_a_price": -135,
+          "fighter_b_price": 114
+        }
+      ]
+    }
+  }
+}

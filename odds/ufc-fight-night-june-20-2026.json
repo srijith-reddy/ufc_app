@@ -1,0 +1,116 @@
+{
+  "event": "ufc-fight-night-june-20-2026",
+  "event_id": "ufc-fight-night-june-20-2026",
+  "event_number": null,
+  "scraped_at": "2026-06-10T09:59:00.452009",
+  "source": "https://the-odds-api.com",
+  "odds": {
+    "manel kape": [
+      -220,
+      -192
+    ],
+    "kyoji horiguchi": [
+      160,
+      182,
+      185
+    ],
+    "ion cutelaba": [
+      235
+    ],
+    "navajo stirling": [
+      -295
+    ],
+    "hyder amil": [
+      130
+    ],
+    "christian rodriguez": [
+      -150
+    ],
+    "allan nascimento": [
+      -200
+    ],
+    "mitch raposo": [
+      170
+    ],
+    "karol rosa": [
+      -170
+    ],
+    "luana santos": [
+      145
+    ]
+  },
+  "books": {
+    "manel kape-vs-kyoji horiguchi": {
+      "fighter_a": "MANEL KAPE",
+      "fighter_b": "KYOJI HORIGUCHI",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-06-10T09:58:47Z",
+          "fighter_a_price": -220,
+          "fighter_b_price": 185
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-06-10T09:58:06Z",
+          "fighter_a_price": -192,
+          "fighter_b_price": 160
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-06-10T09:58:06Z",
+          "fighter_a_price": -220,
+          "fighter_b_price": 182
+        }
+      ]
+    },
+    "ion cutelaba-vs-navajo stirling": {
+      "fighter_a": "ION CUTELABA",
+      "fighter_b": "NAVAJO STIRLING",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-06-10T09:58:47Z",
+          "fighter_a_price": 235,
+          "fighter_b_price": -295
+        }
+      ]
+    },
+    "hyder amil-vs-christian rodriguez": {
+      "fighter_a": "HYDER AMIL",
+      "fighter_b": "CHRISTIAN RODRIGUEZ",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-06-10T09:58:47Z",
+          "fighter_a_price": 130,
+          "fighter_b_price": -150
+        }
+      ]
+    },
+    "allan nascimento-vs-mitch raposo": {
+      "fighter_a": "ALLAN NASCIMENTO",
+      "fighter_b": "MITCH RAPOSO",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-06-10T09:58:47Z",
+          "fighter_a_price": -200,
+          "fighter_b_price": 170
+        }
+      ]
+    },
+    "karol rosa-vs-luana santos": {
+      "fighter_a": "KAROL ROSA",
+      "fighter_b": "LUANA SANTOS",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-06-10T09:58:47Z",
+          "fighter_a_price": -170,
+          "fighter_b_price": 145
+        }
+      ]
+    }
+  }
+}
