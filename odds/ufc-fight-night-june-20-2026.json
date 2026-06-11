@@ -2,17 +2,16 @@
   "event": "ufc-fight-night-june-20-2026",
   "event_id": "ufc-fight-night-june-20-2026",
   "event_number": null,
-  "scraped_at": "2026-06-10T09:59:00.452009",
+  "scraped_at": "2026-06-11T10:23:21.293084",
   "source": "https://the-odds-api.com",
   "odds": {
     "manel kape": [
-      -220,
-      -192
+      -192,
+      -185
     ],
     "kyoji horiguchi": [
-      160,
-      182,
-      185
+      154,
+      160
     ],
     "ion cutelaba": [
       235
@@ -26,6 +25,18 @@
     "christian rodriguez": [
       -150
     ],
+    "andre lima": [
+      -700
+    ],
+    "kevin borjas": [
+      500
+    ],
+    "melsik baghdasaryan": [
+      240
+    ],
+    "murtazali magomedov": [
+      -280
+    ],
     "allan nascimento": [
       -200
     ],
@@ -33,10 +44,10 @@
       170
     ],
     "karol rosa": [
-      -170
+      -140
     ],
     "luana santos": [
-      145
+      120
     ]
   },
   "books": {
@@ -46,21 +57,21 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-06-10T09:58:47Z",
-          "fighter_a_price": -220,
-          "fighter_b_price": 185
+          "last_update": "2026-06-11T10:21:41Z",
+          "fighter_a_price": -185,
+          "fighter_b_price": 160
         },
         {
           "sportsbook": "DraftKings",
-          "last_update": "2026-06-10T09:58:06Z",
+          "last_update": "2026-06-11T10:21:32Z",
           "fighter_a_price": -192,
           "fighter_b_price": 160
         },
         {
           "sportsbook": "BetUS",
-          "last_update": "2026-06-10T09:58:06Z",
-          "fighter_a_price": -220,
-          "fighter_b_price": 182
+          "last_update": "2026-06-11T10:22:10Z",
+          "fighter_a_price": -185,
+          "fighter_b_price": 154
         }
       ]
     },
@@ -70,7 +81,7 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-06-10T09:58:47Z",
+          "last_update": "2026-06-11T10:21:41Z",
           "fighter_a_price": 235,
           "fighter_b_price": -295
         }
@@ -82,9 +93,33 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-06-10T09:58:47Z",
+          "last_update": "2026-06-11T10:21:41Z",
           "fighter_a_price": 130,
           "fighter_b_price": -150
+        }
+      ]
+    },
+    "andre lima-vs-kevin borjas": {
+      "fighter_a": "ANDRE LIMA",
+      "fighter_b": "KEVIN BORJAS",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-06-11T10:21:41Z",
+          "fighter_a_price": -700,
+          "fighter_b_price": 500
+        }
+      ]
+    },
+    "melsik baghdasaryan-vs-murtazali magomedov": {
+      "fighter_a": "MELSIK BAGHDASARYAN",
+      "fighter_b": "MURTAZALI MAGOMEDOV",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-06-11T10:21:41Z",
+          "fighter_a_price": 240,
+          "fighter_b_price": -280
         }
       ]
     },
@@ -94,7 +129,7 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-06-10T09:58:47Z",
+          "last_update": "2026-06-11T10:21:41Z",
           "fighter_a_price": -200,
           "fighter_b_price": 170
         }
@@ -106,9 +141,9 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-06-10T09:58:47Z",
-          "fighter_a_price": -170,
-          "fighter_b_price": 145
+          "last_update": "2026-06-11T10:21:41Z",
+          "fighter_a_price": -140,
+          "fighter_b_price": 120
         }
       ]
     }
