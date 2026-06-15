@@ -2,7 +2,7 @@
   "event": "ufc-fight-night-june-27-2026",
   "event_id": "ufc-fight-night-june-27-2026",
   "event_number": null,
-  "scraped_at": "2026-06-14T09:33:50.126122",
+  "scraped_at": "2026-06-15T12:12:20.548090",
   "source": "https://the-odds-api.com",
   "odds": {
     "rafael fiziev": [
@@ -19,7 +19,7 @@
       "quotes": [
         {
           "sportsbook": "DraftKings",
-          "last_update": "2026-06-14T09:32:41Z",
+          "last_update": "2026-06-15T12:11:12Z",
           "fighter_a_price": -135,
           "fighter_b_price": 114
         }
