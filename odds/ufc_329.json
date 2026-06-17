@@ -1,0 +1,166 @@
+{
+  "event": 329,
+  "event_id": "ufc-329",
+  "event_number": 329,
+  "scraped_at": "2026-06-17T10:54:38.984175",
+  "source": "https://the-odds-api.com",
+  "odds": {
+    "conor mcgregor": [
+      230,
+      240
+    ],
+    "max holloway": [
+      -310,
+      -300,
+      -270
+    ],
+    "cory sandhagen": [
+      -164,
+      -155,
+      -148,
+      -145
+    ],
+    "mario bautista": [
+      124,
+      125,
+      128
+    ],
+    "brandon royval": [
+      140,
+      145,
+      164,
+      170
+    ],
+    "loneer kavanagh": [
+      -200,
+      -198,
+      -180
+    ],
+    "gable steveson": [
+      -2800,
+      -2500,
+      -2000
+    ],
+    "elisha ellison": [
+      900,
+      1000,
+      1300
+    ]
+  },
+  "books": {
+    "conor mcgregor-vs-max holloway": {
+      "fighter_a": "CONOR MCGREGOR",
+      "fighter_b": "MAX HOLLOWAY",
+      "quotes": [
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-06-17T10:54:15Z",
+          "fighter_a_price": 230,
+          "fighter_b_price": -310
+        },
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-06-17T10:51:30Z",
+          "fighter_a_price": 230,
+          "fighter_b_price": -270
+        },
+        {
+          "sportsbook": "Hard Rock Bet",
+          "last_update": "2026-06-17T10:54:03Z",
+          "fighter_a_price": 240,
+          "fighter_b_price": -300
+        }
+      ]
+    },
+    "cory sandhagen-vs-mario bautista": {
+      "fighter_a": "CORY SANDHAGEN",
+      "fighter_b": "MARIO BAUTISTA",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-06-17T10:51:30Z",
+          "fighter_a_price": -145,
+          "fighter_b_price": 125
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-06-17T10:53:37Z",
+          "fighter_a_price": -148,
+          "fighter_b_price": 124
+        },
+        {
+          "sportsbook": "Hard Rock Bet",
+          "last_update": "2026-06-17T10:54:03Z",
+          "fighter_a_price": -155,
+          "fighter_b_price": 125
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-06-17T10:54:15Z",
+          "fighter_a_price": -164,
+          "fighter_b_price": 128
+        }
+      ]
+    },
+    "brandon royval-vs-loneer kavanagh": {
+      "fighter_a": "BRANDON ROYVAL",
+      "fighter_b": "LONE\u2019ER KAVANAGH",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-06-17T10:51:30Z",
+          "fighter_a_price": 170,
+          "fighter_b_price": -200
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-06-17T10:53:37Z",
+          "fighter_a_price": 164,
+          "fighter_b_price": -198
+        },
+        {
+          "sportsbook": "Hard Rock Bet",
+          "last_update": "2026-06-17T10:54:03Z",
+          "fighter_a_price": 145,
+          "fighter_b_price": -180
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-06-17T10:54:15Z",
+          "fighter_a_price": 140,
+          "fighter_b_price": -180
+        }
+      ]
+    },
+    "gable steveson-vs-elisha ellison": {
+      "fighter_a": "GABLE STEVESON",
+      "fighter_b": "ELISHA ELLISON",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-06-17T10:51:30Z",
+          "fighter_a_price": -2800,
+          "fighter_b_price": 1300
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-06-17T10:53:37Z",
+          "fighter_a_price": -2800,
+          "fighter_b_price": 1300
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-06-17T10:54:15Z",
+          "fighter_a_price": -2500,
+          "fighter_b_price": 900
+        },
+        {
+          "sportsbook": "Hard Rock Bet",
+          "last_update": "2026-06-17T10:54:03Z",
+          "fighter_a_price": -2000,
+          "fighter_b_price": 1000
+        }
+      ]
+    }
+  }
+}
