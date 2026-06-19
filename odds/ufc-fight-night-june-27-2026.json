@@ -2,14 +2,46 @@
   "event": "ufc-fight-night-june-27-2026",
   "event_id": "ufc-fight-night-june-27-2026",
   "event_number": null,
-  "scraped_at": "2026-06-18T10:20:11.197059",
+  "scraped_at": "2026-06-19T10:25:30.771680",
   "source": "https://the-odds-api.com",
   "odds": {
     "rafael fiziev": [
-      -135
+      -135,
+      -115
     ],
     "manuel torres": [
+      -105,
       114
+    ],
+    "shara magomedov": [
+      -310
+    ],
+    "michel pereira": [
+      260
+    ],
+    "nazim sadykhov": [
+      -245
+    ],
+    "matheus camilo": [
+      210
+    ],
+    "ikram aliskerov": [
+      -220
+    ],
+    "brunno ferreira": [
+      185
+    ],
+    "farman hasanov": [
+      -155
+    ],
+    "eric nolan": [
+      135
+    ],
+    "bekzat almakhan": [
+      130
+    ],
+    "jean matsumoto": [
+      -150
     ]
   },
   "books": {
@@ -19,9 +51,75 @@
       "quotes": [
         {
           "sportsbook": "DraftKings",
-          "last_update": "2026-06-18T10:18:13Z",
+          "last_update": "2026-06-19T10:25:21Z",
           "fighter_a_price": -135,
           "fighter_b_price": 114
+        },
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-06-19T10:22:10Z",
+          "fighter_a_price": -115,
+          "fighter_b_price": -105
+        }
+      ]
+    },
+    "shara magomedov-vs-michel pereira": {
+      "fighter_a": "SHARA MAGOMEDOV",
+      "fighter_b": "MICHEL PEREIRA",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-06-19T10:22:10Z",
+          "fighter_a_price": -310,
+          "fighter_b_price": 260
+        }
+      ]
+    },
+    "nazim sadykhov-vs-matheus camilo": {
+      "fighter_a": "NAZIM SADYKHOV",
+      "fighter_b": "MATHEUS CAMILO",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-06-19T10:22:10Z",
+          "fighter_a_price": -245,
+          "fighter_b_price": 210
+        }
+      ]
+    },
+    "ikram aliskerov-vs-brunno ferreira": {
+      "fighter_a": "IKRAM ALISKEROV",
+      "fighter_b": "BRUNNO FERREIRA",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-06-19T10:22:10Z",
+          "fighter_a_price": -220,
+          "fighter_b_price": 185
+        }
+      ]
+    },
+    "farman hasanov-vs-eric nolan": {
+      "fighter_a": "FARMAN HASANOV",
+      "fighter_b": "ERIC NOLAN",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-06-19T10:22:10Z",
+          "fighter_a_price": -155,
+          "fighter_b_price": 135
+        }
+      ]
+    },
+    "bekzat almakhan-vs-jean matsumoto": {
+      "fighter_a": "BEKZAT ALMAKHAN",
+      "fighter_b": "JEAN MATSUMOTO",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-06-19T10:22:10Z",
+          "fighter_a_price": 130,
+          "fighter_b_price": -150
         }
       ]
     }
