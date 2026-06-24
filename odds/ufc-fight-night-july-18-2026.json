@@ -2,14 +2,16 @@
   "event": "ufc-fight-night-july-18-2026",
   "event_id": "ufc-fight-night-july-18-2026",
   "event_number": null,
-  "scraped_at": "2026-06-23T09:37:38.441079",
+  "scraped_at": "2026-06-24T09:28:16.450674",
   "source": "https://the-odds-api.com",
   "odds": {
     "dricus du plessis": [
+      -375,
       -350,
       -340
     ],
     "kamaru usman": [
+      260,
       270,
       285
     ]
@@ -21,15 +23,21 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-06-23T09:37:00Z",
+          "last_update": "2026-06-24T09:26:37Z",
           "fighter_a_price": -350,
           "fighter_b_price": 285
         },
         {
           "sportsbook": "DraftKings",
-          "last_update": "2026-06-23T09:35:46Z",
+          "last_update": "2026-06-24T09:28:06Z",
           "fighter_a_price": -340,
           "fighter_b_price": 270
+        },
+        {
+          "sportsbook": "BetMGM",
+          "last_update": "2026-06-24T09:27:06Z",
+          "fighter_a_price": -375,
+          "fighter_b_price": 260
         }
       ]
     }
