@@ -2,20 +2,20 @@
   "event": "ufc-fight-night-july-18-2026",
   "event_id": "ufc-fight-night-july-18-2026",
   "event_number": null,
-  "scraped_at": "2026-06-30T09:34:23.002609",
+  "scraped_at": "2026-07-01T09:45:37.927970",
   "source": "https://the-odds-api.com",
   "odds": {
     "dricus du plessis": [
       -370,
-      -340,
       -335,
       -325,
       -315
     ],
     "kamaru usman": [
       250,
-      265,
-      270
+      258,
+      260,
+      265
     ]
   },
   "books": {
@@ -25,39 +25,45 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-06-30T09:33:23Z",
+          "last_update": "2026-07-01T09:44:05Z",
           "fighter_a_price": -315,
           "fighter_b_price": 265
         },
         {
           "sportsbook": "DraftKings",
-          "last_update": "2026-06-30T09:34:14Z",
-          "fighter_a_price": -340,
-          "fighter_b_price": 270
+          "last_update": "2026-07-01T09:45:09Z",
+          "fighter_a_price": -325,
+          "fighter_b_price": 260
         },
         {
           "sportsbook": "betPARX",
-          "last_update": "2026-06-30T09:34:14Z",
+          "last_update": "2026-07-01T09:43:37Z",
           "fighter_a_price": -335,
           "fighter_b_price": 250
         },
         {
           "sportsbook": "Bally Bet",
-          "last_update": "2026-06-30T09:34:15Z",
+          "last_update": "2026-07-01T09:44:34Z",
           "fighter_a_price": -335,
           "fighter_b_price": 250
         },
         {
           "sportsbook": "FanDuel",
-          "last_update": "2026-06-30T09:34:18Z",
+          "last_update": "2026-07-01T09:45:10Z",
           "fighter_a_price": -370,
           "fighter_b_price": 265
         },
         {
           "sportsbook": "Hard Rock Bet",
-          "last_update": "2026-06-30T09:33:28Z",
+          "last_update": "2026-07-01T09:45:21Z",
           "fighter_a_price": -325,
           "fighter_b_price": 250
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-07-01T09:44:33Z",
+          "fighter_a_price": -315,
+          "fighter_b_price": 258
         }
       ]
     }
