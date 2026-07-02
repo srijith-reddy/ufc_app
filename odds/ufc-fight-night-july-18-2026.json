@@ -2,7 +2,7 @@
   "event": "ufc-fight-night-july-18-2026",
   "event_id": "ufc-fight-night-july-18-2026",
   "event_number": null,
-  "scraped_at": "2026-07-01T09:45:37.927970",
+  "scraped_at": "2026-07-02T08:54:58.946154",
   "source": "https://the-odds-api.com",
   "odds": {
     "dricus du plessis": [
@@ -25,43 +25,43 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-07-01T09:44:05Z",
+          "last_update": "2026-07-02T08:54:55Z",
           "fighter_a_price": -315,
           "fighter_b_price": 265
         },
         {
           "sportsbook": "DraftKings",
-          "last_update": "2026-07-01T09:45:09Z",
+          "last_update": "2026-07-02T08:54:32Z",
           "fighter_a_price": -325,
           "fighter_b_price": 260
         },
         {
           "sportsbook": "betPARX",
-          "last_update": "2026-07-01T09:43:37Z",
+          "last_update": "2026-07-02T08:53:57Z",
           "fighter_a_price": -335,
           "fighter_b_price": 250
         },
         {
           "sportsbook": "Bally Bet",
-          "last_update": "2026-07-01T09:44:34Z",
+          "last_update": "2026-07-02T08:54:20Z",
           "fighter_a_price": -335,
           "fighter_b_price": 250
         },
         {
           "sportsbook": "FanDuel",
-          "last_update": "2026-07-01T09:45:10Z",
+          "last_update": "2026-07-02T08:54:56Z",
           "fighter_a_price": -370,
           "fighter_b_price": 265
         },
         {
           "sportsbook": "Hard Rock Bet",
-          "last_update": "2026-07-01T09:45:21Z",
+          "last_update": "2026-07-02T08:54:44Z",
           "fighter_a_price": -325,
           "fighter_b_price": 250
         },
         {
           "sportsbook": "BetUS",
-          "last_update": "2026-07-01T09:44:33Z",
+          "last_update": "2026-07-02T08:54:20Z",
           "fighter_a_price": -315,
           "fighter_b_price": 258
         }
