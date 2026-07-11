@@ -2,7 +2,7 @@
   "event": "ufc-freedom-250",
   "event_id": "ufc-freedom-250",
   "event_number": null,
-  "scraped_at": "2026-07-10T09:33:36.148111",
+  "scraped_at": "2026-07-11T07:54:39.884843",
   "source": "https://the-odds-api.com",
   "odds": {
     "ilia topuria": [
@@ -19,7 +19,7 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-07-10T09:32:51Z",
+          "last_update": "2026-07-11T07:54:00Z",
           "fighter_a_price": -250,
           "fighter_b_price": 210
         }
