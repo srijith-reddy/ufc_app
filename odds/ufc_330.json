@@ -1,0 +1,73 @@
+{
+  "event": 330,
+  "event_id": "ufc-330",
+  "event_number": 330,
+  "scraped_at": "2026-08-02T08:23:06.572323",
+  "source": "https://the-odds-api.com",
+  "odds": {
+    "mackenzie dern": [
+      -265,
+      -225,
+      -218,
+      -205,
+      -200
+    ],
+    "gillian robertson": [
+      163,
+      165,
+      180,
+      189,
+      200
+    ]
+  },
+  "books": {
+    "mackenzie dern-vs-gillian robertson": {
+      "fighter_a": "MACKENZIE DERN",
+      "fighter_b": "GILLIAN ROBERTSON",
+      "quotes": [
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-08-02T08:22:19Z",
+          "fighter_a_price": -218,
+          "fighter_b_price": 180
+        },
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-08-02T08:23:02Z",
+          "fighter_a_price": -225,
+          "fighter_b_price": 189
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-08-02T08:22:58Z",
+          "fighter_a_price": -265,
+          "fighter_b_price": 200
+        },
+        {
+          "sportsbook": "Hard Rock Bet",
+          "last_update": "2026-08-02T08:22:18Z",
+          "fighter_a_price": -200,
+          "fighter_b_price": 165
+        },
+        {
+          "sportsbook": "betPARX",
+          "last_update": "2026-08-02T08:22:08Z",
+          "fighter_a_price": -205,
+          "fighter_b_price": 163
+        },
+        {
+          "sportsbook": "Bally Bet",
+          "last_update": "2026-08-02T08:22:08Z",
+          "fighter_a_price": -205,
+          "fighter_b_price": 163
+        },
+        {
+          "sportsbook": "BetRivers",
+          "last_update": "2026-08-02T08:22:09Z",
+          "fighter_a_price": -205,
+          "fighter_b_price": 163
+        }
+      ]
+    }
+  }
+}
