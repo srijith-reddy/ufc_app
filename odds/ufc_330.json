@@ -2,20 +2,20 @@
   "event": 330,
   "event_id": "ufc-330",
   "event_number": 330,
-  "scraped_at": "2026-08-03T09:42:20.347759",
+  "scraped_at": "2026-08-04T08:35:00.420895",
   "source": "https://the-odds-api.com",
   "odds": {
     "mackenzie dern": [
       -265,
+      -240,
       -225,
-      -218,
-      -215,
-      -210
+      -218
     ],
     "gillian robertson": [
-      170,
       180,
+      188,
       189,
+      190,
       200
     ]
   },
@@ -26,45 +26,45 @@
       "quotes": [
         {
           "sportsbook": "DraftKings",
-          "last_update": "2026-08-03T09:42:15Z",
+          "last_update": "2026-08-04T08:34:24Z",
           "fighter_a_price": -218,
           "fighter_b_price": 180
         },
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-08-03T09:42:18Z",
+          "last_update": "2026-08-04T08:34:18Z",
           "fighter_a_price": -225,
           "fighter_b_price": 189
         },
         {
           "sportsbook": "FanDuel",
-          "last_update": "2026-08-03T09:41:46Z",
+          "last_update": "2026-08-04T08:34:55Z",
           "fighter_a_price": -265,
           "fighter_b_price": 200
         },
         {
           "sportsbook": "Hard Rock Bet",
-          "last_update": "2026-08-03T09:41:27Z",
-          "fighter_a_price": -210,
-          "fighter_b_price": 170
+          "last_update": "2026-08-04T08:34:45Z",
+          "fighter_a_price": -240,
+          "fighter_b_price": 190
         },
         {
           "sportsbook": "betPARX",
-          "last_update": "2026-08-03T09:41:46Z",
-          "fighter_a_price": -215,
-          "fighter_b_price": 170
+          "last_update": "2026-08-04T08:33:04Z",
+          "fighter_a_price": -240,
+          "fighter_b_price": 188
         },
         {
           "sportsbook": "Bally Bet",
-          "last_update": "2026-08-03T09:41:46Z",
-          "fighter_a_price": -215,
-          "fighter_b_price": 170
+          "last_update": "2026-08-04T08:34:46Z",
+          "fighter_a_price": -240,
+          "fighter_b_price": 188
         },
         {
           "sportsbook": "BetRivers",
-          "last_update": "2026-08-03T09:42:16Z",
-          "fighter_a_price": -215,
-          "fighter_b_price": 170
+          "last_update": "2026-08-04T08:34:04Z",
+          "fighter_a_price": -240,
+          "fighter_b_price": 188
         }
       ]
     }
