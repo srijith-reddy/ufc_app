@@ -2,7 +2,7 @@
   "event": "ufc-fight-night-august-29-2026",
   "event_id": "ufc-fight-night-august-29-2026",
   "event_number": null,
-  "scraped_at": "2026-08-09T06:54:46.737707",
+  "scraped_at": "2026-08-10T07:38:44.172990",
   "source": "https://the-odds-api.com",
   "odds": {
     "umar nurmagomedov": [
@@ -26,49 +26,49 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-08-09T06:53:57Z",
+          "last_update": "2026-08-10T07:37:00Z",
           "fighter_a_price": -450,
           "fighter_b_price": 350
         },
         {
           "sportsbook": "BetUS",
-          "last_update": "2026-08-09T06:54:43Z",
+          "last_update": "2026-08-10T07:37:58Z",
           "fighter_a_price": -450,
           "fighter_b_price": 339
         },
         {
           "sportsbook": "DraftKings",
-          "last_update": "2026-08-09T06:54:43Z",
+          "last_update": "2026-08-10T07:37:48Z",
           "fighter_a_price": -455,
           "fighter_b_price": 350
         },
         {
           "sportsbook": "FanDuel",
-          "last_update": "2026-08-09T06:54:22Z",
+          "last_update": "2026-08-10T07:38:28Z",
           "fighter_a_price": -520,
           "fighter_b_price": 350
         },
         {
           "sportsbook": "Bally Bet",
-          "last_update": "2026-08-09T06:54:22Z",
+          "last_update": "2026-08-10T07:38:06Z",
           "fighter_a_price": -480,
           "fighter_b_price": 335
         },
         {
           "sportsbook": "BetRivers",
-          "last_update": "2026-08-09T06:53:52Z",
+          "last_update": "2026-08-10T07:37:56Z",
           "fighter_a_price": -480,
           "fighter_b_price": 335
         },
         {
           "sportsbook": "betPARX",
-          "last_update": "2026-08-09T06:54:32Z",
+          "last_update": "2026-08-10T07:37:46Z",
           "fighter_a_price": -480,
           "fighter_b_price": 335
         },
         {
           "sportsbook": "Hard Rock Bet",
-          "last_update": "2026-08-09T06:54:02Z",
+          "last_update": "2026-08-10T07:38:07Z",
           "fighter_a_price": -475,
           "fighter_b_price": 325
         }
