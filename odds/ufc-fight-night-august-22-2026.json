@@ -1,0 +1,135 @@
+{
+  "event": "ufc-fight-night-august-22-2026",
+  "event_id": "ufc-fight-night-august-22-2026",
+  "event_number": null,
+  "scraped_at": "2026-08-12T07:23:20.446798",
+  "source": "https://the-odds-api.com",
+  "odds": {
+    "anthony hernandez": [
+      -155
+    ],
+    "gregory rodrigues": [
+      130,
+      135
+    ],
+    "reinier de ridder": [
+      -330
+    ],
+    "roman dolidze": [
+      267,
+      270
+    ],
+    "carli judice": [
+      -450
+    ],
+    "jeisla chaves": [
+      339,
+      350
+    ],
+    "kennedy nzechukwu": [
+      105
+    ],
+    "shamil gaziev": [
+      -125
+    ],
+    "wes schultz": [
+      142,
+      145
+    ],
+    "jackson mcvey": [
+      -170
+    ]
+  },
+  "books": {
+    "anthony hernandez-vs-gregory rodrigues": {
+      "fighter_a": "ANTHONY HERNANDEZ",
+      "fighter_b": "GREGORY RODRIGUES",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-08-12T07:22:33Z",
+          "fighter_a_price": -155,
+          "fighter_b_price": 135
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-08-12T07:22:47Z",
+          "fighter_a_price": -155,
+          "fighter_b_price": 130
+        }
+      ]
+    },
+    "reinier de ridder-vs-roman dolidze": {
+      "fighter_a": "REINIER DE RIDDER",
+      "fighter_b": "ROMAN DOLIDZE",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-08-12T07:22:33Z",
+          "fighter_a_price": -330,
+          "fighter_b_price": 270
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-08-12T07:22:47Z",
+          "fighter_a_price": -330,
+          "fighter_b_price": 267
+        }
+      ]
+    },
+    "carli judice-vs-jeisla chaves": {
+      "fighter_a": "CARLI JUDICE",
+      "fighter_b": "JEISLA CHAVES",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-08-12T07:22:33Z",
+          "fighter_a_price": -450,
+          "fighter_b_price": 350
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-08-12T07:22:47Z",
+          "fighter_a_price": -450,
+          "fighter_b_price": 339
+        }
+      ]
+    },
+    "kennedy nzechukwu-vs-shamil gaziev": {
+      "fighter_a": "KENNEDY NZECHUKWU",
+      "fighter_b": "SHAMIL GAZIEV",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-08-12T07:22:33Z",
+          "fighter_a_price": 105,
+          "fighter_b_price": -125
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-08-12T07:22:47Z",
+          "fighter_a_price": 105,
+          "fighter_b_price": -125
+        }
+      ]
+    },
+    "wes schultz-vs-jackson mcvey": {
+      "fighter_a": "WES SCHULTZ",
+      "fighter_b": "JACKSON MCVEY",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-08-12T07:22:33Z",
+          "fighter_a_price": 145,
+          "fighter_b_price": -170
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-08-12T07:22:47Z",
+          "fighter_a_price": 142,
+          "fighter_b_price": -170
+        }
+      ]
+    }
+  }
+}
