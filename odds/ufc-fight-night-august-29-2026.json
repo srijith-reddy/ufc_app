@@ -2,21 +2,21 @@
   "event": "ufc-fight-night-august-29-2026",
   "event_id": "ufc-fight-night-august-29-2026",
   "event_number": null,
-  "scraped_at": "2026-08-16T06:37:47.663193",
+  "scraped_at": "2026-08-17T06:53:33.717631",
   "source": "https://the-odds-api.com",
   "odds": {
     "umar nurmagomedov": [
       -550,
       -520,
+      -485,
       -480,
-      -475,
-      -470
+      -475
     ],
     "song yadong": [
       325,
       335,
       350,
-      360,
+      370,
       399,
       420
     ]
@@ -28,49 +28,49 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-08-16T06:36:50Z",
+          "last_update": "2026-08-17T06:53:33Z",
           "fighter_a_price": -550,
           "fighter_b_price": 420
         },
         {
           "sportsbook": "BetUS",
-          "last_update": "2026-08-16T06:37:07Z",
+          "last_update": "2026-08-17T06:53:05Z",
           "fighter_a_price": -550,
           "fighter_b_price": 399
         },
         {
           "sportsbook": "DraftKings",
-          "last_update": "2026-08-16T06:37:27Z",
-          "fighter_a_price": -470,
-          "fighter_b_price": 360
+          "last_update": "2026-08-17T06:53:04Z",
+          "fighter_a_price": -485,
+          "fighter_b_price": 370
         },
         {
           "sportsbook": "FanDuel",
-          "last_update": "2026-08-16T06:37:27Z",
+          "last_update": "2026-08-17T06:53:04Z",
           "fighter_a_price": -520,
           "fighter_b_price": 350
         },
         {
           "sportsbook": "Bally Bet",
-          "last_update": "2026-08-16T06:36:28Z",
+          "last_update": "2026-08-17T06:52:25Z",
           "fighter_a_price": -480,
           "fighter_b_price": 335
         },
         {
           "sportsbook": "BetRivers",
-          "last_update": "2026-08-16T06:37:27Z",
+          "last_update": "2026-08-17T06:52:26Z",
           "fighter_a_price": -480,
           "fighter_b_price": 335
         },
         {
           "sportsbook": "betPARX",
-          "last_update": "2026-08-16T06:37:47Z",
+          "last_update": "2026-08-17T06:52:25Z",
           "fighter_a_price": -480,
           "fighter_b_price": 335
         },
         {
           "sportsbook": "Hard Rock Bet",
-          "last_update": "2026-08-16T06:37:07Z",
+          "last_update": "2026-08-17T06:53:04Z",
           "fighter_a_price": -475,
           "fighter_b_price": 325
         }
