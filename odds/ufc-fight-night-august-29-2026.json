@@ -2,23 +2,66 @@
   "event": "ufc-fight-night-august-29-2026",
   "event_id": "ufc-fight-night-august-29-2026",
   "event_number": null,
-  "scraped_at": "2026-08-20T06:42:50.550178",
+  "scraped_at": "2026-08-21T06:43:30.281643",
   "source": "https://the-odds-api.com",
   "odds": {
     "umar nurmagomedov": [
       -550,
+      -530,
+      -525,
       -520,
-      -485,
-      -480,
-      -475
+      -485
     ],
     "song yadong": [
-      325,
-      335,
       350,
       370,
+      375,
       399,
       420
+    ],
+    "yan xiaonan": [
+      -157,
+      -155,
+      -146
+    ],
+    "denise gomes": [
+      125,
+      126
+    ],
+    "bilal hasan": [
+      -500
+    ],
+    "nilson rojas": [
+      385
+    ],
+    "namsrai batbayar": [
+      200
+    ],
+    "andre lima": [
+      -235
+    ],
+    "rei tsuruya": [
+      -600,
+      -590
+    ],
+    "kevin borjas": [
+      400,
+      450
+    ],
+    "jack jenkins": [
+      118,
+      120,
+      125
+    ],
+    "sean woodson": [
+      -148,
+      -145
+    ],
+    "lawrence lui": [
+      -300
+    ],
+    "hector santiago": [
+      250
     ]
   },
   "books": {
@@ -28,51 +71,195 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-08-20T06:42:12Z",
+          "last_update": "2026-08-21T06:43:24Z",
           "fighter_a_price": -550,
           "fighter_b_price": 420
         },
         {
           "sportsbook": "BetUS",
-          "last_update": "2026-08-20T06:42:07Z",
+          "last_update": "2026-08-21T06:43:30Z",
           "fighter_a_price": -550,
           "fighter_b_price": 399
         },
         {
           "sportsbook": "DraftKings",
-          "last_update": "2026-08-20T06:42:25Z",
+          "last_update": "2026-08-21T06:43:28Z",
           "fighter_a_price": -485,
           "fighter_b_price": 370
         },
         {
           "sportsbook": "FanDuel",
-          "last_update": "2026-08-20T06:42:45Z",
+          "last_update": "2026-08-21T06:43:29Z",
           "fighter_a_price": -520,
           "fighter_b_price": 350
         },
         {
           "sportsbook": "Bally Bet",
-          "last_update": "2026-08-20T06:39:49Z",
-          "fighter_a_price": -480,
-          "fighter_b_price": 335
+          "last_update": "2026-08-21T06:43:28Z",
+          "fighter_a_price": -530,
+          "fighter_b_price": 375
         },
         {
           "sportsbook": "BetRivers",
-          "last_update": "2026-08-20T06:42:25Z",
-          "fighter_a_price": -480,
-          "fighter_b_price": 335
+          "last_update": "2026-08-21T06:42:46Z",
+          "fighter_a_price": -530,
+          "fighter_b_price": 375
         },
         {
           "sportsbook": "betPARX",
-          "last_update": "2026-08-20T06:42:25Z",
-          "fighter_a_price": -480,
-          "fighter_b_price": 335
+          "last_update": "2026-08-21T06:43:28Z",
+          "fighter_a_price": -530,
+          "fighter_b_price": 375
         },
         {
           "sportsbook": "Hard Rock Bet",
-          "last_update": "2026-08-20T06:42:06Z",
-          "fighter_a_price": -475,
-          "fighter_b_price": 325
+          "last_update": "2026-08-21T06:42:47Z",
+          "fighter_a_price": -525,
+          "fighter_b_price": 375
+        }
+      ]
+    },
+    "yan xiaonan-vs-denise gomes": {
+      "fighter_a": "YAN XIAONAN",
+      "fighter_b": "DENISE GOMES",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-08-21T06:43:24Z",
+          "fighter_a_price": -146,
+          "fighter_b_price": 126
+        },
+        {
+          "sportsbook": "Bally Bet",
+          "last_update": "2026-08-21T06:43:28Z",
+          "fighter_a_price": -157,
+          "fighter_b_price": 125
+        },
+        {
+          "sportsbook": "betPARX",
+          "last_update": "2026-08-21T06:43:28Z",
+          "fighter_a_price": -157,
+          "fighter_b_price": 125
+        },
+        {
+          "sportsbook": "BetRivers",
+          "last_update": "2026-08-21T06:42:46Z",
+          "fighter_a_price": -157,
+          "fighter_b_price": 125
+        },
+        {
+          "sportsbook": "Hard Rock Bet",
+          "last_update": "2026-08-21T06:42:47Z",
+          "fighter_a_price": -155,
+          "fighter_b_price": 125
+        }
+      ]
+    },
+    "bilal hasan-vs-nilson rojas": {
+      "fighter_a": "BILAL HASAN",
+      "fighter_b": "NILSON ROJAS",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-08-21T06:43:24Z",
+          "fighter_a_price": -500,
+          "fighter_b_price": 385
+        }
+      ]
+    },
+    "namsrai batbayar-vs-andre lima": {
+      "fighter_a": "NAMSRAI BATBAYAR",
+      "fighter_b": "ANDRE LIMA",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-08-21T06:43:24Z",
+          "fighter_a_price": 200,
+          "fighter_b_price": -235
+        }
+      ]
+    },
+    "rei tsuruya-vs-kevin borjas": {
+      "fighter_a": "REI TSURUYA",
+      "fighter_b": "KEVIN BORJAS",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-08-21T06:43:24Z",
+          "fighter_a_price": -600,
+          "fighter_b_price": 450
+        },
+        {
+          "sportsbook": "betPARX",
+          "last_update": "2026-08-21T06:43:28Z",
+          "fighter_a_price": -590,
+          "fighter_b_price": 400
+        },
+        {
+          "sportsbook": "BetRivers",
+          "last_update": "2026-08-21T06:42:46Z",
+          "fighter_a_price": -590,
+          "fighter_b_price": 400
+        },
+        {
+          "sportsbook": "Bally Bet",
+          "last_update": "2026-08-21T06:43:28Z",
+          "fighter_a_price": -590,
+          "fighter_b_price": 400
+        },
+        {
+          "sportsbook": "Hard Rock Bet",
+          "last_update": "2026-08-21T06:42:47Z",
+          "fighter_a_price": -600,
+          "fighter_b_price": 400
+        }
+      ]
+    },
+    "jack jenkins-vs-sean woodson": {
+      "fighter_a": "JACK JENKINS",
+      "fighter_b": "SEAN WOODSON",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-08-21T06:43:24Z",
+          "fighter_a_price": 125,
+          "fighter_b_price": -145
+        },
+        {
+          "sportsbook": "betPARX",
+          "last_update": "2026-08-21T06:43:28Z",
+          "fighter_a_price": 118,
+          "fighter_b_price": -148
+        },
+        {
+          "sportsbook": "BetRivers",
+          "last_update": "2026-08-21T06:42:46Z",
+          "fighter_a_price": 118,
+          "fighter_b_price": -148
+        },
+        {
+          "sportsbook": "Bally Bet",
+          "last_update": "2026-08-21T06:43:28Z",
+          "fighter_a_price": 118,
+          "fighter_b_price": -148
+        },
+        {
+          "sportsbook": "Hard Rock Bet",
+          "last_update": "2026-08-21T06:42:47Z",
+          "fighter_a_price": 120,
+          "fighter_b_price": -145
+        }
+      ]
+    },
+    "lawrence lui-vs-hector santiago": {
+      "fighter_a": "LAWRENCE LUI",
+      "fighter_b": "HECTOR SANTIAGO",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-08-21T06:43:24Z",
+          "fighter_a_price": -300,
+          "fighter_b_price": 250
         }
       ]
     }
