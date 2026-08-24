@@ -1,0 +1,119 @@
+{
+  "event": "ufc-fight-night-september-05-2026",
+  "event_id": "ufc-fight-night-september-05-2026",
+  "event_number": null,
+  "scraped_at": "2026-08-24T06:55:55.148919",
+  "source": "https://the-odds-api.com",
+  "odds": {
+    "fares ziam": [
+      -150
+    ],
+    "axel sola": [
+      130
+    ],
+    "morgan charriere": [
+      168
+    ],
+    "felipe lima": [
+      -193
+    ],
+    "mario pinto": [
+      -225
+    ],
+    "ryan spann": [
+      189
+    ],
+    "kurtis campbell": [
+      -333
+    ],
+    "trevor peek": [
+      269
+    ],
+    "oumar sy": [
+      -175
+    ],
+    "modestas bukauskas": [
+      153
+    ],
+    "nathaniel wood": [
+      115
+    ],
+    "mairon santos": [
+      -135
+    ]
+  },
+  "books": {
+    "fares ziam-vs-axel sola": {
+      "fighter_a": "FAR\u00c8S ZIAM",
+      "fighter_b": "AXEL SOLA",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-08-24T06:54:44Z",
+          "fighter_a_price": -150,
+          "fighter_b_price": 130
+        }
+      ]
+    },
+    "morgan charriere-vs-felipe lima": {
+      "fighter_a": "MORGAN CHARRIERE",
+      "fighter_b": "FELIPE LIMA",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-08-24T06:54:44Z",
+          "fighter_a_price": 168,
+          "fighter_b_price": -193
+        }
+      ]
+    },
+    "mario pinto-vs-ryan spann": {
+      "fighter_a": "MARIO PINTO",
+      "fighter_b": "RYAN SPANN",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-08-24T06:54:44Z",
+          "fighter_a_price": -225,
+          "fighter_b_price": 189
+        }
+      ]
+    },
+    "kurtis campbell-vs-trevor peek": {
+      "fighter_a": "KURTIS CAMPBELL",
+      "fighter_b": "TREVOR PEEK",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-08-24T06:54:44Z",
+          "fighter_a_price": -333,
+          "fighter_b_price": 269
+        }
+      ]
+    },
+    "oumar sy-vs-modestas bukauskas": {
+      "fighter_a": "OUMAR SY",
+      "fighter_b": "MODESTAS BUKAUSKAS",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-08-24T06:54:44Z",
+          "fighter_a_price": -175,
+          "fighter_b_price": 153
+        }
+      ]
+    },
+    "nathaniel wood-vs-mairon santos": {
+      "fighter_a": "NATHANIEL WOOD",
+      "fighter_b": "MAIRON SANTOS",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-08-24T06:54:44Z",
+          "fighter_a_price": 115,
+          "fighter_b_price": -135
+        }
+      ]
+    }
+  }
+}
