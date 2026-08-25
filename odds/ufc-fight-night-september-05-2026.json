@@ -2,44 +2,46 @@
   "event": "ufc-fight-night-september-05-2026",
   "event_id": "ufc-fight-night-september-05-2026",
   "event_number": null,
-  "scraped_at": "2026-08-24T06:55:55.148919",
+  "scraped_at": "2026-08-25T06:43:56.059329",
   "source": "https://the-odds-api.com",
   "odds": {
     "fares ziam": [
-      -150
+      -142,
+      -140
     ],
     "axel sola": [
-      130
+      120
     ],
     "morgan charriere": [
-      168
+      170,
+      177
     ],
     "felipe lima": [
-      -193
+      -205
     ],
     "mario pinto": [
-      -225
+      -258,
+      -255
     ],
     "ryan spann": [
-      189
+      210,
+      211
     ],
     "kurtis campbell": [
+      -340,
       -333
     ],
     "trevor peek": [
-      269
+      269,
+      270
     ],
     "oumar sy": [
+      -180,
       -175
     ],
     "modestas bukauskas": [
+      150,
       153
-    ],
-    "nathaniel wood": [
-      115
-    ],
-    "mairon santos": [
-      -135
     ]
   },
   "books": {
@@ -49,9 +51,15 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-08-24T06:54:44Z",
-          "fighter_a_price": -150,
-          "fighter_b_price": 130
+          "last_update": "2026-08-25T06:42:43Z",
+          "fighter_a_price": -140,
+          "fighter_b_price": 120
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-08-25T06:43:02Z",
+          "fighter_a_price": -142,
+          "fighter_b_price": 120
         }
       ]
     },
@@ -61,9 +69,15 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-08-24T06:54:44Z",
-          "fighter_a_price": 168,
-          "fighter_b_price": -193
+          "last_update": "2026-08-25T06:42:43Z",
+          "fighter_a_price": 177,
+          "fighter_b_price": -205
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-08-25T06:43:02Z",
+          "fighter_a_price": 170,
+          "fighter_b_price": -205
         }
       ]
     },
@@ -73,9 +87,15 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-08-24T06:54:44Z",
-          "fighter_a_price": -225,
-          "fighter_b_price": 189
+          "last_update": "2026-08-25T06:42:43Z",
+          "fighter_a_price": -255,
+          "fighter_b_price": 211
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-08-25T06:43:02Z",
+          "fighter_a_price": -258,
+          "fighter_b_price": 210
         }
       ]
     },
@@ -85,9 +105,15 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-08-24T06:54:44Z",
+          "last_update": "2026-08-25T06:42:43Z",
           "fighter_a_price": -333,
           "fighter_b_price": 269
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-08-25T06:43:02Z",
+          "fighter_a_price": -340,
+          "fighter_b_price": 270
         }
       ]
     },
@@ -97,21 +123,15 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-08-24T06:54:44Z",
+          "last_update": "2026-08-25T06:42:43Z",
           "fighter_a_price": -175,
           "fighter_b_price": 153
-        }
-      ]
-    },
-    "nathaniel wood-vs-mairon santos": {
-      "fighter_a": "NATHANIEL WOOD",
-      "fighter_b": "MAIRON SANTOS",
-      "quotes": [
+        },
         {
-          "sportsbook": "BetOnline.ag",
-          "last_update": "2026-08-24T06:54:44Z",
-          "fighter_a_price": 115,
-          "fighter_b_price": -135
+          "sportsbook": "DraftKings",
+          "last_update": "2026-08-25T06:43:02Z",
+          "fighter_a_price": -180,
+          "fighter_b_price": 150
         }
       ]
     }
