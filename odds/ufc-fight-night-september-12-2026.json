@@ -2,30 +2,33 @@
   "event": "ufc-fight-night-september-12-2026",
   "event_id": "ufc-fight-night-september-12-2026",
   "event_number": null,
-  "scraped_at": "2026-09-02T10:42:13.104370",
+  "scraped_at": "2026-09-04T10:39:30.462147",
   "source": "https://the-odds-api.com",
   "odds": {
     "brandon moreno": [
-      -105
+      110
     ],
     "joseph morales": [
-      -115
+      -130
     ],
     "tommy mcmillen": [
-      -145
+      -155
     ],
     "marwan rahiki": [
-      122,
-      125
+      130,
+      135
     ],
     "manon fiorot": [
+      -218,
       -215
     ],
     "alexa grasso": [
       178,
+      180,
       183
     ],
     "david martinez": [
+      -305,
       -300
     ],
     "dan ige": [
@@ -34,31 +37,28 @@
     ],
     "tim elliott": [
       182,
+      185,
       186
     ],
     "edgar chairez": [
+      -225,
       -220
     ],
     "ignacio bahamondes": [
-      -450
+      -535,
+      -525
     ],
     "muslim salikhov": [
-      339,
-      350
+      386,
+      400
     ],
     "yousri belgaroui": [
       -700
     ],
     "djorden santos": [
       475,
+      500,
       505
-    ],
-    "ramiro jimenez": [
-      114,
-      115
-    ],
-    "rodrigo vera": [
-      -135
     ],
     "jj aldrich": [
       190,
@@ -75,15 +75,21 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-09-02T10:41:39Z",
-          "fighter_a_price": -105,
-          "fighter_b_price": -115
+          "last_update": "2026-09-04T10:39:06Z",
+          "fighter_a_price": 110,
+          "fighter_b_price": -130
         },
         {
           "sportsbook": "BetUS",
-          "last_update": "2026-09-02T10:42:09Z",
-          "fighter_a_price": -105,
-          "fighter_b_price": -115
+          "last_update": "2026-09-04T10:38:32Z",
+          "fighter_a_price": 110,
+          "fighter_b_price": -130
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-09-04T10:38:31Z",
+          "fighter_a_price": 110,
+          "fighter_b_price": -130
         }
       ]
     },
@@ -93,15 +99,21 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-09-02T10:41:39Z",
-          "fighter_a_price": -145,
-          "fighter_b_price": 125
+          "last_update": "2026-09-04T10:39:06Z",
+          "fighter_a_price": -155,
+          "fighter_b_price": 135
         },
         {
           "sportsbook": "BetUS",
-          "last_update": "2026-09-02T10:42:09Z",
-          "fighter_a_price": -145,
-          "fighter_b_price": 122
+          "last_update": "2026-09-04T10:38:32Z",
+          "fighter_a_price": -155,
+          "fighter_b_price": 130
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-09-04T10:38:31Z",
+          "fighter_a_price": -155,
+          "fighter_b_price": 130
         }
       ]
     },
@@ -111,15 +123,21 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-09-02T10:41:39Z",
+          "last_update": "2026-09-04T10:39:06Z",
           "fighter_a_price": -215,
           "fighter_b_price": 183
         },
         {
           "sportsbook": "BetUS",
-          "last_update": "2026-09-02T10:42:09Z",
+          "last_update": "2026-09-04T10:38:32Z",
           "fighter_a_price": -215,
           "fighter_b_price": 178
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-09-04T10:38:31Z",
+          "fighter_a_price": -218,
+          "fighter_b_price": 180
         }
       ]
     },
@@ -129,15 +147,21 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-09-02T10:41:39Z",
+          "last_update": "2026-09-04T10:39:06Z",
           "fighter_a_price": -300,
           "fighter_b_price": 245
         },
         {
           "sportsbook": "BetUS",
-          "last_update": "2026-09-02T10:42:09Z",
+          "last_update": "2026-09-04T10:38:32Z",
           "fighter_a_price": -300,
           "fighter_b_price": 246
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-09-04T10:38:31Z",
+          "fighter_a_price": -305,
+          "fighter_b_price": 245
         }
       ]
     },
@@ -147,15 +171,21 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-09-02T10:41:39Z",
+          "last_update": "2026-09-04T10:39:06Z",
           "fighter_a_price": 186,
           "fighter_b_price": -220
         },
         {
           "sportsbook": "BetUS",
-          "last_update": "2026-09-02T10:42:09Z",
+          "last_update": "2026-09-04T10:38:32Z",
           "fighter_a_price": 182,
           "fighter_b_price": -220
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-09-04T10:38:31Z",
+          "fighter_a_price": 185,
+          "fighter_b_price": -225
         }
       ]
     },
@@ -165,15 +195,21 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-09-02T10:41:39Z",
-          "fighter_a_price": -450,
-          "fighter_b_price": 350
+          "last_update": "2026-09-04T10:39:06Z",
+          "fighter_a_price": -525,
+          "fighter_b_price": 400
         },
         {
           "sportsbook": "BetUS",
-          "last_update": "2026-09-02T10:42:09Z",
-          "fighter_a_price": -450,
-          "fighter_b_price": 339
+          "last_update": "2026-09-04T10:38:32Z",
+          "fighter_a_price": -525,
+          "fighter_b_price": 386
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-09-04T10:38:31Z",
+          "fighter_a_price": -535,
+          "fighter_b_price": 400
         }
       ]
     },
@@ -183,33 +219,21 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-09-02T10:41:39Z",
+          "last_update": "2026-09-04T10:39:06Z",
           "fighter_a_price": -700,
           "fighter_b_price": 505
         },
         {
           "sportsbook": "BetUS",
-          "last_update": "2026-09-02T10:42:09Z",
+          "last_update": "2026-09-04T10:38:32Z",
           "fighter_a_price": -700,
           "fighter_b_price": 475
-        }
-      ]
-    },
-    "ramiro jimenez-vs-rodrigo vera": {
-      "fighter_a": "RAMIRO JIMENEZ",
-      "fighter_b": "RODRIGO VERA",
-      "quotes": [
-        {
-          "sportsbook": "BetOnline.ag",
-          "last_update": "2026-09-02T10:41:39Z",
-          "fighter_a_price": 115,
-          "fighter_b_price": -135
         },
         {
-          "sportsbook": "BetUS",
-          "last_update": "2026-09-02T10:42:09Z",
-          "fighter_a_price": 114,
-          "fighter_b_price": -135
+          "sportsbook": "DraftKings",
+          "last_update": "2026-09-04T10:38:31Z",
+          "fighter_a_price": -700,
+          "fighter_b_price": 500
         }
       ]
     },
@@ -219,13 +243,13 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-09-02T10:41:39Z",
+          "last_update": "2026-09-04T10:39:06Z",
           "fighter_a_price": 192,
           "fighter_b_price": -230
         },
         {
           "sportsbook": "BetUS",
-          "last_update": "2026-09-02T10:42:09Z",
+          "last_update": "2026-09-04T10:38:32Z",
           "fighter_a_price": 190,
           "fighter_b_price": -230
         }
