@@ -1,0 +1,62 @@
+{
+  "event": 332,
+  "event_id": "ufc-332",
+  "event_number": 332,
+  "scraped_at": "2026-09-06T10:19:44.024234",
+  "source": "https://the-odds-api.com",
+  "odds": {
+    "natalia silva": [
+      -250,
+      -210
+    ],
+    "wang cong": [
+      180,
+      205
+    ],
+    "deiveson figueiredo": [
+      410,
+      415
+    ],
+    "payton talbott": [
+      -550
+    ]
+  },
+  "books": {
+    "natalia silva-vs-wang cong": {
+      "fighter_a": "NATALIA SILVA",
+      "fighter_b": "WANG CONG",
+      "quotes": [
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-09-06T10:19:42Z",
+          "fighter_a_price": -250,
+          "fighter_b_price": 205
+        },
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-09-06T10:18:21Z",
+          "fighter_a_price": -210,
+          "fighter_b_price": 180
+        }
+      ]
+    },
+    "deiveson figueiredo-vs-payton talbott": {
+      "fighter_a": "DEIVESON FIGUEIREDO",
+      "fighter_b": "PAYTON TALBOTT",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-09-06T10:18:21Z",
+          "fighter_a_price": 415,
+          "fighter_b_price": -550
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-09-06T10:19:42Z",
+          "fighter_a_price": 410,
+          "fighter_b_price": -550
+        }
+      ]
+    }
+  }
+}
