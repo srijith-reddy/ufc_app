@@ -2,16 +2,18 @@
   "event": 332,
   "event_id": "ufc-332",
   "event_number": 332,
-  "scraped_at": "2026-09-08T10:38:41.607341",
+  "scraped_at": "2026-09-09T10:48:38.934107",
   "source": "https://the-odds-api.com",
   "odds": {
     "natalia silva": [
       -265,
       -260,
       -250,
-      -230
+      -230,
+      -210
     ],
     "wang cong": [
+      180,
       190,
       198,
       205,
@@ -19,7 +21,8 @@
     ],
     "deiveson figueiredo": [
       390,
-      410
+      410,
+      415
     ],
     "payton talbott": [
       -550
@@ -32,37 +35,43 @@
       "quotes": [
         {
           "sportsbook": "DraftKings",
-          "last_update": "2026-09-08T10:38:14Z",
+          "last_update": "2026-09-09T10:47:58Z",
           "fighter_a_price": -230,
           "fighter_b_price": 190
         },
         {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-09-09T10:47:34Z",
+          "fighter_a_price": -210,
+          "fighter_b_price": 180
+        },
+        {
           "sportsbook": "betPARX",
-          "last_update": "2026-09-08T10:37:52Z",
+          "last_update": "2026-09-09T10:48:00Z",
           "fighter_a_price": -265,
           "fighter_b_price": 205
         },
         {
           "sportsbook": "Bally Bet",
-          "last_update": "2026-09-08T10:38:14Z",
+          "last_update": "2026-09-09T10:46:48Z",
           "fighter_a_price": -265,
           "fighter_b_price": 205
         },
         {
           "sportsbook": "BetRivers",
-          "last_update": "2026-09-08T10:38:15Z",
+          "last_update": "2026-09-09T10:48:30Z",
           "fighter_a_price": -265,
           "fighter_b_price": 205
         },
         {
           "sportsbook": "FanDuel",
-          "last_update": "2026-09-08T10:38:15Z",
+          "last_update": "2026-09-09T10:47:58Z",
           "fighter_a_price": -250,
           "fighter_b_price": 198
         },
         {
           "sportsbook": "Hard Rock Bet",
-          "last_update": "2026-09-08T10:38:36Z",
+          "last_update": "2026-09-09T10:48:27Z",
           "fighter_a_price": -260,
           "fighter_b_price": 210
         }
@@ -73,14 +82,20 @@
       "fighter_b": "PAYTON TALBOTT",
       "quotes": [
         {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-09-09T10:47:34Z",
+          "fighter_a_price": 415,
+          "fighter_b_price": -550
+        },
+        {
           "sportsbook": "DraftKings",
-          "last_update": "2026-09-08T10:38:14Z",
+          "last_update": "2026-09-09T10:47:58Z",
           "fighter_a_price": 410,
           "fighter_b_price": -550
         },
         {
           "sportsbook": "FanDuel",
-          "last_update": "2026-09-08T10:38:15Z",
+          "last_update": "2026-09-09T10:47:58Z",
           "fighter_a_price": 390,
           "fighter_b_price": -550
         }
