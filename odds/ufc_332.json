@@ -2,30 +2,33 @@
   "event": 332,
   "event_id": "ufc-332",
   "event_number": 332,
-  "scraped_at": "2026-09-09T10:48:38.934107",
+  "scraped_at": "2026-09-10T10:41:18.570497",
   "source": "https://the-odds-api.com",
   "odds": {
     "natalia silva": [
-      -265,
-      -260,
       -250,
-      -230,
-      -210
+      -210,
+      -205,
+      -200
     ],
     "wang cong": [
+      163,
+      165,
+      170,
       180,
-      190,
-      198,
-      205,
-      210
+      198
     ],
     "deiveson figueiredo": [
+      375,
       390,
-      410,
-      415
+      455,
+      505
     ],
     "payton talbott": [
-      -550
+      -700,
+      -625,
+      -550,
+      -530
     ]
   },
   "books": {
@@ -35,45 +38,45 @@
       "quotes": [
         {
           "sportsbook": "DraftKings",
-          "last_update": "2026-09-09T10:47:58Z",
-          "fighter_a_price": -230,
-          "fighter_b_price": 190
+          "last_update": "2026-09-10T10:41:17Z",
+          "fighter_a_price": -205,
+          "fighter_b_price": 170
         },
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-09-09T10:47:34Z",
+          "last_update": "2026-09-10T10:41:00Z",
           "fighter_a_price": -210,
           "fighter_b_price": 180
         },
         {
           "sportsbook": "betPARX",
-          "last_update": "2026-09-09T10:48:00Z",
-          "fighter_a_price": -265,
-          "fighter_b_price": 205
+          "last_update": "2026-09-10T10:40:48Z",
+          "fighter_a_price": -205,
+          "fighter_b_price": 163
         },
         {
           "sportsbook": "Bally Bet",
-          "last_update": "2026-09-09T10:46:48Z",
-          "fighter_a_price": -265,
-          "fighter_b_price": 205
+          "last_update": "2026-09-10T10:40:00Z",
+          "fighter_a_price": -205,
+          "fighter_b_price": 163
         },
         {
           "sportsbook": "BetRivers",
-          "last_update": "2026-09-09T10:48:30Z",
-          "fighter_a_price": -265,
-          "fighter_b_price": 205
+          "last_update": "2026-09-10T10:41:17Z",
+          "fighter_a_price": -205,
+          "fighter_b_price": 163
         },
         {
           "sportsbook": "FanDuel",
-          "last_update": "2026-09-09T10:47:58Z",
+          "last_update": "2026-09-10T10:40:50Z",
           "fighter_a_price": -250,
           "fighter_b_price": 198
         },
         {
           "sportsbook": "Hard Rock Bet",
-          "last_update": "2026-09-09T10:48:27Z",
-          "fighter_a_price": -260,
-          "fighter_b_price": 210
+          "last_update": "2026-09-10T10:40:48Z",
+          "fighter_a_price": -200,
+          "fighter_b_price": 165
         }
       ]
     },
@@ -83,21 +86,39 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-09-09T10:47:34Z",
-          "fighter_a_price": 415,
-          "fighter_b_price": -550
+          "last_update": "2026-09-10T10:41:00Z",
+          "fighter_a_price": 505,
+          "fighter_b_price": -700
         },
         {
           "sportsbook": "DraftKings",
-          "last_update": "2026-09-09T10:47:58Z",
-          "fighter_a_price": 410,
-          "fighter_b_price": -550
+          "last_update": "2026-09-10T10:41:17Z",
+          "fighter_a_price": 455,
+          "fighter_b_price": -625
         },
         {
           "sportsbook": "FanDuel",
-          "last_update": "2026-09-09T10:47:58Z",
+          "last_update": "2026-09-10T10:40:50Z",
           "fighter_a_price": 390,
           "fighter_b_price": -550
+        },
+        {
+          "sportsbook": "betPARX",
+          "last_update": "2026-09-10T10:40:48Z",
+          "fighter_a_price": 375,
+          "fighter_b_price": -530
+        },
+        {
+          "sportsbook": "BetRivers",
+          "last_update": "2026-09-10T10:41:17Z",
+          "fighter_a_price": 375,
+          "fighter_b_price": -530
+        },
+        {
+          "sportsbook": "Bally Bet",
+          "last_update": "2026-09-10T10:40:00Z",
+          "fighter_a_price": 375,
+          "fighter_b_price": -530
         }
       ]
     }
