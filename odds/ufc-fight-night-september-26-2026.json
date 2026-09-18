@@ -1,0 +1,137 @@
+{
+  "event": "ufc-fight-night-september-26-2026",
+  "event_id": "ufc-fight-night-september-26-2026",
+  "event_number": null,
+  "scraped_at": "2026-09-18T10:38:10.685526",
+  "source": "https://the-odds-api.com",
+  "odds": {
+    "raul rosas jr": [
+      -185
+    ],
+    "raoni barcelos": [
+      157
+    ],
+    "rodolfo vieira": [
+      -108
+    ],
+    "robert bryczek": [
+      -108
+    ],
+    "brady hiestand": [
+      265
+    ],
+    "rinya nakamura": [
+      -325
+    ],
+    "rodolfo bellato": [
+      -160
+    ],
+    "christian edwards": [
+      136
+    ],
+    "montel jackson": [
+      -176
+    ],
+    "ricky simon": [
+      149
+    ],
+    "norma dumont": [
+      111
+    ],
+    "ailin perez": [
+      -130
+    ],
+    "vanessa demopoulos": [
+      451
+    ],
+    "yazmin jauregui": [
+      -600
+    ]
+  },
+  "books": {
+    "raul rosas jr-vs-raoni barcelos": {
+      "fighter_a": "RAUL ROSAS JR.",
+      "fighter_b": "RAONI BARCELOS",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-09-18T10:37:04Z",
+          "fighter_a_price": -185,
+          "fighter_b_price": 157
+        }
+      ]
+    },
+    "rodolfo vieira-vs-robert bryczek": {
+      "fighter_a": "RODOLFO VIEIRA",
+      "fighter_b": "ROBERT BRYCZEK",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-09-18T10:37:04Z",
+          "fighter_a_price": -108,
+          "fighter_b_price": -108
+        }
+      ]
+    },
+    "brady hiestand-vs-rinya nakamura": {
+      "fighter_a": "BRADY HIESTAND",
+      "fighter_b": "RINYA NAKAMURA",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-09-18T10:37:04Z",
+          "fighter_a_price": 265,
+          "fighter_b_price": -325
+        }
+      ]
+    },
+    "rodolfo bellato-vs-christian edwards": {
+      "fighter_a": "RODOLFO BELLATO",
+      "fighter_b": "CHRISTIAN EDWARDS",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-09-18T10:37:04Z",
+          "fighter_a_price": -160,
+          "fighter_b_price": 136
+        }
+      ]
+    },
+    "montel jackson-vs-ricky simon": {
+      "fighter_a": "MONTEL JACKSON",
+      "fighter_b": "RICKY SIMON",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-09-18T10:37:04Z",
+          "fighter_a_price": -176,
+          "fighter_b_price": 149
+        }
+      ]
+    },
+    "norma dumont-vs-ailin perez": {
+      "fighter_a": "NORMA DUMONT",
+      "fighter_b": "AILIN PEREZ",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-09-18T10:37:04Z",
+          "fighter_a_price": 111,
+          "fighter_b_price": -130
+        }
+      ]
+    },
+    "vanessa demopoulos-vs-yazmin jauregui": {
+      "fighter_a": "VANESSA DEMOPOULOS",
+      "fighter_b": "YAZMIN JAUREGUI",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-09-18T10:37:04Z",
+          "fighter_a_price": 451,
+          "fighter_b_price": -600
+        }
+      ]
+    }
+  }
+}
