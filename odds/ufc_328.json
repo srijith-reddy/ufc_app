@@ -2,7 +2,7 @@
   "event": 328,
   "event_id": "ufc-328",
   "event_number": 328,
-  "scraped_at": "2026-09-20T10:41:45.809167",
+  "scraped_at": "2026-09-21T12:04:58.179611",
   "source": "https://the-odds-api.com",
   "odds": {
     "khamzat chimaev": [
@@ -19,7 +19,7 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-09-20T10:40:44Z",
+          "last_update": "2026-09-21T12:04:32Z",
           "fighter_a_price": -205,
           "fighter_b_price": 175
         }
