@@ -2,17 +2,17 @@
   "event": 324,
   "event_id": "ufc-324",
   "event_number": 324,
-  "scraped_at": "2026-09-22T11:01:22.605348",
+  "scraped_at": "2026-09-23T10:49:53.226760",
   "source": "https://the-odds-api.com",
   "odds": {
     "kayla harrison": [
       -205,
       -200,
-      -198
+      -192
     ],
     "amanda nunes": [
+      160,
       163,
-      164,
       165,
       169
     ]
@@ -24,37 +24,37 @@
       "quotes": [
         {
           "sportsbook": "DraftKings",
-          "last_update": "2026-09-22T10:59:52Z",
-          "fighter_a_price": -198,
-          "fighter_b_price": 164
+          "last_update": "2026-09-23T10:48:34Z",
+          "fighter_a_price": -192,
+          "fighter_b_price": 160
         },
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-09-22T11:01:15Z",
+          "last_update": "2026-09-23T10:49:00Z",
           "fighter_a_price": -200,
           "fighter_b_price": 169
         },
         {
           "sportsbook": "betPARX",
-          "last_update": "2026-09-22T11:01:10Z",
+          "last_update": "2026-09-23T10:49:23Z",
           "fighter_a_price": -205,
           "fighter_b_price": 163
         },
         {
           "sportsbook": "BetRivers",
-          "last_update": "2026-09-22T11:00:51Z",
+          "last_update": "2026-09-23T10:49:41Z",
           "fighter_a_price": -205,
           "fighter_b_price": 163
         },
         {
           "sportsbook": "Bally Bet",
-          "last_update": "2026-09-22T10:59:52Z",
+          "last_update": "2026-09-23T10:49:06Z",
           "fighter_a_price": -205,
           "fighter_b_price": 163
         },
         {
           "sportsbook": "Hard Rock Bet",
-          "last_update": "2026-09-22T11:00:51Z",
+          "last_update": "2026-09-23T10:48:51Z",
           "fighter_a_price": -200,
           "fighter_b_price": 165
         }
