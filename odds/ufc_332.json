@@ -2,9 +2,22 @@
   "event": 332,
   "event_id": "ufc-332",
   "event_number": 332,
-  "scraped_at": "2026-09-23T10:49:53.218846",
+  "scraped_at": "2026-09-24T11:10:10.989211",
   "source": "https://the-odds-api.com",
   "odds": {
+    "natalia silva": [
+      -210,
+      -205,
+      -200,
+      -190
+    ],
+    "wang cong": [
+      160,
+      163,
+      165,
+      170,
+      177
+    ],
     "deiveson figueiredo": [
       400,
       440,
@@ -20,55 +33,109 @@
     ]
   },
   "books": {
+    "natalia silva-vs-wang cong": {
+      "fighter_a": "NATALIA SILVA",
+      "fighter_b": "WANG CONG",
+      "quotes": [
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-09-24T11:08:39Z",
+          "fighter_a_price": -205,
+          "fighter_b_price": 170
+        },
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-09-24T11:07:15Z",
+          "fighter_a_price": -210,
+          "fighter_b_price": 177
+        },
+        {
+          "sportsbook": "betPARX",
+          "last_update": "2026-09-24T11:08:57Z",
+          "fighter_a_price": -205,
+          "fighter_b_price": 163
+        },
+        {
+          "sportsbook": "Bally Bet",
+          "last_update": "2026-09-24T11:10:05Z",
+          "fighter_a_price": -205,
+          "fighter_b_price": 163
+        },
+        {
+          "sportsbook": "BetRivers",
+          "last_update": "2026-09-24T11:09:15Z",
+          "fighter_a_price": -205,
+          "fighter_b_price": 163
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-09-24T11:10:06Z",
+          "fighter_a_price": -200,
+          "fighter_b_price": 160
+        },
+        {
+          "sportsbook": "Hard Rock Bet",
+          "last_update": "2026-09-24T11:09:49Z",
+          "fighter_a_price": -200,
+          "fighter_b_price": 165
+        },
+        {
+          "sportsbook": "BetAnything",
+          "last_update": "2026-09-24T11:09:14Z",
+          "fighter_a_price": -190,
+          "fighter_b_price": 160
+        }
+      ]
+    },
     "deiveson figueiredo-vs-payton talbott": {
       "fighter_a": "DEIVESON FIGUEIREDO",
       "fighter_b": "PAYTON TALBOTT",
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-09-23T10:49:00Z",
+          "last_update": "2026-09-24T11:07:15Z",
           "fighter_a_price": 505,
           "fighter_b_price": -700
         },
         {
           "sportsbook": "DraftKings",
-          "last_update": "2026-09-23T10:48:34Z",
+          "last_update": "2026-09-24T11:08:39Z",
           "fighter_a_price": 500,
           "fighter_b_price": -700
         },
         {
           "sportsbook": "FanDuel",
-          "last_update": "2026-09-23T10:49:41Z",
+          "last_update": "2026-09-24T11:10:06Z",
           "fighter_a_price": 440,
           "fighter_b_price": -650
         },
         {
           "sportsbook": "betPARX",
-          "last_update": "2026-09-23T10:49:23Z",
+          "last_update": "2026-09-24T11:08:57Z",
           "fighter_a_price": 460,
           "fighter_b_price": -715
         },
         {
           "sportsbook": "BetRivers",
-          "last_update": "2026-09-23T10:49:41Z",
+          "last_update": "2026-09-24T11:09:15Z",
           "fighter_a_price": 460,
           "fighter_b_price": -715
         },
         {
           "sportsbook": "Bally Bet",
-          "last_update": "2026-09-23T10:49:06Z",
+          "last_update": "2026-09-24T11:10:05Z",
           "fighter_a_price": 460,
           "fighter_b_price": -715
         },
         {
           "sportsbook": "Hard Rock Bet",
-          "last_update": "2026-09-23T10:48:51Z",
+          "last_update": "2026-09-24T11:09:49Z",
           "fighter_a_price": 450,
           "fighter_b_price": -700
         },
         {
           "sportsbook": "BetAnything",
-          "last_update": "2026-09-23T10:49:41Z",
+          "last_update": "2026-09-24T11:09:14Z",
           "fighter_a_price": 400,
           "fighter_b_price": -700
         }

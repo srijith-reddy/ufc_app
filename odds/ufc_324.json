@@ -2,7 +2,7 @@
   "event": 324,
   "event_id": "ufc-324",
   "event_number": 324,
-  "scraped_at": "2026-09-23T10:49:53.226760",
+  "scraped_at": "2026-09-24T11:10:10.997872",
   "source": "https://the-odds-api.com",
   "odds": {
     "kayla harrison": [
@@ -24,37 +24,37 @@
       "quotes": [
         {
           "sportsbook": "DraftKings",
-          "last_update": "2026-09-23T10:48:34Z",
+          "last_update": "2026-09-24T11:08:39Z",
           "fighter_a_price": -192,
           "fighter_b_price": 160
         },
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-09-23T10:49:00Z",
+          "last_update": "2026-09-24T11:07:15Z",
           "fighter_a_price": -200,
           "fighter_b_price": 169
         },
         {
           "sportsbook": "betPARX",
-          "last_update": "2026-09-23T10:49:23Z",
+          "last_update": "2026-09-24T11:08:57Z",
           "fighter_a_price": -205,
           "fighter_b_price": 163
         },
         {
           "sportsbook": "BetRivers",
-          "last_update": "2026-09-23T10:49:41Z",
+          "last_update": "2026-09-24T11:09:15Z",
           "fighter_a_price": -205,
           "fighter_b_price": 163
         },
         {
           "sportsbook": "Bally Bet",
-          "last_update": "2026-09-23T10:49:06Z",
+          "last_update": "2026-09-24T11:10:05Z",
           "fighter_a_price": -205,
           "fighter_b_price": 163
         },
         {
           "sportsbook": "Hard Rock Bet",
-          "last_update": "2026-09-23T10:48:51Z",
+          "last_update": "2026-09-24T11:09:49Z",
           "fighter_a_price": -200,
           "fighter_b_price": 165
         }
