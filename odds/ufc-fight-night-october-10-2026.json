@@ -1,0 +1,215 @@
+{
+  "event": "ufc-fight-night-october-10-2026",
+  "event_id": "ufc-fight-night-october-10-2026",
+  "event_number": null,
+  "scraped_at": "2026-10-02T11:56:37.238136",
+  "source": "https://the-odds-api.com",
+  "odds": {
+    "brendan allen": [
+      -142
+    ],
+    "christian leroy duncan": [
+      120,
+      122
+    ],
+    "matheus camilo": [
+      -185,
+      -180
+    ],
+    "jai herbert": [
+      154,
+      157
+    ],
+    "julius walker": [
+      -285,
+      -280
+    ],
+    "gerald meerschaert": [
+      230
+    ],
+    "malcolm wellmaker": [
+      -205,
+      -200
+    ],
+    "otari tanzilovi": [
+      170,
+      174
+    ],
+    "francisco prado": [
+      114,
+      115
+    ],
+    "ismael bonfim": [
+      -135
+    ],
+    "felipe franco": [
+      -310
+    ],
+    "brendson ribeiro": [
+      250,
+      252
+    ],
+    "allen frye jr": [
+      185,
+      186
+    ],
+    "rj harris": [
+      -225,
+      -220
+    ],
+    "ernesta kareckaite": [
+      142,
+      145
+    ],
+    "melissa gatto": [
+      -170,
+      -165
+    ]
+  },
+  "books": {
+    "brendan allen-vs-christian leroy duncan": {
+      "fighter_a": "BRENDAN ALLEN",
+      "fighter_b": "CHRISTIAN LEROY DUNCAN",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-10-02T11:55:45Z",
+          "fighter_a_price": -142,
+          "fighter_b_price": 122
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-10-02T11:55:08Z",
+          "fighter_a_price": -142,
+          "fighter_b_price": 120
+        }
+      ]
+    },
+    "matheus camilo-vs-jai herbert": {
+      "fighter_a": "MATHEUS CAMILO",
+      "fighter_b": "JAI HERBERT",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-10-02T11:55:45Z",
+          "fighter_a_price": -180,
+          "fighter_b_price": 157
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-10-02T11:55:08Z",
+          "fighter_a_price": -185,
+          "fighter_b_price": 154
+        }
+      ]
+    },
+    "julius walker-vs-gerald meerschaert": {
+      "fighter_a": "JULIUS WALKER",
+      "fighter_b": "GERALD MEERSCHAERT",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-10-02T11:55:45Z",
+          "fighter_a_price": -280,
+          "fighter_b_price": 230
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-10-02T11:55:08Z",
+          "fighter_a_price": -285,
+          "fighter_b_price": 230
+        }
+      ]
+    },
+    "malcolm wellmaker-vs-otari tanzilovi": {
+      "fighter_a": "MALCOLM WELLMAKER",
+      "fighter_b": "OTARI TANZILOVI",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-10-02T11:55:45Z",
+          "fighter_a_price": -200,
+          "fighter_b_price": 174
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-10-02T11:55:08Z",
+          "fighter_a_price": -205,
+          "fighter_b_price": 170
+        }
+      ]
+    },
+    "francisco prado-vs-ismael bonfim": {
+      "fighter_a": "FRANCISCO PRADO",
+      "fighter_b": "ISMAEL BONFIM",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-10-02T11:55:45Z",
+          "fighter_a_price": 115,
+          "fighter_b_price": -135
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-10-02T11:55:08Z",
+          "fighter_a_price": 114,
+          "fighter_b_price": -135
+        }
+      ]
+    },
+    "felipe franco-vs-brendson ribeiro": {
+      "fighter_a": "FELIPE FRANCO",
+      "fighter_b": "BRENDSON RIBEIRO",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-10-02T11:55:45Z",
+          "fighter_a_price": -310,
+          "fighter_b_price": 252
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-10-02T11:55:08Z",
+          "fighter_a_price": -310,
+          "fighter_b_price": 250
+        }
+      ]
+    },
+    "allen frye jr-vs-rj harris": {
+      "fighter_a": "ALLEN FRYE JR.",
+      "fighter_b": "RJ HARRIS",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-10-02T11:55:45Z",
+          "fighter_a_price": 186,
+          "fighter_b_price": -220
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-10-02T11:55:08Z",
+          "fighter_a_price": 185,
+          "fighter_b_price": -225
+        }
+      ]
+    },
+    "ernesta kareckaite-vs-melissa gatto": {
+      "fighter_a": "ERNESTA KARECKAIT\u0116",
+      "fighter_b": "MELISSA GATTO",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-10-02T11:55:45Z",
+          "fighter_a_price": 145,
+          "fighter_b_price": -165
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-10-02T11:55:08Z",
+          "fighter_a_price": 142,
+          "fighter_b_price": -170
+        }
+      ]
+    }
+  }
+}
