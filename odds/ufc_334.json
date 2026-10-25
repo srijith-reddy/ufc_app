@@ -1,0 +1,131 @@
+{
+  "event": 334,
+  "event_id": "ufc-334",
+  "event_number": 334,
+  "scraped_at": "2026-10-25T10:47:49.800341",
+  "source": "https://the-odds-api.com",
+  "odds": {
+    "ciryl gane": [
+      -275,
+      -265,
+      -245
+    ],
+    "josh hokit": [
+      200,
+      205,
+      210,
+      215
+    ],
+    "kayla harrison": [
+      -210,
+      -205,
+      -200,
+      -190
+    ],
+    "amanda nunes": [
+      161,
+      162,
+      163,
+      165,
+      170
+    ]
+  },
+  "books": {
+    "ciryl gane-vs-josh hokit": {
+      "fighter_a": "CIRYL GANE",
+      "fighter_b": "JOSH HOKIT",
+      "quotes": [
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-10-25T10:47:21Z",
+          "fighter_a_price": -265,
+          "fighter_b_price": 215
+        },
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-10-25T10:47:31Z",
+          "fighter_a_price": -245,
+          "fighter_b_price": 205
+        },
+        {
+          "sportsbook": "Bally Bet",
+          "last_update": "2026-10-25T10:46:39Z",
+          "fighter_a_price": -275,
+          "fighter_b_price": 210
+        },
+        {
+          "sportsbook": "betPARX",
+          "last_update": "2026-10-25T10:47:04Z",
+          "fighter_a_price": -275,
+          "fighter_b_price": 210
+        },
+        {
+          "sportsbook": "BetRivers",
+          "last_update": "2026-10-25T10:47:01Z",
+          "fighter_a_price": -275,
+          "fighter_b_price": 210
+        },
+        {
+          "sportsbook": "Hard Rock Bet",
+          "last_update": "2026-10-25T10:47:22Z",
+          "fighter_a_price": -275,
+          "fighter_b_price": 210
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-10-25T10:47:44Z",
+          "fighter_a_price": -265,
+          "fighter_b_price": 200
+        }
+      ]
+    },
+    "kayla harrison-vs-amanda nunes": {
+      "fighter_a": "KAYLA HARRISON",
+      "fighter_b": "AMANDA NUNES",
+      "quotes": [
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-10-25T10:47:21Z",
+          "fighter_a_price": -205,
+          "fighter_b_price": 170
+        },
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-10-25T10:47:31Z",
+          "fighter_a_price": -190,
+          "fighter_b_price": 161
+        },
+        {
+          "sportsbook": "betPARX",
+          "last_update": "2026-10-25T10:47:04Z",
+          "fighter_a_price": -205,
+          "fighter_b_price": 163
+        },
+        {
+          "sportsbook": "BetRivers",
+          "last_update": "2026-10-25T10:47:01Z",
+          "fighter_a_price": -205,
+          "fighter_b_price": 163
+        },
+        {
+          "sportsbook": "Bally Bet",
+          "last_update": "2026-10-25T10:46:39Z",
+          "fighter_a_price": -205,
+          "fighter_b_price": 163
+        },
+        {
+          "sportsbook": "Hard Rock Bet",
+          "last_update": "2026-10-25T10:47:22Z",
+          "fighter_a_price": -200,
+          "fighter_b_price": 165
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-10-25T10:47:44Z",
+          "fighter_a_price": -210,
+          "fighter_b_price": 162
+        }
+      ]
+    }
+  }
+}

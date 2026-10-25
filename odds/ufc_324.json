@@ -2,21 +2,21 @@
   "event": 324,
   "event_id": "ufc-324",
   "event_number": 324,
-  "scraped_at": "2026-10-03T11:09:45.422807",
+  "scraped_at": "2026-10-25T10:47:49.808793",
   "source": "https://the-odds-api.com",
   "odds": {
     "kayla harrison": [
       -210,
       -205,
       -200,
-      -192
+      -190
     ],
     "amanda nunes": [
-      160,
+      161,
       162,
       163,
       165,
-      169
+      170
     ]
   },
   "books": {
@@ -26,43 +26,43 @@
       "quotes": [
         {
           "sportsbook": "DraftKings",
-          "last_update": "2026-10-03T11:09:21Z",
-          "fighter_a_price": -192,
-          "fighter_b_price": 160
+          "last_update": "2026-10-25T10:47:21Z",
+          "fighter_a_price": -205,
+          "fighter_b_price": 170
         },
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-10-03T11:09:39Z",
-          "fighter_a_price": -200,
-          "fighter_b_price": 169
+          "last_update": "2026-10-25T10:47:31Z",
+          "fighter_a_price": -190,
+          "fighter_b_price": 161
         },
         {
           "sportsbook": "betPARX",
-          "last_update": "2026-10-03T11:09:05Z",
+          "last_update": "2026-10-25T10:47:04Z",
           "fighter_a_price": -205,
           "fighter_b_price": 163
         },
         {
           "sportsbook": "BetRivers",
-          "last_update": "2026-10-03T11:09:05Z",
+          "last_update": "2026-10-25T10:47:01Z",
           "fighter_a_price": -205,
           "fighter_b_price": 163
         },
         {
           "sportsbook": "Bally Bet",
-          "last_update": "2026-10-03T11:09:34Z",
+          "last_update": "2026-10-25T10:46:39Z",
           "fighter_a_price": -205,
           "fighter_b_price": 163
         },
         {
           "sportsbook": "Hard Rock Bet",
-          "last_update": "2026-10-03T11:08:49Z",
+          "last_update": "2026-10-25T10:47:22Z",
           "fighter_a_price": -200,
           "fighter_b_price": 165
         },
         {
           "sportsbook": "FanDuel",
-          "last_update": "2026-10-03T11:09:05Z",
+          "last_update": "2026-10-25T10:47:44Z",
           "fighter_a_price": -210,
           "fighter_b_price": 162
         }
