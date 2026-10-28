@@ -2,7 +2,7 @@
   "event": 334,
   "event_id": "ufc-334",
   "event_number": 334,
-  "scraped_at": "2026-10-27T11:39:02.965202",
+  "scraped_at": "2026-10-28T12:10:03.584366",
   "source": "https://the-odds-api.com",
   "odds": {
     "ciryl gane": [
@@ -28,6 +28,24 @@
       163,
       165,
       170
+    ],
+    "caio borralho": [
+      -120
+    ],
+    "yousri belgaroui": [
+      103
+    ],
+    "uros medic": [
+      -165
+    ],
+    "kevin holland": [
+      140
+    ],
+    "bilal hasan": [
+      -950
+    ],
+    "luis gurule": [
+      648
     ]
   },
   "books": {
@@ -37,43 +55,43 @@
       "quotes": [
         {
           "sportsbook": "DraftKings",
-          "last_update": "2026-10-27T11:38:06Z",
+          "last_update": "2026-10-28T12:09:23Z",
           "fighter_a_price": -265,
           "fighter_b_price": 215
         },
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-10-27T11:36:46Z",
+          "last_update": "2026-10-28T12:09:30Z",
           "fighter_a_price": -243,
           "fighter_b_price": 203
         },
         {
           "sportsbook": "Bally Bet",
-          "last_update": "2026-10-27T11:38:52Z",
+          "last_update": "2026-10-28T12:09:50Z",
           "fighter_a_price": -275,
           "fighter_b_price": 210
         },
         {
           "sportsbook": "betPARX",
-          "last_update": "2026-10-27T11:37:23Z",
+          "last_update": "2026-10-28T12:09:00Z",
           "fighter_a_price": -275,
           "fighter_b_price": 210
         },
         {
           "sportsbook": "BetRivers",
-          "last_update": "2026-10-27T11:38:51Z",
+          "last_update": "2026-10-28T12:08:59Z",
           "fighter_a_price": -275,
           "fighter_b_price": 210
         },
         {
           "sportsbook": "Hard Rock Bet",
-          "last_update": "2026-10-27T11:38:54Z",
+          "last_update": "2026-10-28T12:09:52Z",
           "fighter_a_price": -275,
           "fighter_b_price": 210
         },
         {
           "sportsbook": "FanDuel",
-          "last_update": "2026-10-27T11:38:53Z",
+          "last_update": "2026-10-28T12:09:46Z",
           "fighter_a_price": -265,
           "fighter_b_price": 200
         }
@@ -85,45 +103,81 @@
       "quotes": [
         {
           "sportsbook": "DraftKings",
-          "last_update": "2026-10-27T11:38:06Z",
+          "last_update": "2026-10-28T12:09:23Z",
           "fighter_a_price": -205,
           "fighter_b_price": 170
         },
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-10-27T11:36:46Z",
+          "last_update": "2026-10-28T12:09:30Z",
           "fighter_a_price": -190,
           "fighter_b_price": 161
         },
         {
           "sportsbook": "betPARX",
-          "last_update": "2026-10-27T11:37:23Z",
+          "last_update": "2026-10-28T12:09:00Z",
           "fighter_a_price": -205,
           "fighter_b_price": 163
         },
         {
           "sportsbook": "BetRivers",
-          "last_update": "2026-10-27T11:38:51Z",
+          "last_update": "2026-10-28T12:08:59Z",
           "fighter_a_price": -205,
           "fighter_b_price": 163
         },
         {
           "sportsbook": "Bally Bet",
-          "last_update": "2026-10-27T11:38:52Z",
+          "last_update": "2026-10-28T12:09:50Z",
           "fighter_a_price": -205,
           "fighter_b_price": 163
         },
         {
           "sportsbook": "Hard Rock Bet",
-          "last_update": "2026-10-27T11:38:54Z",
+          "last_update": "2026-10-28T12:09:52Z",
           "fighter_a_price": -200,
           "fighter_b_price": 165
         },
         {
           "sportsbook": "FanDuel",
-          "last_update": "2026-10-27T11:38:53Z",
+          "last_update": "2026-10-28T12:09:46Z",
           "fighter_a_price": -210,
           "fighter_b_price": 162
+        }
+      ]
+    },
+    "caio borralho-vs-yousri belgaroui": {
+      "fighter_a": "CAIO BORRALHO",
+      "fighter_b": "YOUSRI BELGAROUI",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-10-28T12:09:30Z",
+          "fighter_a_price": -120,
+          "fighter_b_price": 103
+        }
+      ]
+    },
+    "uros medic-vs-kevin holland": {
+      "fighter_a": "URO\u0160 MEDI\u0106",
+      "fighter_b": "KEVIN HOLLAND",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-10-28T12:09:30Z",
+          "fighter_a_price": -165,
+          "fighter_b_price": 140
+        }
+      ]
+    },
+    "bilal hasan-vs-luis gurule": {
+      "fighter_a": "BILAL HASAN",
+      "fighter_b": "LUIS GURULE",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-10-28T12:09:30Z",
+          "fighter_a_price": -950,
+          "fighter_b_price": 648
         }
       ]
     }
