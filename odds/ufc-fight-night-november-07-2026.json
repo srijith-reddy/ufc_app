@@ -1,0 +1,155 @@
+{
+  "event": "ufc-fight-night-november-07-2026",
+  "event_id": "ufc-fight-night-november-07-2026",
+  "event_number": null,
+  "scraped_at": "2026-10-29T12:20:51.953762",
+  "source": "https://the-odds-api.com",
+  "odds": {
+    "gabriel bonfim": [
+      -134
+    ],
+    "sean brady": [
+      115
+    ],
+    "tatiana suarez": [
+      -200
+    ],
+    "virna jandiroba": [
+      169
+    ],
+    "billy elekana": [
+      212
+    ],
+    "lucas fernando": [
+      -255
+    ],
+    "karine silva": [
+      -170
+    ],
+    "gabriella fernandes": [
+      145
+    ],
+    "mitch raposo": [
+      208
+    ],
+    "marcos degli": [
+      -250
+    ],
+    "jose delano": [
+      -131
+    ],
+    "murtazali magomedov": [
+      112
+    ],
+    "keiichiro nakamura": [
+      -350
+    ],
+    "ollie schmid": [
+      284
+    ],
+    "priscila cachoeira": [
+      350
+    ],
+    "nina milosevic": [
+      -445
+    ]
+  },
+  "books": {
+    "gabriel bonfim-vs-sean brady": {
+      "fighter_a": "GABRIEL BONFIM",
+      "fighter_b": "SEAN BRADY",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-10-29T12:19:06Z",
+          "fighter_a_price": -134,
+          "fighter_b_price": 115
+        }
+      ]
+    },
+    "tatiana suarez-vs-virna jandiroba": {
+      "fighter_a": "TATIANA SUAREZ",
+      "fighter_b": "VIRNA JANDIROBA",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-10-29T12:19:06Z",
+          "fighter_a_price": -200,
+          "fighter_b_price": 169
+        }
+      ]
+    },
+    "billy elekana-vs-lucas fernando": {
+      "fighter_a": "BILLY ELEKANA",
+      "fighter_b": "LUCAS FERNANDO",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-10-29T12:19:06Z",
+          "fighter_a_price": 212,
+          "fighter_b_price": -255
+        }
+      ]
+    },
+    "karine silva-vs-gabriella fernandes": {
+      "fighter_a": "KARINE SILVA",
+      "fighter_b": "GABRIELLA FERNANDES",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-10-29T12:19:06Z",
+          "fighter_a_price": -170,
+          "fighter_b_price": 145
+        }
+      ]
+    },
+    "mitch raposo-vs-marcos degli": {
+      "fighter_a": "MITCH RAPOSO",
+      "fighter_b": "MARCOS DEGLI",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-10-29T12:19:06Z",
+          "fighter_a_price": 208,
+          "fighter_b_price": -250
+        }
+      ]
+    },
+    "jose delano-vs-murtazali magomedov": {
+      "fighter_a": "JOSE DELANO",
+      "fighter_b": "MURTAZALI MAGOMEDOV",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-10-29T12:19:06Z",
+          "fighter_a_price": -131,
+          "fighter_b_price": 112
+        }
+      ]
+    },
+    "keiichiro nakamura-vs-ollie schmid": {
+      "fighter_a": "KEIICHIRO NAKAMURA",
+      "fighter_b": "OLLIE SCHMID",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-10-29T12:19:07Z",
+          "fighter_a_price": -350,
+          "fighter_b_price": 284
+        }
+      ]
+    },
+    "priscila cachoeira-vs-nina milosevic": {
+      "fighter_a": "PRISCILA CACHOEIRA",
+      "fighter_b": "NINA MILO\u0160EVI\u0106",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-10-29T12:19:07Z",
+          "fighter_a_price": 350,
+          "fighter_b_price": -445
+        }
+      ]
+    }
+  }
+}
