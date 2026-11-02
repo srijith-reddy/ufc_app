@@ -1,0 +1,37 @@
+{
+  "event": "ufc-fight-night-november-21-2026",
+  "event_id": "ufc-fight-night-november-21-2026",
+  "event_number": null,
+  "scraped_at": "2026-11-02T14:50:39.417833",
+  "source": "https://the-odds-api.com",
+  "odds": {
+    "jiri prochazka": [
+      125,
+      132
+    ],
+    "navajo stirling": [
+      -167,
+      -155
+    ]
+  },
+  "books": {
+    "jiri prochazka-vs-navajo stirling": {
+      "fighter_a": "JI\u0158\u00cd PROCH\u00c1ZKA",
+      "fighter_b": "NAVAJO STIRLING",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-11-02T14:49:51Z",
+          "fighter_a_price": 132,
+          "fighter_b_price": -155
+        },
+        {
+          "sportsbook": "Betwhale",
+          "last_update": "2026-11-02T14:50:11Z",
+          "fighter_a_price": 125,
+          "fighter_b_price": -167
+        }
+      ]
+    }
+  }
+}
