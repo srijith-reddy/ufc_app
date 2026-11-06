@@ -2,15 +2,16 @@
   "event": "ufc-fight-night-november-21-2026",
   "event_id": "ufc-fight-night-november-21-2026",
   "event_number": null,
-  "scraped_at": "2026-11-05T14:01:36.493119",
+  "scraped_at": "2026-11-06T13:47:12.794606",
   "source": "https://the-odds-api.com",
   "odds": {
     "jiri prochazka": [
+      110,
       118,
       120
     ],
     "navajo stirling": [
-      -159,
+      -149,
       -140
     ]
   },
@@ -21,19 +22,19 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-11-05T14:01:03Z",
+          "last_update": "2026-11-06T13:46:48Z",
           "fighter_a_price": 120,
           "fighter_b_price": -140
         },
         {
           "sportsbook": "Betwhale",
-          "last_update": "2026-11-05T14:00:52Z",
-          "fighter_a_price": 118,
-          "fighter_b_price": -159
+          "last_update": "2026-11-06T13:46:07Z",
+          "fighter_a_price": 110,
+          "fighter_b_price": -149
         },
         {
           "sportsbook": "BetUS",
-          "last_update": "2026-11-05T14:01:32Z",
+          "last_update": "2026-11-06T13:46:52Z",
           "fighter_a_price": 118,
           "fighter_b_price": -140
         }
