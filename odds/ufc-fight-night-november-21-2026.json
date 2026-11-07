@@ -2,7 +2,7 @@
   "event": "ufc-fight-night-november-21-2026",
   "event_id": "ufc-fight-night-november-21-2026",
   "event_number": null,
-  "scraped_at": "2026-11-06T13:47:12.794606",
+  "scraped_at": "2026-11-07T12:30:57.285263",
   "source": "https://the-odds-api.com",
   "odds": {
     "jiri prochazka": [
@@ -22,19 +22,19 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-11-06T13:46:48Z",
+          "last_update": "2026-11-07T12:30:09Z",
           "fighter_a_price": 120,
           "fighter_b_price": -140
         },
         {
           "sportsbook": "Betwhale",
-          "last_update": "2026-11-06T13:46:07Z",
+          "last_update": "2026-11-07T12:30:45Z",
           "fighter_a_price": 110,
           "fighter_b_price": -149
         },
         {
           "sportsbook": "BetUS",
-          "last_update": "2026-11-06T13:46:52Z",
+          "last_update": "2026-11-07T12:29:57Z",
           "fighter_a_price": 118,
           "fighter_b_price": -140
         }
