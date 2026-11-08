@@ -1,0 +1,86 @@
+{
+  "event": 335,
+  "event_id": "ufc-335",
+  "event_number": 335,
+  "scraped_at": "2026-11-08T12:48:39.211600",
+  "source": "https://the-odds-api.com",
+  "odds": {
+    "charles oliveira": [
+      -162,
+      -161,
+      -155,
+      -148,
+      -145
+    ],
+    "diego lopes": [
+      115,
+      120,
+      123,
+      124,
+      125,
+      126
+    ]
+  },
+  "books": {
+    "charles oliveira-vs-diego lopes": {
+      "fighter_a": "CHARLES OLIVEIRA",
+      "fighter_b": "DIEGO LOPES",
+      "quotes": [
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-11-08T12:47:32Z",
+          "fighter_a_price": -148,
+          "fighter_b_price": 124
+        },
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-11-08T12:47:23Z",
+          "fighter_a_price": -148,
+          "fighter_b_price": 126
+        },
+        {
+          "sportsbook": "BetRivers",
+          "last_update": "2026-11-08T12:47:32Z",
+          "fighter_a_price": -155,
+          "fighter_b_price": 123
+        },
+        {
+          "sportsbook": "betPARX",
+          "last_update": "2026-11-08T12:47:33Z",
+          "fighter_a_price": -155,
+          "fighter_b_price": 123
+        },
+        {
+          "sportsbook": "Bally Bet",
+          "last_update": "2026-11-08T12:47:33Z",
+          "fighter_a_price": -155,
+          "fighter_b_price": 123
+        },
+        {
+          "sportsbook": "Hard Rock Bet",
+          "last_update": "2026-11-08T12:47:52Z",
+          "fighter_a_price": -155,
+          "fighter_b_price": 125
+        },
+        {
+          "sportsbook": "FanDuel",
+          "last_update": "2026-11-08T12:48:28Z",
+          "fighter_a_price": -162,
+          "fighter_b_price": 126
+        },
+        {
+          "sportsbook": "Betwhale",
+          "last_update": "2026-11-08T12:47:32Z",
+          "fighter_a_price": -161,
+          "fighter_b_price": 120
+        },
+        {
+          "sportsbook": "BetAnything",
+          "last_update": "2026-11-08T12:48:11Z",
+          "fighter_a_price": -145,
+          "fighter_b_price": 115
+        }
+      ]
+    }
+  }
+}
