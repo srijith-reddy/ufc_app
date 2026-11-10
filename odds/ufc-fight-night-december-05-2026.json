@@ -1,0 +1,36 @@
+{
+  "event": "ufc-fight-night-december-05-2026",
+  "event_id": "ufc-fight-night-december-05-2026",
+  "event_number": null,
+  "scraped_at": "2026-11-10T14:23:48.988526",
+  "source": "https://the-odds-api.com",
+  "odds": {
+    "israel adesanya": [
+      -155
+    ],
+    "shara magomedov": [
+      130,
+      132
+    ]
+  },
+  "books": {
+    "israel adesanya-vs-shara magomedov": {
+      "fighter_a": "ISRAEL ADESANYA",
+      "fighter_b": "SHARA MAGOMEDOV",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-11-10T14:19:49Z",
+          "fighter_a_price": -155,
+          "fighter_b_price": 132
+        },
+        {
+          "sportsbook": "BetUS",
+          "last_update": "2026-11-10T14:23:43Z",
+          "fighter_a_price": -155,
+          "fighter_b_price": 130
+        }
+      ]
+    }
+  }
+}

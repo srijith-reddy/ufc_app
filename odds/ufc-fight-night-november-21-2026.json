@@ -2,7 +2,7 @@
   "event": "ufc-fight-night-november-21-2026",
   "event_id": "ufc-fight-night-november-21-2026",
   "event_number": null,
-  "scraped_at": "2026-11-09T15:17:42.439442",
+  "scraped_at": "2026-11-10T14:23:48.972757",
   "source": "https://the-odds-api.com",
   "odds": {
     "jiri prochazka": [
@@ -15,12 +15,12 @@
       -140
     ],
     "aljamain sterling": [
-      -111,
-      -105
+      -103,
+      103
     ],
     "kevin vallejos": [
-      -118,
-      -111
+      -128,
+      -120
     ]
   },
   "books": {
@@ -30,19 +30,19 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-11-09T15:16:17Z",
+          "last_update": "2026-11-10T14:19:49Z",
           "fighter_a_price": 120,
           "fighter_b_price": -140
         },
         {
           "sportsbook": "Betwhale",
-          "last_update": "2026-11-09T15:17:40Z",
+          "last_update": "2026-11-10T14:23:08Z",
           "fighter_a_price": 110,
           "fighter_b_price": -149
         },
         {
           "sportsbook": "BetUS",
-          "last_update": "2026-11-09T15:16:46Z",
+          "last_update": "2026-11-10T14:23:43Z",
           "fighter_a_price": 118,
           "fighter_b_price": -140
         }
@@ -54,15 +54,15 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-11-09T15:16:17Z",
-          "fighter_a_price": -105,
-          "fighter_b_price": -111
+          "last_update": "2026-11-10T14:19:49Z",
+          "fighter_a_price": 103,
+          "fighter_b_price": -120
         },
         {
           "sportsbook": "Betwhale",
-          "last_update": "2026-11-09T15:17:40Z",
-          "fighter_a_price": -111,
-          "fighter_b_price": -118
+          "last_update": "2026-11-10T14:23:08Z",
+          "fighter_a_price": -103,
+          "fighter_b_price": -128
         }
       ]
     }
