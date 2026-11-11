@@ -2,7 +2,7 @@
   "event": "ufc-fight-night-december-05-2026",
   "event_id": "ufc-fight-night-december-05-2026",
   "event_number": null,
-  "scraped_at": "2026-11-10T14:23:48.988526",
+  "scraped_at": "2026-11-11T13:37:15.496070",
   "source": "https://the-odds-api.com",
   "odds": {
     "israel adesanya": [
@@ -20,13 +20,13 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-11-10T14:19:49Z",
+          "last_update": "2026-11-11T13:35:26Z",
           "fighter_a_price": -155,
           "fighter_b_price": 132
         },
         {
           "sportsbook": "BetUS",
-          "last_update": "2026-11-10T14:23:43Z",
+          "last_update": "2026-11-11T13:35:51Z",
           "fighter_a_price": -155,
           "fighter_b_price": 130
         }
