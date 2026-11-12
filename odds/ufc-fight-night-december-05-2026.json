@@ -2,13 +2,15 @@
   "event": "ufc-fight-night-december-05-2026",
   "event_id": "ufc-fight-night-december-05-2026",
   "event_number": null,
-  "scraped_at": "2026-11-11T13:37:15.496070",
+  "scraped_at": "2026-11-12T14:40:43.125321",
   "source": "https://the-odds-api.com",
   "odds": {
     "israel adesanya": [
+      -157,
       -155
     ],
     "shara magomedov": [
+      125,
       130,
       132
     ]
@@ -20,15 +22,39 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-11-11T13:35:26Z",
+          "last_update": "2026-11-12T14:38:40Z",
           "fighter_a_price": -155,
           "fighter_b_price": 132
         },
         {
           "sportsbook": "BetUS",
-          "last_update": "2026-11-11T13:35:51Z",
+          "last_update": "2026-11-12T14:40:42Z",
           "fighter_a_price": -155,
           "fighter_b_price": 130
+        },
+        {
+          "sportsbook": "BetRivers",
+          "last_update": "2026-11-12T14:40:25Z",
+          "fighter_a_price": -157,
+          "fighter_b_price": 125
+        },
+        {
+          "sportsbook": "betPARX",
+          "last_update": "2026-11-12T14:40:24Z",
+          "fighter_a_price": -157,
+          "fighter_b_price": 125
+        },
+        {
+          "sportsbook": "Bally Bet",
+          "last_update": "2026-11-12T14:40:26Z",
+          "fighter_a_price": -157,
+          "fighter_b_price": 125
+        },
+        {
+          "sportsbook": "Hard Rock Bet",
+          "last_update": "2026-11-12T14:39:28Z",
+          "fighter_a_price": -155,
+          "fighter_b_price": 125
         }
       ]
     }
