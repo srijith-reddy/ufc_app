@@ -2,30 +2,71 @@
   "event": "ufc-fight-night-november-21-2026",
   "event_id": "ufc-fight-night-november-21-2026",
   "event_number": null,
-  "scraped_at": "2026-11-12T14:40:43.113928",
+  "scraped_at": "2026-11-13T13:58:32.277250",
   "source": "https://the-odds-api.com",
   "odds": {
     "jiri prochazka": [
       110,
       114,
-      118,
-      120
+      115,
+      124,
+      126,
+      128
     ],
     "navajo stirling": [
+      -150,
       -149,
+      -148,
       -141,
       -140
     ],
     "aljamain sterling": [
       -107,
       -105,
+      102,
       105,
       107
     ],
     "kevin vallejos": [
       -125,
+      -122,
       -117,
       -115
+    ],
+    "jared cannonier": [
+      280,
+      284
+    ],
+    "ikram aliskerov": [
+      -355,
+      -350
+    ],
+    "aleksandre topuria": [
+      -205
+    ],
+    "santiago luna": [
+      173
+    ],
+    "shamil gaziev": [
+      -225,
+      -220
+    ],
+    "tallison teixeira": [
+      185
+    ],
+    "amir albazi": [
+      130,
+      132
+    ],
+    "alessandro costa": [
+      -155
+    ],
+    "jake matthews": [
+      -166,
+      -165
+    ],
+    "tahir abdullayev": [
+      140
     ]
   },
   "books": {
@@ -35,39 +76,51 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-11-12T14:38:40Z",
-          "fighter_a_price": 120,
-          "fighter_b_price": -140
+          "last_update": "2026-11-13T13:58:31Z",
+          "fighter_a_price": 128,
+          "fighter_b_price": -150
         },
         {
           "sportsbook": "Betwhale",
-          "last_update": "2026-11-12T14:39:50Z",
+          "last_update": "2026-11-13T13:57:45Z",
           "fighter_a_price": 110,
           "fighter_b_price": -149
         },
         {
           "sportsbook": "BetUS",
-          "last_update": "2026-11-12T14:40:42Z",
-          "fighter_a_price": 118,
-          "fighter_b_price": -140
+          "last_update": "2026-11-13T13:58:03Z",
+          "fighter_a_price": 126,
+          "fighter_b_price": -150
         },
         {
           "sportsbook": "BetRivers",
-          "last_update": "2026-11-12T14:40:25Z",
+          "last_update": "2026-11-13T13:57:43Z",
           "fighter_a_price": 114,
           "fighter_b_price": -141
         },
         {
           "sportsbook": "betPARX",
-          "last_update": "2026-11-12T14:40:24Z",
+          "last_update": "2026-11-13T13:58:03Z",
           "fighter_a_price": 114,
           "fighter_b_price": -141
         },
         {
           "sportsbook": "Bally Bet",
-          "last_update": "2026-11-12T14:40:26Z",
+          "last_update": "2026-11-13T13:57:44Z",
           "fighter_a_price": 114,
           "fighter_b_price": -141
+        },
+        {
+          "sportsbook": "Hard Rock Bet",
+          "last_update": "2026-11-13T13:58:06Z",
+          "fighter_a_price": 115,
+          "fighter_b_price": -140
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-11-13T13:57:43Z",
+          "fighter_a_price": 124,
+          "fighter_b_price": -148
         }
       ]
     },
@@ -77,45 +130,135 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-11-12T14:38:40Z",
+          "last_update": "2026-11-13T13:58:31Z",
           "fighter_a_price": 107,
           "fighter_b_price": -125
         },
         {
           "sportsbook": "Betwhale",
-          "last_update": "2026-11-12T14:39:50Z",
+          "last_update": "2026-11-13T13:57:45Z",
           "fighter_a_price": -105,
           "fighter_b_price": -125
         },
         {
           "sportsbook": "betPARX",
-          "last_update": "2026-11-12T14:40:24Z",
+          "last_update": "2026-11-13T13:58:03Z",
           "fighter_a_price": -107,
           "fighter_b_price": -117
         },
         {
           "sportsbook": "Bally Bet",
-          "last_update": "2026-11-12T14:40:26Z",
+          "last_update": "2026-11-13T13:57:44Z",
           "fighter_a_price": -107,
           "fighter_b_price": -117
         },
         {
           "sportsbook": "BetRivers",
-          "last_update": "2026-11-12T14:40:25Z",
+          "last_update": "2026-11-13T13:57:43Z",
           "fighter_a_price": -107,
           "fighter_b_price": -117
         },
         {
           "sportsbook": "BetUS",
-          "last_update": "2026-11-12T14:40:42Z",
+          "last_update": "2026-11-13T13:58:03Z",
           "fighter_a_price": 105,
           "fighter_b_price": -125
         },
         {
           "sportsbook": "Hard Rock Bet",
-          "last_update": "2026-11-12T14:39:28Z",
+          "last_update": "2026-11-13T13:58:06Z",
           "fighter_a_price": -105,
           "fighter_b_price": -115
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-11-13T13:57:43Z",
+          "fighter_a_price": 102,
+          "fighter_b_price": -122
+        }
+      ]
+    },
+    "jared cannonier-vs-ikram aliskerov": {
+      "fighter_a": "JARED CANNONIER",
+      "fighter_b": "IKRAM ALISKEROV",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-11-13T13:58:31Z",
+          "fighter_a_price": 284,
+          "fighter_b_price": -350
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-11-13T13:57:43Z",
+          "fighter_a_price": 280,
+          "fighter_b_price": -355
+        }
+      ]
+    },
+    "aleksandre topuria-vs-santiago luna": {
+      "fighter_a": "ALEKSANDRE TOPURIA",
+      "fighter_b": "SANTIAGO LUNA",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-11-13T13:58:31Z",
+          "fighter_a_price": -205,
+          "fighter_b_price": 173
+        }
+      ]
+    },
+    "shamil gaziev-vs-tallison teixeira": {
+      "fighter_a": "SHAMIL GAZIEV",
+      "fighter_b": "TALLISON TEIXEIRA",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-11-13T13:58:31Z",
+          "fighter_a_price": -220,
+          "fighter_b_price": 185
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-11-13T13:57:43Z",
+          "fighter_a_price": -225,
+          "fighter_b_price": 185
+        }
+      ]
+    },
+    "amir albazi-vs-alessandro costa": {
+      "fighter_a": "AMIR ALBAZI",
+      "fighter_b": "ALESSANDRO COSTA",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-11-13T13:58:31Z",
+          "fighter_a_price": 132,
+          "fighter_b_price": -155
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-11-13T13:57:43Z",
+          "fighter_a_price": 130,
+          "fighter_b_price": -155
+        }
+      ]
+    },
+    "jake matthews-vs-tahir abdullayev": {
+      "fighter_a": "JAKE MATTHEWS",
+      "fighter_b": "TAHIR ABDULLAYEV",
+      "quotes": [
+        {
+          "sportsbook": "BetOnline.ag",
+          "last_update": "2026-11-13T13:58:31Z",
+          "fighter_a_price": -165,
+          "fighter_b_price": 140
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-11-13T13:57:43Z",
+          "fighter_a_price": -166,
+          "fighter_b_price": 140
         }
       ]
     }

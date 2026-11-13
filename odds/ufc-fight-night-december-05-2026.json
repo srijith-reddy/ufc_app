@@ -2,7 +2,7 @@
   "event": "ufc-fight-night-december-05-2026",
   "event_id": "ufc-fight-night-december-05-2026",
   "event_number": null,
-  "scraped_at": "2026-11-12T14:40:43.125321",
+  "scraped_at": "2026-11-13T13:58:32.295108",
   "source": "https://the-odds-api.com",
   "odds": {
     "israel adesanya": [
@@ -22,39 +22,45 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-11-12T14:38:40Z",
+          "last_update": "2026-11-13T13:58:31Z",
           "fighter_a_price": -155,
           "fighter_b_price": 132
         },
         {
           "sportsbook": "BetUS",
-          "last_update": "2026-11-12T14:40:42Z",
+          "last_update": "2026-11-13T13:58:03Z",
           "fighter_a_price": -155,
           "fighter_b_price": 130
         },
         {
           "sportsbook": "BetRivers",
-          "last_update": "2026-11-12T14:40:25Z",
+          "last_update": "2026-11-13T13:57:43Z",
           "fighter_a_price": -157,
           "fighter_b_price": 125
         },
         {
           "sportsbook": "betPARX",
-          "last_update": "2026-11-12T14:40:24Z",
+          "last_update": "2026-11-13T13:58:03Z",
           "fighter_a_price": -157,
           "fighter_b_price": 125
         },
         {
           "sportsbook": "Bally Bet",
-          "last_update": "2026-11-12T14:40:26Z",
+          "last_update": "2026-11-13T13:57:44Z",
           "fighter_a_price": -157,
           "fighter_b_price": 125
         },
         {
           "sportsbook": "Hard Rock Bet",
-          "last_update": "2026-11-12T14:39:28Z",
+          "last_update": "2026-11-13T13:58:06Z",
           "fighter_a_price": -155,
           "fighter_b_price": 125
+        },
+        {
+          "sportsbook": "DraftKings",
+          "last_update": "2026-11-13T13:57:43Z",
+          "fighter_a_price": -155,
+          "fighter_b_price": 130
         }
       ]
     }
