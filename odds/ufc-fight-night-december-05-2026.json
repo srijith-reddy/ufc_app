@@ -2,11 +2,12 @@
   "event": "ufc-fight-night-december-05-2026",
   "event_id": "ufc-fight-night-december-05-2026",
   "event_number": null,
-  "scraped_at": "2026-11-16T14:52:20.355603",
+  "scraped_at": "2026-11-17T15:31:43.323972",
   "source": "https://the-odds-api.com",
   "odds": {
     "israel adesanya": [
       -164,
+      -160,
       -157,
       -155
     ],
@@ -14,7 +15,8 @@
       125,
       128,
       130,
-      134
+      134,
+      136
     ]
   },
   "books": {
@@ -24,49 +26,49 @@
       "quotes": [
         {
           "sportsbook": "BetOnline.ag",
-          "last_update": "2026-11-16T14:52:15Z",
-          "fighter_a_price": -157,
-          "fighter_b_price": 134
+          "last_update": "2026-11-17T15:30:29Z",
+          "fighter_a_price": -160,
+          "fighter_b_price": 136
         },
         {
           "sportsbook": "BetUS",
-          "last_update": "2026-11-16T14:51:39Z",
-          "fighter_a_price": -155,
-          "fighter_b_price": 130
+          "last_update": "2026-11-17T15:30:49Z",
+          "fighter_a_price": -160,
+          "fighter_b_price": 134
         },
         {
           "sportsbook": "BetRivers",
-          "last_update": "2026-11-16T14:51:55Z",
+          "last_update": "2026-11-17T15:31:33Z",
           "fighter_a_price": -157,
           "fighter_b_price": 125
         },
         {
           "sportsbook": "betPARX",
-          "last_update": "2026-11-16T14:51:26Z",
+          "last_update": "2026-11-17T15:30:48Z",
           "fighter_a_price": -157,
           "fighter_b_price": 125
         },
         {
           "sportsbook": "Bally Bet",
-          "last_update": "2026-11-16T14:51:25Z",
+          "last_update": "2026-11-17T15:31:31Z",
           "fighter_a_price": -157,
           "fighter_b_price": 125
         },
         {
           "sportsbook": "Hard Rock Bet",
-          "last_update": "2026-11-16T14:51:39Z",
+          "last_update": "2026-11-17T15:30:49Z",
           "fighter_a_price": -155,
           "fighter_b_price": 125
         },
         {
           "sportsbook": "DraftKings",
-          "last_update": "2026-11-16T14:51:54Z",
+          "last_update": "2026-11-17T15:30:35Z",
           "fighter_a_price": -155,
           "fighter_b_price": 130
         },
         {
           "sportsbook": "FanDuel",
-          "last_update": "2026-11-16T14:51:54Z",
+          "last_update": "2026-11-17T15:31:31Z",
           "fighter_a_price": -164,
           "fighter_b_price": 128
         }
